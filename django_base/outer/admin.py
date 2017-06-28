@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Outer
+
+
+class OuterAdmin(admin.ModelAdmin):
+    list_display = ('name', 'create_time',)
+
+admin.site.register(Outer, OuterAdmin)

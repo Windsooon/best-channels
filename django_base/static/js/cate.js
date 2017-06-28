@@ -14,7 +14,7 @@ function get_category(url) {
 function set_category_block(data, container) {
      $.each(data, function(k, v) {
          var $cate_block = $("<div />", {
-                "class": "pure-u-1 pure-u-md-1-3 cate-block"
+                "class": "pure-u-1 .pure-u-sm-1-1 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 cate-block"
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a"
@@ -70,7 +70,7 @@ function set_channel_block(data, container) {
          // if the category have soem channel inside
          if (v["playlist"].length != 0) {
              var $details_div = $("<div />", {
-                 "class": "pure-u-1 pure-u-md-1-1 details-div"
+                 "class": "pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div"
              });
              var $details_title = $("<div />", {
                  "class": "details-title"
@@ -111,17 +111,20 @@ function get_channel_info(data, container) {
                      "class": "channel-div"
                  });
                  var $channel_inside_a = $("<a />", {
-                     "class": "channel-indide-a",
-                     "href": "http://" + window.location.hostname + "/channel/" + title + "/"
+                     "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
+                     "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/"
                  });
                  var $channel_inside_div = $("<div />", {
-                     "class": "channel-indide-div"
+                     "class": "channel-indide-div pure-u-g"
                  });
                  var $channel_clear = $("<div />", {
                      "class": "clear"
                  });
                  var $channel_details = $("<div />", {
-                     "class": "channel-details"
+                     "class": "channel-details pure-u-1 pure-u-md-5-6 pure-u-sm-4-6"
+                 });
+                 var $channel_details_inside = $("<div />", {
+                     "class": "channel-details-inside"
                  });
                  var $channel_title = $("<div />", {
                      "class": "channel-title",
@@ -134,7 +137,10 @@ function get_channel_info(data, container) {
                      "text": description
                  });
                  var $channel_thumbnail = $("<div />", {
-                     "class": "channel-thumbnail"
+                     "class": "channel-thumbnail pure-u-1 pure-u-md-1-6 pure-u-sm-2-6"
+                 });
+                 var $channel_thumbnail_inside = $("<div />", {
+                     "class": "channel-thumbnail_inside"
                  });
                  var $channel_name = $("<span />", {
                      "class": "channel-name",
@@ -147,13 +153,15 @@ function get_channel_info(data, container) {
                  $channel_div.append($channel_inside_a);
                  $channel_inside_a.append($channel_inside_div);
                  $channel_inside_div.append($channel_thumbnail);
-                 $channel_details.append($channel_title);
-                 $channel_details.append($channel_content);
+                 $channel_details.append($channel_details_inside);
+                 $channel_details_inside.append($channel_title);
+                 $channel_details_inside.append($channel_content);
                  $channel_inside_div.append($channel_details);
                  $channel_inside_div.append($channel_clear);
                  $channel_content.append($channel_content_span);
                  $channel_title.append($channel_name);
-                 $channel_thumbnail.append($channel_img);
+                 $channel_thumbnail.append($channel_thumbnail_inside);
+                 $channel_thumbnail_inside.append($channel_img);
                  container.append($channel_div);
             },
             error: function(){

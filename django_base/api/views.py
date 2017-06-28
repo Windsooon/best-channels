@@ -28,7 +28,7 @@ class InnerViewSet(viewsets.ModelViewSet):
         queryset = Inner.objects.all()
         category = self.request.query_params.get('category', None)
         if category is not None:
-            queryset = queryset.filter(category=category)
+            queryset = queryset.filter(outer__name=category)
         return queryset
 
 

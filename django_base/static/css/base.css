@@ -1,9 +1,38 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
 body {
     background-color: #f2f2f2;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #555;
 }
 
-.outside {
-    height: 150px;
+a {
+    color: #555;
+}
+
+h1, h2, strong {
+  color: #333;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+code, pre {
+  background: #eee;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+pre {
+  padding: 1em;
+  border-left: 2px solid #69c;
 }
 
 .youtube-header {

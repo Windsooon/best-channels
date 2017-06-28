@@ -8,6 +8,5 @@ class PlaylistSerializer(serializers.ModelSerializer):
         model = Playlist
         fields = (
             'id', 'inner', 'channel_id', 'channel_title',
-            'description', 'thumbnails', 'subscriber',
-            'last_update_time', 'create_time'
-        )  
+            'update_time', 'create_time'
+        )

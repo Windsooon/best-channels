@@ -7,7 +7,7 @@
 {% block content %}
 <div class="cate-content">
   <div class="pure-g search-cate-div">
-    <div class="pure-u-1 pure-u-md-17-24 select-cate-div">
+    <div class="pure-u-1 pure-u-md-21-24 select-cate-div">
       <div class="control-group">
         <label for="select-cate"></label>
         <select id="select-cate" class="select-category" placeholder="Select a Category...">
@@ -32,9 +32,13 @@ $(window).on('hashchange', function(e){
         get_channel(document.location.hash.split("#")[1]);
     }
     else {
-        $(".details-outside-div").remove() 
+        if ($(".details-outside-div").length !=0 ) {
+            $(".details-outside-div").remove() 
+        }
         $(".cate-block-pure").css("display", "block");
-        get_category("/api/outer/");
+        if ($(".cate-block").length == 0) {
+            get_category("/api/outer/");
+        }
     }
 });
 
@@ -44,7 +48,9 @@ $(document).ready(function() {
         get_channel(document.location.hash.split("#")[1]);
     }
     else {
-        get_category("/api/outer/");
+        if ($(".cate-block").length == 0) {
+            get_category("/api/outer/");
+        }
     }
 
     $(".cate-block-pure").on("click", ".cate-block-outside", function() {
@@ -52,7 +58,7 @@ $(document).ready(function() {
     });
 });
 
-$('#select-cate').selectize({
+var select_cate =  $('#select-cate').selectize({
     valueField: 'name',
     labelField: 'name',
     searchField: 'name',
@@ -71,6 +77,9 @@ $('#select-cate').selectize({
             '</div>';
         }
     },
+    onItemAdd: function (value, item) {
+        document.location.hash = value;
+    },
     load: function(query, callback) {
         $.ajax({
             url: '/api/outer/',
@@ -80,7 +89,7 @@ $('#select-cate').selectize({
                 callback();
             },
             success: function(res) {
-			    callback(res.results.slice(0, 10));
+			    callback(res.results.slice(0, 100));
             }
         });
     }
