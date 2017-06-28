@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/channel.css' %}" />
+{% endblock %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+<div class="channel-header">
+  <div class="pure-g channel-pure">
+    <div class="pure-u-1 pure-u-md-1-1 channel-header-pure">
+      <div id="channel-header-outside">
+        <div id="channel-header-img">
+          <img id="channel-src" src="{{ thumbnails }}" />
+        </div> <!-- end channel-header-img -->
+        <div id="channel-header-details">
+          <div id="channel-header-title">
+            <span id="channel-header-text">{{ title }}</span>
+            <input id="channel-id-input" type=hidden value={{ channel_id }} />
+          </div> <!-- end channel-header-title -->
+          <div id="channel-header-sub">
+              <img id="channel-sub-img" src="{% static 'imgs/subscribe.png' %}" />
+            <span id="channel-sub-text">{{ subscriber }}</span>
+            <span>subscriber</span>
+          </div> <!-- end channel-header-title -->
+          <div id="channel-header-content">
+            <span>{{ description }}</span>
+            <div id="channel-time">
+              <span id="channel-update-time">Update at:  </span>
+              <span>{{ last_update_time }}</span>
+              <span id="channel-create-time">Create at:  </span>
+              <span>{{ create_time }}</span>
+            </div>
+          </div> <!-- end channel-header-content -->
+        </div> <!-- end channel-header-details -->
+      </div> <!-- end channel-header-outside -->
+      <div class="clear"></div>
+    </div> <!-- end pure-u-1 -->
+  </div> <!-- end pure-g -->
+</div> <!-- end channel-header -->
+
+<div class="channel-content">
+  <div class="hostest-video">
+    <div class="pure-g hostest-content-g">
+    </div> <!-- end channel-content-g -->
+  </div> <!-- end hostest-video -->
+
+  <div class="newest-video">
+    <div class="pure-g channel-content-g">
+      <div class="pure-u-1 pure-u-md-1-1 channel-content-pure">
+      </div> <!-- end channel-content-pure -->
+    </div> <!-- end channel-content-g -->
+  </div> <!-- end hostest-video -->
+
+  <div class="playlist-intro">
+    <div class="pure-g channel-content-g">
+      <div class="pure-u-1 pure-u-md-1-1 channel-playlist-pure">
+      </div> <!-- end channel-content-pure -->
+    </div> <!-- end channel-content-g -->
+  </div> <!-- end hostest-video -->
+
+</div> <!-- end channel-content -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/channel.js' %}"></script>
+<script>
+    channel_id = $("#channel-id-input").val();
+    get_video("date", channel_id, $(".hostest-content-g"));
+</script>
+{% endblock %}
+
