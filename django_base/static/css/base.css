@@ -4,8 +4,22 @@ body {
     background-color: #f2f2f2;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
-    padding: 4em 1em;
     color: #555;
+}
+
+#youtube-title {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+}
+
+.outside {
+    background-color: white;
+}
+
+.header-a {
+    display: inline-block;
 }
 
 a {

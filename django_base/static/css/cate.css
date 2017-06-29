@@ -2,6 +2,13 @@
     clear: both;
 }
 
+.cate-search {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 40px;
+}
+
 .select-cate-div {
     margin: 0 auto;
 }
@@ -12,10 +19,6 @@
 
 .selectize-dropdown, .selectize-input, .selectize-input input {
     line-height: 40px;
-}
-
-.search-cate-div {
-    margin-bottom: 50px;
 }
 
 
@@ -96,10 +99,6 @@
 .details-title-span {
     margin-left: 20px;
     color: #ff5733;
-}
-
-.details-div {
-    padding-top: 20px;
 }
 
 .channel-name {
