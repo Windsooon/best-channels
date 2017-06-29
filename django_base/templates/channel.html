@@ -23,7 +23,9 @@
             </div> <!-- end channel-header-title -->
             <div id="channel-header-sub">
               <span id="channel-sub-text"></span>
-              <img id="channel-sub-img" src="{% static 'imgs/subscribe.png' %}" />
+              <span id="channel-sub-img-span">
+                <img id="channel-sub-img" src="{% static 'imgs/subscribe.png' %}" />
+              </span>
             </div> <!-- end channel-header-title -->
             <div id="channel-header-content">
               <span id="channel-header-content-span"></span>
@@ -42,16 +44,25 @@
 
 <div class="channel-content">
   <div class="hostest-video">
+    <div id="hostest-content-title">
+      <h1 id="hostest-content-title-text">Hostest Videos</h1>
+    </div>
     <div class="pure-g hostest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
 
   <div class="newest-video">
+    <div id="newest-content-title">
+      <h1 id="newest-content-title-text">Newest Videos</h1>
+    </div>
     <div class="pure-g newest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
 
   <div class="playlist-intro">
+    <div id="hostest-playlist-title">
+      <h1 id="hostest-playlist-title-text">Hostest Playlists</h1>
+    </div>
     <div class="pure-g playlist-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
