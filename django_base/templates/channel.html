@@ -7,29 +7,33 @@
 {% block content %}
 <div class="channel-header">
   <div class="pure-g channel-pure">
-    <div class="pure-u-1 pure-u-md-1-1 channel-header-pure">
-      <div id="channel-header-outside">
-        <div id="channel-header-img">
-          <img id="channel-src" src="" />
+    <div class="pure-u-1 pure-u-md-1-1 pure-u-lg-1-1 pure-u-xl-1-1 channel-header-pure">
+      <div id="channel-header-outside" >
+        <div class="pure-u-md-2-24"></div>
+        <div id="channel-header-img" class="pure-u-sm-4-24 pure-u-md-4-24">
+          <div id="channel-header-img-wrapper">
+            <img id="channel-src" src="" />
+          </div>
         </div> <!-- end channel-header-img -->
-        <div id="channel-header-details">
-          <div id="channel-header-title">
-            <span id="channel-header-text"></span>
-            <input id="channel-id-input" type=hidden value={{ channel_id }} />
-          </div> <!-- end channel-header-title -->
-          <div id="channel-header-sub">
+        <div id="channel-header-details" class="pure-u-sm-18-24 pure-u-md-16-24">
+          <div id="channel-header-details-wrapper">
+            <div id="channel-header-title">
+              <span id="channel-header-text"></span>
+              <input id="channel-id-input" type=hidden value={{ channel_id }} />
+            </div> <!-- end channel-header-title -->
+            <div id="channel-header-sub">
+              <span id="channel-sub-text"></span>
               <img id="channel-sub-img" src="{% static 'imgs/subscribe.png' %}" />
-            <span id="channel-sub-text"></span>
-            <span>subscriber</span>
-          </div> <!-- end channel-header-title -->
-          <div id="channel-header-content">
-            <span id="channel-header-content-span"></span>
-            <div id="channel-time">
-              <span id="channel-create-time">Create at:  </span>
-              <span id="channel-create-time-span"></span>
-            </div>
-          </div> <!-- end channel-header-content -->
-        </div> <!-- end channel-header-details -->
+            </div> <!-- end channel-header-title -->
+            <div id="channel-header-content">
+              <span id="channel-header-content-span"></span>
+              <div id="channel-time">
+                <span id="channel-create-time-span"></span>
+              </div>
+            </div> <!-- end channel-header-content -->
+          </div> <!-- end channel-header-details -->
+        </div>
+        <div class="pure-u-sm-2-24 pure-u-md-2-24 pure-u-lg-2-24 pure-u-xl-2-24"></div>
       </div> <!-- end channel-header-outside -->
       <div class="clear"></div>
     </div> <!-- end pure-u-1 -->
@@ -56,6 +60,7 @@
 {% endblock %}
 
 {% block extra_scripts %}
+<script src="{% static 'js/js_lib/moment.js' %}"></script>
 <script src="{% static 'js/channel.js' %}"></script>
 <script>
     channel_id = $("#channel-id-input").val();

@@ -56,7 +56,6 @@ function get_channel(category) {
             set_channel_block(data.results, $(".cate-content"));
         }, 
         error: function(){
-            alert("Can't find any match channel.");
         }
     }); 
 }
@@ -165,7 +164,6 @@ function get_channel_info(data, container) {
                  container.append($channel_div);
             },
             error: function(){
-                alert("Server Error.");
             },
         }); 
     }); 

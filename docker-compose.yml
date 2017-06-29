@@ -9,7 +9,6 @@ services:
     environment:
       PYTHONPATH: '/usr/src/app/'
     volumes:
-      - ./dns/resolv.conf:/etc/resolv.conf
       - ./django_base:/usr/src/app
 
   nginx:

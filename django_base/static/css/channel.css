@@ -1,12 +1,17 @@
-#channel-header-img {
-    float: left;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 40px;
+.video-title-div {
+    margin-bottom: 20px;
+}
+
+.video-des-text {
+    word-break: break-all;
 }
 
 .channel-header {
     margin-top: 40px;
+}
+
+#channel-header-img-wrapper {
+    padding: 0px 20px 20px 20px;
 }
 
 .channel-pure {
@@ -16,8 +21,7 @@
 }
 
 #channel-src {
-    width: 150px;
-    height: 150px;
+    max-width: 100%;
     border-radius: 50%;
 }
 
@@ -39,12 +43,6 @@
     width: 80%;
 }
 
-#channel-header-details {
-    margin-left: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
 #channel-sub-text {
     display: inline-block;
     margin-left: 10px;
@@ -63,6 +61,7 @@
 }
 
 #channel-header-outside {
+    margin-top: 30px;
 }
 
 .channel-header-pure {
@@ -75,7 +74,6 @@
 
 #channel-sub-img {
     width: 80px;
-    float: left;
 }
 
 .video-outside-div {
@@ -99,7 +97,7 @@
 }
 
 .video-title-text {
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
     word-wrap: break-word; 
     overflow-wrap: break-word;
@@ -111,8 +109,16 @@
     padding: 10px;
 }
 
+.video-des-div {
+    line-height: 2.5ex;
+    height: 7.5ex;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .video-content-div {
     display: inline-block;
+    margin-bottom: 35px;
 }
 
 .video-time-span {

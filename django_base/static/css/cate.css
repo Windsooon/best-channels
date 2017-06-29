@@ -1,7 +1,3 @@
-.clear {
-    clear: both;
-}
-
 .cate-search {
     background-color: white;
     padding-top: 50px;
@@ -134,4 +130,15 @@
 
 .channel-thumbnail_inside {
     margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .channel-thumbnail_inside {
+    }
+    .channel-img {
+        display: block; 
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+    }
 }
