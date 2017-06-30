@@ -8,7 +8,10 @@ from inner.models import Inner
 from inner.serializers import InnerSerializer
 from playlist.models import Playlist
 from playlist.serializers import PlaylistSerializer
+from recommend.models import Recommend
+from recommend.serializers import RecommendSerializer
 from .permissions import IsAdminOrReadOnly
+from rest_framework import permissions
 
 
 class DefaultsMixin(object):
@@ -16,12 +19,12 @@ class DefaultsMixin(object):
     paginate_by = 20
 
 
-class OuterViewSet(viewsets.ModelViewSet):
+class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):
     queryset = Outer.objects.all()
     serializer_class = OuterSerializer
 
 
-class InnerViewSet(viewsets.ModelViewSet):
+class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
     serializer_class = InnerSerializer
 
     def get_queryset(self):
@@ -32,10 +35,15 @@ class InnerViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-class PlaylistViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAdminOrReadOnly, )
+class PlaylistViewSet(DefaultsMixin, viewsets.ModelViewSet):
     queryset = Playlist.objects.all()
     serializer_class = PlaylistSerializer
+
+
+class RecommendViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.AllowAny, )
+    queryset = Recommend.objects.all()
+    serializer_class = RecommendSerializer
 
 
 @api_view(['GET'])
@@ -43,5 +51,6 @@ def api_root(request, format=None):
     return Response({
         'outer': reverse('outer_list', request=request, format=format),
         'inner': reverse('inner_list', request=request, format=format),
-        'playlist': reverse('playlist_list', request=request, format=format)
+        'playlist': reverse('playlist_list', request=request, format=format),
+        'recommend': reverse('recommend_list', request=request, format=format),
     })

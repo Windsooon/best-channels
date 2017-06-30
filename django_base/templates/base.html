@@ -55,14 +55,14 @@
   {% block sub %}
   <div class="sub-form">
       <h1>Join to complate this channel list!</h1>
-      <form class="pure-form pure-g">
+      <form class="pure-form pure-g" id="recommend-form">
         <div class="pure-u-1-2 pure-u-md-1-2 form-div">
         <fieldset class="pure-group">
-          <input type="email" class="pure-input-1" placeholder="Your Email" required>
-          <input type="text" class="pure-input-1" placeholder="Category e.g. Design or Science" required >
-          <textarea class="pure-input-1" required placeholder="Channel name, and your recommend reason, we may display on our application"></textarea>
+          <input type="email" class="pure-input-1 sub-email" placeholder="* Your Email" required>
+          <input type="text" class="pure-input-1 sub-text" placeholder="* Category e.g. Design or Science" required >
+          <textarea class="pure-input-1 sub-textarea" required placeholder="* Channel name, and your recommend reason, we may display on our application"></textarea>
         </fieldset>
-        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Submit</button>
+        <button type="button" class="sub-btn pure-button pure-input-1 pure-button-primary">Submit</button>
         <a target="_blank" href="https://github.com/Windsooon/awesome-youtube-category">contrbute on Github</a>
       </form>
     </div> <!-- end form-div -->

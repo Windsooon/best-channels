@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'outer.apps.OuterConfig',
+    'recommend.apps.RecommendConfig',
     'inner.apps.InnerConfig',
     'playlist.apps.PlaylistConfig',
     'api.apps.ApiConfig',
