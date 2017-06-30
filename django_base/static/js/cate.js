@@ -74,6 +74,9 @@ function set_channel_block(data, container) {
              var $details_title = $("<div />", {
                  "class": "details-title"
              });
+             var $details_title_div = $("<div />", {
+                 "class": "details-title-div",
+             });
              var $details_title_span = $("<span />", {
                  "class": "details-title-span",
                  "text": v["name"]
@@ -83,7 +86,8 @@ function set_channel_block(data, container) {
              });
 
              $details_outside_div.append($details_div);
-             $details_title.append($details_title_span);
+             $details_title.append($details_title_div);
+             $details_title_div.append($details_title_span);
              $details_div.append($details_title);
              $details_div.append($details_content);
              get_channel_info(v["playlist"], $details_content);

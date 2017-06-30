@@ -40,7 +40,7 @@
 }
 
 #channel-header-content {
-    width: 80%;
+    width: 85%;
 }
 
 #channel-sub-text {
@@ -98,6 +98,7 @@
     width: 90%;
     background-color: white;
     margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .video-title-text {

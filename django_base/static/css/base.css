@@ -15,11 +15,17 @@ body {
 }
 
 .outside {
+    padding-top: 20px;
     background-color: white;
 }
 
 .header-a {
+    width: 150px;
     display: inline-block;
+}
+
+#youtube-img {
+    max-width: 100%;
 }
 
 a {
@@ -58,10 +64,22 @@ pre {
     margin: 0 auto;
 }
 
-.base-footer {
-    height: 200px;
+.footer-div {
+    text-align: center;
 }
 
 .clear {
     clear: both;
+}
+
+.sub-form {
+    background-color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.form-div {
+    margin: 0 auto;
+    text-align: center;
 }

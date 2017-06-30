@@ -25,7 +25,7 @@
 
   {% block nav %}
   <div class="outside">
-    <div class="pure-g">
+    <div class="pure-g outside-div">
       <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-2 pure-u-xl-1-2 youtube-header">
         <a class="header-a" href="/">
           <img id="youtube-img" src="{% static "imgs/youtube.png" %}"/>
@@ -50,6 +50,25 @@
   {% endblock %}
 
   {% block content %}
+  {% endblock %}
+
+  {% block sub %}
+  <div class="sub-form">
+      <h1>Join to complate this channel list!</h1>
+      <form class="pure-form pure-g">
+        <div class="pure-u-1-2 pure-u-md-1-2 form-div">
+        <fieldset class="pure-group">
+          <input type="email" class="pure-input-1" placeholder="Your Email" required>
+          <input type="text" class="pure-input-1" placeholder="Category e.g. Design or Science" required >
+          <textarea class="pure-input-1" required placeholder="Channel name, and your recommend reason, we may display on our application"></textarea>
+        </fieldset>
+        <button type="submit" class="pure-button pure-input-1 pure-button-primary">Submit</button>
+        <a target="_blank" href="https://github.com/Windsooon/awesome-youtube-category">contrbute on Github</a>
+      </form>
+    </div> <!-- end form-div -->
+  </div> <!-- end sub_form -->
+  <div class="on-github">
+  </div>
   {% endblock %}
 
   {% block scripts %}
@@ -98,10 +117,16 @@
   {% block footer %}
   <footer>
     <div class="base-footer">
-      <div class="pure-g">
-        <div class="pure-u-1 pure-u-md-1-3">...</div>
-        <div class="pure-u-1 pure-u-md-1-3">...</div>
-        <div class="pure-u-1 pure-u-md-1-3">...</div>
+      <div class="pure-g footer-div">
+        <div class="pure-u-1-3 pure-u-md-1-3">
+          <p>Contact us</p>
+        </div>
+        <div class="pure-u-1-3 pure-u-md-1-3">
+          <p>Thank you</p>
+        </div>
+        <div class="pure-u-1-3 pure-u-md-1-3">
+          <p>© 2017 - Unicooo</p>
+        </div>
       </div> <!-- end pure-g -->
     </div> <!-- end base-footer -->
   </footer>
