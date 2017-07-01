@@ -1,3 +1,4 @@
+from django.db.models import Count
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -22,6 +23,11 @@ class DefaultsMixin(object):
 class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):
     queryset = Outer.objects.all()
     serializer_class = OuterSerializer
+
+    def get_queryset(self):
+        queryset = Outer.objects.all().annotate(num_inner=Count('inner__playlist')) \
+                .order_by('-num_inner')
+        return queryset
 
 
 class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
