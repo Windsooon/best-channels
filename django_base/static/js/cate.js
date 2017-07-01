@@ -1,17 +1,20 @@
 // get category by name, like Science
-function get_category(url) {
+function get_category(url, container) {
 	$.ajax({
 		url: url,
 		type: "GET",
 		dataType: "json",
 		success:function(data){
-            set_category_block(data.results, $(".cate-block-pure"));
+            set_category_block(data.results, container);
         }
     });
 };
 
 // set category block
 function set_category_block(data, container) {
+     var $cate_block_pure = $("<div />", {
+            "class": "pure-g cate-block-pure"
+        });
      $.each(data, function(k, v) {
          var $cate_block = $("<div />", {
                 "class": "pure-u-1 .pure-u-sm-1-1 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 cate-block"
@@ -36,7 +39,8 @@ function set_category_block(data, container) {
                 "class": "cate-span",
                 "text": v["name"]
             });
-         container.append($cate_block);
+         container.append($cate_block_pure);
+         $cate_block_pure.append($cate_block)
          $cate_block.append($cate_block_a);
          $cate_block_a.append($cate_block_outside);
          $cate_block_outside.append($cate_block_inside);
@@ -47,13 +51,13 @@ function set_category_block(data, container) {
 }
 
 // get non empty channel by category
-function get_channel(category) {
+function get_channel(category, container) {
     $.ajax({
 		url: "/api/inner/?category=" + category,
 		type: "GET",
 		dataType: "json",
 		success:function(data){
-            set_channel_block(data.results, $(".cate-content"));
+            set_channel_block(data.results, container);
         }, 
         error: function(){
         }
@@ -63,7 +67,7 @@ function get_channel(category) {
 
 function set_channel_block(data, container) {
      var $details_outside_div = $("<div />", {
-         "class": "pure-u-g details-outside-div"
+         "class": "pure-g details-outside-div"
      });
      $.each(data, function(k, v) {
          // if the category have soem channel inside

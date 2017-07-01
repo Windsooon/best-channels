@@ -2,11 +2,27 @@
 {% load staticfiles %}
 {% block extra_styles %}
 {% endblock %}
-{% block title %}Youtube List{% endblock %}
+{% block title %}Youtube Classified{% endblock %}
 
 {% block content %}
 <div class="cate-content">
-  <div class="pure-g cate-block-pure">
-  </div> <!-- end cate-block-pure -->
 </div> <!-- end country-content -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  $(document).ready(function() {
+      if (window.location.href == window.location.origin + "/") {
+          get_category("/api/outer/", $(".cate-content")); 
+      }
+      else {
+          get_channel(document.location.hash.split("#")[1], $(".cate-content"));
+      }
+
+      // click on the category
+      $(".cate-content").on("click", ".cate-block-outside", function() {
+          document.location.hash = $(this).find(".cate-span").text();
+      });
+  });
+</script>
 {% endblock %}
