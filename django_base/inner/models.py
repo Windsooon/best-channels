@@ -10,4 +10,7 @@ class Inner(models.Model):
     update_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.name + '  ---  ' + self.outer.name
+
+    class Meta:
+        unique_together = ('name', 'outer',)

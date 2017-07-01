@@ -4,7 +4,7 @@ from .models import Outer
 
 
 class OuterAdmin(admin.ModelAdmin):
-    list_display = ('name', 'create_time',)
+    list_display = ('name', 'id', 'create_time',)
     search_fields = ['name']
 
 admin.site.register(Outer, OuterAdmin)

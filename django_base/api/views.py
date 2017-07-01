@@ -25,8 +25,8 @@ class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):
     serializer_class = OuterSerializer
 
     def get_queryset(self):
-        queryset = Outer.objects.all().annotate(num_inner=Count('inner__playlist')) \
-                .order_by('-num_inner')
+        queryset = Outer.objects.all().annotate(
+            num_inner=Count('inner__playlist')).order_by('-num_inner')
         return queryset
 
 
@@ -34,7 +34,9 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
     serializer_class = InnerSerializer
 
     def get_queryset(self):
-        queryset = Inner.objects.all()
+        queryset = Inner.objects.all().annotate(
+            num_channel=Count('playlist')).order_by('-num_channel')
+
         category = self.request.query_params.get('category', None)
         if category is not None:
             queryset = queryset.filter(outer__name=category)
