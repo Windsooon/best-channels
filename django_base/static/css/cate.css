@@ -74,20 +74,15 @@
 }
 
 .details-title {
-    margin-bottom: 50px;
-}
-
-.details-title-div {
     margin: 0 auto;
+    display: block;
     text-align: center;
-}
-
-.details-title-span {
-    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .details-div {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: white;
     border-radius: 10px;
 }
@@ -157,4 +152,11 @@
         margin-left: 10px;
         font-size: 1.5em;
     }
+}
+
+.details-title-img {
+    width: 8%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }

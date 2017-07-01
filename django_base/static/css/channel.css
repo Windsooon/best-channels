@@ -8,6 +8,7 @@
 
 .channel-header {
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 #channel-header-img-wrapper {
@@ -96,7 +97,6 @@
 
 .channel-content {
     width: 90%;
-    background-color: white;
     margin: 0 auto;
     margin-bottom: 40px;
 }
@@ -157,4 +157,14 @@
 
 #hostest-content-title, #newest-content-title, #hostest-playlist-title{
     text-align:center;
+}
+
+.content-img-icon {
+    width: 8%;
+    margin-top: 20px;
+}
+
+.hostest-video, .newest-video, .playlist-intro{
+    margin-bottom: 20px;
+    background-color: white;
 }
