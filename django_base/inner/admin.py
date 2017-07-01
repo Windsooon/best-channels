@@ -5,6 +5,6 @@ from .models import Inner
 
 class InnerAdmin(admin.ModelAdmin):
     list_display = ('name', 'outer', 'create_time',)
-    search_fields = ['name', 'outer']
+    search_fields = ['name', 'outer__name']
 
 admin.site.register(Inner, InnerAdmin)
