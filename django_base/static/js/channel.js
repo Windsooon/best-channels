@@ -11,7 +11,7 @@ function get_video_playlist(order, id, container, name, type="video") {
 		success:function(data){
             $.each(data["items"], function(key, value) {
                 var $video_block = $("<div />", {
-                       "class": "pure-u-1 pure-u-md-1-3 " + name + "-block"
+                       "class": "pure-u-1-1 pure-u-sm-1-1 pure-u-md-1-3 " + name + "-block"
                    });
                 if (type == "playlist") {
                     video_href = "https://www.youtube.com/playlist?list=" + value["id"]["playlistId"]

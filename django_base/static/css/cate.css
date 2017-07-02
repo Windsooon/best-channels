@@ -9,6 +9,11 @@
     margin-bottom: 40px;
 }
 
+.cate-block-a {
+    display: block;
+    margin: 20px;
+}
+
 .select-cate-div {
     margin: 0 auto;
 }
@@ -23,9 +28,12 @@
 
 
 .cate-img {
-    float: left;
-    width: 56px;
-    height: 56px;
+    max-width:100%;
+}
+
+.cate-wrapper-span {
+    margin-top: 10px;
+    text-align: center;
 }
 
 .cate-block {
@@ -33,7 +41,6 @@
 }
 
 .cate-block-outside {
-    margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 3px 0px rgba(170,170,170,0.1);
     cursor: pointer;
@@ -46,18 +53,10 @@
 
 .cate-span {
     display: inline-block;
-    font-size: 2rem;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    margin-left: 25px;
-    margin-top: 10px;
-}
-
-.cate-title {
-    display: inline-block;
+    font-size: 1.8em;
 }
 
 .cate-block-inside {
-    display: inline-block;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -107,11 +106,12 @@
 
 .channel-content-span {
     font-size: 16px;
+    word-break: break-all; 
     color: grey;
 }
 
 .channel-content {
-    margin-top: 10px;
+    margin: 20px;
 }
 
 .channel-div {
@@ -127,12 +127,12 @@
 }
 
 .channel-details-inside {
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .channel-thumbnail_inside {
-    margin: 10px;
+    margin: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -148,14 +148,25 @@
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .cate-wrapper-span {
+        margin-top: 10px; 
+    }
     .cate-span {
-        margin-left: 10px;
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .cate-wrapper-span {
+        margin-top: 10px; 
+    }
+    .cate-span {
+        font-size: 1.4em;
+    }
+
+}
+
 .details-title-img {
-    width: 8%;
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;

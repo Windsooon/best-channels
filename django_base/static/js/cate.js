@@ -17,10 +17,12 @@ function set_category_block(data, container) {
         });
      $.each(data, function(k, v) {
          var $cate_block = $("<div />", {
-                "class": "pure-u-1 .pure-u-sm-1-1 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-3 cate-block"
+                "class": "cate-block pure-u-1 pure-u-sm-1-1 " + 
+                         "pure-u-md-1-3"
             });
          var $cate_block_a = $("<a />", {
-                "class": "cate-block-a"
+                "class": "cate-block-a",
+                "href": "#" + v["name"]
             });
          var $cate_block_outside = $("<div />", {
                 "class": "cate-block-outside"
@@ -29,11 +31,21 @@ function set_category_block(data, container) {
                 "class": "cate-block-inside"
             });
          var $cate_title = $("<div />", {
-                "class": "cate-title"
+                "class": "cate-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
+            });
+         var $cate_img_span = $("<span />", {
+                "class": "cate-img-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
             });
          var $cate_img = $("<img />", {
                 "class": "cate-img",
-                "src": 'http://' + window.location.hostname + '/static/imgs/' + v["thumbnail"] + '.png'
+                "src": 'http://' + window.location.hostname + 
+                '/static/imgs/' + v["thumbnail"] + '.png'
+            });
+         var $cate_grep = $("<span />", {
+                "class": "cate-grep pure-u-2-24 pure-u-sm-2-24 pure-u-md-2-24",
+            });
+         var $cate_wrapper_span = $("<span />", {
+                "class": "cate-wrapper-span pure-u-16-24 pure-u-sm-16-24 pure-u-md-16-24",
             });
          var $cate_span = $("<span />", {
                 "class": "cate-span",
@@ -45,8 +57,11 @@ function set_category_block(data, container) {
          $cate_block_a.append($cate_block_outside);
          $cate_block_outside.append($cate_block_inside);
          $cate_block_inside.append($cate_title);
-         $cate_title.append($cate_img);
-         $cate_title.append($cate_span);
+         $cate_title.append($cate_img_span);
+         $cate_title.append($cate_grep);
+         $cate_title.append($cate_wrapper_span);
+         $cate_img_span.append($cate_img);
+         $cate_wrapper_span.append($cate_span);
      });
 }
 
@@ -76,7 +91,7 @@ function set_channel_block(data, container) {
                  "class": "pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div"
              });
              var $details_title = $("<div />", {
-                 "class": "details-title"
+                 "class": "details-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
              });
              var $details_title_img = $("<img />", {
                  "class": "details-title-img",

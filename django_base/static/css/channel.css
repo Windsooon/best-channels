@@ -12,7 +12,13 @@
 }
 
 #channel-header-img-wrapper {
-    padding: 0px 15px 15px 15px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#channel-header-img {
+    padding: 10px;
+    text-align: center;
 }
 
 .channel-pure {
@@ -40,10 +46,6 @@
     display: inline-block;
 }
 
-#channel-header-content {
-    width: 85%;
-}
-
 #channel-sub-text {
     display: inline-block;
     font-size: 25px;
@@ -51,6 +53,7 @@
 }
 
 #channel-header-content {
+    margin-right: 20px;
     margin-top: 20px;
 }
 
@@ -160,11 +163,19 @@
 }
 
 .content-img-icon {
-    width: 8%;
     margin-top: 20px;
 }
 
 .hostest-video, .newest-video, .playlist-intro{
     margin-bottom: 20px;
     background-color: white;
+}
+
+#channel-header-details-wrapper {
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+#channel-header-content-span {
+    word-break: break-all; 
 }
