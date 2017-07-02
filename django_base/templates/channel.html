@@ -18,19 +18,19 @@
         <div id="channel-header-details" class="pure-u-1-1 pure-u-sm-18-24 pure-u-md-16-24">
           <div id="channel-header-details-wrapper">
             <div id="channel-header-title">
-              <span id="channel-header-text"></span>
+                <a target="_blank" class="channel-title-href" href="https://www.youtube.com/channel/{{ channel_id }}"><span id="channel-header-text"></span></a>
               <input id="channel-id-input" type=hidden value={{ channel_id }} />
             </div> <!-- end channel-header-title -->
             <div id="channel-header-sub">
               <span id="channel-sub-text"></span>
               <span id="channel-sub-img-span">
-                <img id="channel-sub-img" src="{% static 'imgs/subscribe.png' %}" />
+                <img id="channel-sub-img" src="{% static 'imgs/youtube.png' %}" />
               </span>
             </div> <!-- end channel-header-title -->
             <div id="channel-header-content">
               <span id="channel-header-content-span"></span>
-              <div id="channel-time">
-                <span id="channel-create-time-span"></span>
+              <div id="channel-time" class="pure-u-1-1 pure-sm-1-1 pure-md-1-1">
+                  <a target="_blank" class="pure-button pure-button-primary get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Watch the Channel</a>
               </div>
             </div> <!-- end channel-header-content -->
           </div> <!-- end channel-header-details -->

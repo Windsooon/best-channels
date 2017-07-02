@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {% block styles %}
+    <link rel="shortcut icon" href="{% static 'imgs/youtube.png' %}"/>
     <link rel="stylesheet" href="{% static 'css/css_lib/font-awesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
@@ -54,7 +55,7 @@
 
   {% block sub %}
   <div class="sub-form">
-      <h1>Help us complate the channel list!</h1>
+      <h1>Help us complete the channel list!</h1>
       <form class="pure-form pure-g" id="recommend-form">
         <div class="pure-u-1-2 pure-u-md-1-2 form-div">
         <fieldset class="pure-group">
@@ -63,7 +64,7 @@
           <textarea class="pure-input-1 sub-textarea" required placeholder="* Channel name and your reason of recommendation.(The channel should have at least 100k subscribers.)"></textarea>
         </fieldset>
         <button type="button" class="sub-btn pure-button pure-input-1 pure-button-primary">Submit</button>
-        <a target="_blank" href="https://github.com/Windsooon/awesome-youtube-category">Contrbute on Github</a>
+        <a target="_blank" href="https://github.com/Windsooon/awesome-youtube-category">Contribute on Github</a>
       </form>
     </div> <!-- end form-div -->
   </div> <!-- end sub_form -->

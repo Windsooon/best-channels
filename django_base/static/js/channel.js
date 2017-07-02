@@ -96,12 +96,11 @@ function get_channel_details(id) {
             var description = data["items"][0]["snippet"]["description"];
             var thumbnails = data["items"][0]["snippet"]["thumbnails"]["high"]["url"];
             var create_time = moment(data["items"][0]["snippet"]["publishedAt"], moment.ISO_8601);
-            var sub_count = data["items"][0]["statistics"]["subscriberCount"];
+            var sub_count = readSub(data["items"][0]["statistics"]["subscriberCount"]);
             $("#channel-header-text").text(title);
             $("#channel-header-content-span").text(description);
             $("#channel-src").attr("src", thumbnails);
             $("#channel-sub-text").text(sub_count);
-            $("#channel-create-time-span").text(create_time.format("dddd, MMMM Do YYYY"));
         },
     });
 }

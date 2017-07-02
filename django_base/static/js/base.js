@@ -94,4 +94,9 @@ function getCookie(name) {
     return cookieValue;
 }
 
-
+function readSub(number) {
+    var s = [' ', 'K', 'M']
+    var e = Math.floor(Math.log(number) / Math.log(1000));
+    console.log(e);
+    return (number / Math.pow(1000, e)).toFixed(1) + " " + s[e];
+}
