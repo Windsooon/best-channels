@@ -131,6 +131,9 @@ function get_channel_info(data, type, container) {
 	    	url: url,
 	    	type: "GET",
 	    	dataType: "json",
+            headers: {
+                'Cache-Control': 'max-age=1000',
+            },
 	    	success:function(data){
                 var title = data["items"][0]["snippet"]["title"];
                 var description = data["items"][0]["snippet"]["description"];
@@ -142,6 +145,7 @@ function get_channel_info(data, type, container) {
                  });
                  var $channel_inside_a = $("<a />", {
                      "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
+                     "id": "channel-" + v["channel_id"],
                      "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/"
                  });
                  var $channel_inside_type = $("<input />", {

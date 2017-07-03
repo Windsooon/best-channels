@@ -28,10 +28,10 @@
             get_channel(window.location.href.split("/")[3], $(".cate-content"));
         }
         $(".cate-content").on("click", ".channel-indide-a", function() {
-            if (!getAnchor(window.location.href)) {
-                var type = $(this).parent().children(".channel-indide-type").val();
-                history.pushState({}, "", "#" + type);
-            }
+            var hostname = window.location.href
+            var new_hostname = hostname.substring(0, hostname.lastIndexOf("/") + 1);    
+            window.location.replace(new_hostname);
+            history.pushState({}, "", "#" + $(this).attr("id"));
         });
     });
 </script>
