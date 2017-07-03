@@ -32,7 +32,7 @@
 }
 
 .cate-wrapper-span {
-    margin-top: 10px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -177,4 +177,8 @@
 
 .channel-details {
     padding-top: 5px;
+}
+
+.details-title-a {
+    display: inline-block;
 }

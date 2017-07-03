@@ -22,7 +22,7 @@ function set_category_block(data, container) {
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a",
-                "href": "#" + v["name"]
+                "href": v["name"] + "/"
             });
          var $cate_block_outside = $("<div />", {
                 "class": "cate-block-outside"
@@ -75,7 +75,7 @@ function get_channel(category, container) {
 		dataType: "json",
 		success:function(data){
             set_channel_block(data.results, container);
-        }, 
+        },
         error: function(){
         }
     }); 
@@ -99,9 +99,14 @@ function set_channel_block(data, container) {
                  "class": "details-title-img",
                  "src": "../static/imgs/tv.png"
              });
+             var $details_title_a = $("<a />", {
+                 "class": "details-title-a",
+                 "href": "#" + v["name"],
+                 "id": v["name"]
+             });
              var $details_title_span = $("<h1 />", {
                  "class": "details-title-span",
-                 "text": v["name"].toUpperCase()
+                 "text": v["name"].toUpperCase(),
              });
              var $details_content = $("<div />", {
                  "class": "details-content"
@@ -109,7 +114,8 @@ function set_channel_block(data, container) {
 
              $details_outside_div.append($details_div);
              $details_title.append($details_title_img);
-             $details_title.append($details_title_span);
+             $details_title.append($details_title_a);
+             $details_title_a.append($details_title_span);
              $details_div.append($details_title);
              $details_div.append($details_content);
              get_channel_info(v["playlist"], $details_content);

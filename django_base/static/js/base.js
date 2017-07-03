@@ -100,3 +100,9 @@ function readSub(number) {
     console.log(e);
     return (number / Math.pow(1000, e)).toFixed(1) + " " + s[e];
 }
+
+function getAnchor(url) {
+    var index = url.lastIndexOf('#');
+    if (index != -1)
+        return url.substring(index);
+}

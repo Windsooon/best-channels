@@ -77,20 +77,6 @@
   <script src="{% static 'js/js_lib/selectize.min.js' %}"></script>
   <script src="{% static 'js/base.js' %}"></script>
   <script src="{% static 'js/cate.js' %}"></script>
-  <script>
-  $(window).on('hashchange', function(e){
-      if (document.location.hash) {
-          $(".cate-content").empty();
-          get_channel(document.location.hash.split("#")[1], $(".cate-content"));
-      }
-      else {
-          if ($(".details-outside-div").length !=0 ) {
-              $(".details-outside-div").remove() 
-          }
-          get_category("/api/outer/", $(".cate-content")); 
-      }
-  });
-  </script>
   {% endblock %}
 
   {% block extra_scripts %}
