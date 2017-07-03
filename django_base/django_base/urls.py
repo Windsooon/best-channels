@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^api/', include('api.urls')),
     url(r'^api-auth/', include(
         'rest_framework.urls', namespace='rest_framework')),
-    url(r'^', cache_page(60 * 15)(views.cate)),
+    url(r'^', views.cate),
 ]
