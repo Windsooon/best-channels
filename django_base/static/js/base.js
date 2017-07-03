@@ -21,10 +21,8 @@ $(document).ready(function() {
         },
         onItemAdd: function (value, item) {
             var host = "http://"+ window.location.hostname;
-            console.log($(item).find("span").attr('class'));
-            console.log($(item).html());
-            // console.log(item.innerHTML);
-            // window.location = host + "/" + value + "/#" + item.text();
+            type = $(item).find("span").attr('class');
+            window.location = host + "/" + type + "/#" + value;
         },
         load: function(query, callback) {
             $.ajax({
