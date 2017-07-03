@@ -5,33 +5,36 @@ $(document).ready(function() {
         searchField: 'name',
         preload: true,
         options: [],
+        closeAfterSelect: true,
         create: false,
         render: {
             item: function(item, escape) {
                 return '<div>' +
-                    (item.name ? '<span class="email">' + item.name + '</span>' : '') +
+                    ('<span value=' + item.outer + '>' + item.name + '</span>') +
                 '</div>';
             },
             option: function(item, escape) {
                 return '<div>' +
-                    '<span class="label">' + escape(item.name) + '</span>'
+                    ('<span>' + item.name + '</span>') +
                 '</div>';
-            }
+            },
         },
         onItemAdd: function (value, item) {
-            var host = "http://"+ window.location.hostname + "/#";
-            window.location = host + value;
+            var host = "http://"+ window.location.hostname;
+            console.log(item.val());
+            console.log(item.attr('data-category'));
+            // window.location = host + "/" + value + "/#" + item.text();
         },
         load: function(query, callback) {
             $.ajax({
-                url: '/api/outer/',
+                url: '/api/inner/',
                 type: 'GET',
                 dataType: 'JSON',
                 error: function() {
                     callback();
                 },
                 success: function(res) {
-    			    callback(res.results.slice(0, 100));
+    			    callback(res.results);
                 }
             });
         }

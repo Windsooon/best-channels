@@ -5,6 +5,7 @@ from playlist.serializers import PlaylistSerializer
 
 class InnerSerializer(serializers.ModelSerializer):
     playlist = PlaylistSerializer(many=True, read_only=True)
+    outer = serializers.ReadOnlyField(source='outer.name')
 
     class Meta:
         model = Inner

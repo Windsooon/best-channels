@@ -17,7 +17,7 @@ from rest_framework import permissions
 
 class DefaultsMixin(object):
     permission_classes = (IsAdminOrReadOnly, )
-    paginate_by = 20
+    paginate_by = 1
 
 
 class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):

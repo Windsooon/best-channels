@@ -16,8 +16,9 @@
         // check if anchor equel this subcategory
         var anchor = getAnchor(window.location.href);
         if (anchor) {
+            anchor = anchor.replace(" ", "-");
             $('html, body').animate({
-                scrollTop: ($(anchor).offset().top-160) }, 'fast');
+                scrollTop: ($(anchor).offset().top-160) }, "fast");
         }
     });
     $(document).ready(function() {
