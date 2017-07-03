@@ -12,13 +12,12 @@
 {% block extra_scripts %}
 <script>
     $(document).ajaxStop(function() {
-    // place code to be executed on completion of last outstanding ajax call here
         // check if anchor equel this subcategory
         var anchor = getAnchor(window.location.href);
         if (anchor) {
             anchor = anchor.replace(" ", "-");
             $('html, body').animate({
-                scrollTop: ($(anchor).offset().top-160) }, "fast");
+                scrollTop: ($(anchor).offset().top-160) }, "10");
         }
     });
     $(document).ready(function() {
@@ -28,6 +27,12 @@
         else if (window.location.href.split("/")[3] != "channel") {
             get_channel(window.location.href.split("/")[3], $(".cate-content"));
         }
+        $(".cate-content").on("click", ".channel-indide-a", function() {
+            if (!getAnchor(window.location.href)) {
+                var type = $(this).parent().children(".channel-indide-type").val();
+                history.pushState({}, "", "#" + type);
+            }
+        });
     });
 </script>
 {% endblock %}

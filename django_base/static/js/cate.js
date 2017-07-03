@@ -63,7 +63,6 @@ function set_category_block(data, container) {
          $cate_img_span.append($cate_img);
          $cate_wrapper_span.append($cate_span);
          height = $cate_block_inside.outerHeight();
-         $cate_wrapper_span.css("line-height", height*2/3 + "px");
      });
 }
 
@@ -118,14 +117,14 @@ function set_channel_block(data, container) {
              $details_title_a.append($details_title_span);
              $details_div.append($details_title);
              $details_div.append($details_content);
-             get_channel_info(v["playlist"], $details_content);
+             get_channel_info(v["playlist"], v["name"], $details_content);
          }
      });
      container.append($details_outside_div);
 }
 
 
-function get_channel_info(data, container) {
+function get_channel_info(data, type, container) {
     $.each(data, function(k, v) {
         url = "https://www.googleapis.com/youtube/v3/channels?part=snippet, statistics&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&id=" + v["channel_id"];
         $.ajax({
@@ -144,6 +143,11 @@ function get_channel_info(data, container) {
                  var $channel_inside_a = $("<a />", {
                      "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
                      "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/"
+                 });
+                 var $channel_inside_type = $("<input />", {
+                     "class": "channel-indide-type",
+                     "type": "hidden",
+                     "value": type,
                  });
                  var $channel_inside_div = $("<div />", {
                      "class": "channel-indide-div pure-u-g"
@@ -182,6 +186,7 @@ function get_channel_info(data, container) {
                      "src": thumbnails
                  });
                  $channel_div.append($channel_inside_a);
+                 $channel_div.append($channel_inside_type);
                  $channel_inside_a.append($channel_inside_div);
                  $channel_inside_div.append($channel_thumbnail);
                  $channel_details.append($channel_details_inside);

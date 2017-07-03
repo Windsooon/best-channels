@@ -10,7 +10,7 @@ $(document).ready(function() {
         render: {
             item: function(item, escape) {
                 return '<div>' +
-                    ('<span value=' + item.outer + '>' + item.name + '</span>') +
+                    ('<span class=' + item.outer + '>' + item.name + '</span>') +
                 '</div>';
             },
             option: function(item, escape) {
@@ -21,8 +21,9 @@ $(document).ready(function() {
         },
         onItemAdd: function (value, item) {
             var host = "http://"+ window.location.hostname;
-            console.log(item.val());
-            console.log(item.attr('data-category'));
+            console.log($(item).find("span").attr('class'));
+            console.log($(item).html());
+            // console.log(item.innerHTML);
             // window.location = host + "/" + value + "/#" + item.text();
         },
         load: function(query, callback) {
