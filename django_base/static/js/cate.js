@@ -100,7 +100,7 @@ function set_channel_block(data, container) {
              });
              var $details_title_a = $("<a />", {
                  "class": "details-title-a",
-                 "href": "#" + v["name"],
+                 "href": "javascript:void(0)",
                  "id": v["name"].replace(' ', '-'),
              });
              var $details_title_span = $("<h1 />", {
