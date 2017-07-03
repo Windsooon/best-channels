@@ -54,7 +54,7 @@
 .cate-span {
     display: inline-block;
     white-space: nowrap;
-    font-size: 1.8em;
+    font-size: 1.8vw;
 }
 
 .cate-block-inside {
@@ -111,8 +111,10 @@
     color: grey;
 }
 
-.channel-content {
-    margin: 20px;
+.channel-title, .channel-content {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 .channel-div {
@@ -162,7 +164,7 @@
         margin-top: 10px; 
     }
     .cate-span {
-        font-size: 1.6em;
+        font-size: 6vw;
     }
 
 }
@@ -171,4 +173,8 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
+}
+
+.channel-details {
+    padding-top: 5px;
 }

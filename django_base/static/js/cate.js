@@ -62,6 +62,8 @@ function set_category_block(data, container) {
          $cate_title.append($cate_wrapper_span);
          $cate_img_span.append($cate_img);
          $cate_wrapper_span.append($cate_span);
+         height = $cate_block_inside.outerHeight();
+         $cate_wrapper_span.css("line-height", height*2/3 + "px");
      });
 }
 
