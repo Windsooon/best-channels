@@ -101,20 +101,17 @@
 }
 
 .channel-name {
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
 }
 
 .channel-content-span {
-    font-size: 16px;
-    word-break: break-all; 
+    font-size: 1.3vw;
     color: grey;
 }
 
 .channel-title, .channel-content {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    padding: 20px;
 }
 
 .channel-div {
@@ -139,18 +136,24 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .channel-thumbnail {
+        margin: 0 auto; 
+        display: block;
+    }
     .channel-thumbnail_inside {
         margin-bottom: 20px;
     }
     .channel-img {
         display: block; 
         margin: 0 auto;
-        width: 100px;
-        height: 100px;
     }
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
+@media only screen and (max-width: 1024px) and (min-width: 767px) {
+    .channel-thumbnail {
+        margin: 0 auto; 
+        display: block;
+    }
     .cate-wrapper-span {
         margin-top: 10px; 
     }
@@ -159,14 +162,20 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 700px) {
     .cate-wrapper-span {
         margin-top: 10px; 
     }
     .cate-span {
         font-size: 6vw;
     }
-
+    .channel-name {
+        font-size: 6vw;
+        font-weight: bold;
+    }
+    .channel-content-span {
+        font-size: 4vw;
+    }
 }
 
 .details-title-img {

@@ -1,9 +1,5 @@
 .video-title-div {
-    margin-bottom: 20px;
-}
-
-.video-des-text {
-    word-break: break-all;
+    margin-bottom: 15px;
 }
 
 .channel-header {
@@ -100,10 +96,15 @@
 }
 
 .video-title-text {
-    font-size: 1.3em;
+    font-size: 1.5vw;
     font-weight: bold;
     word-wrap: break-word; 
     overflow-wrap: break-word;
+}
+
+.video-des-text {
+    font-size: 1.1vw;
+    word-break: break-all;
 }
 
 .video-details-div {
@@ -177,4 +178,10 @@
 
 .channel-title-href {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .video-title-text {
+        font-size: 4vw; 
+    }
 }

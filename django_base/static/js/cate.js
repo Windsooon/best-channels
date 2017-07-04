@@ -160,7 +160,7 @@ function get_channel_info(data, type, container) {
                      "class": "clear"
                  });
                  var $channel_details = $("<div />", {
-                     "class": "channel-details pure-u-1 pure-u-md-5-6 pure-u-sm-4-6"
+                     "class": "channel-details pure-u-1-1 pure-u-md-1-1 pure-u-sm-4-6 pure-u-lg-5-6"
                  });
                  var $channel_details_inside = $("<div />", {
                      "class": "channel-details-inside"
@@ -176,7 +176,7 @@ function get_channel_info(data, type, container) {
                      "text": description
                  });
                  var $channel_thumbnail = $("<div />", {
-                     "class": "channel-thumbnail pure-u-1 pure-u-md-1-6 pure-u-sm-2-6"
+                     "class": "channel-thumbnail pure-u-1-3 pure-u-md-2-6 pure-u-sm-2-6 pure-u-lg-1-6"
                  });
                  var $channel_thumbnail_inside = $("<div />", {
                      "class": "channel-thumbnail_inside"
