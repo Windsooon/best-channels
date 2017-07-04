@@ -38,8 +38,9 @@
 }
 
 #channel-header-sub {
-    margin-left: 20px;
     display: inline-block;
+    float: right;
+    margin-top: 10px;
 }
 
 #channel-sub-text {
@@ -183,5 +184,9 @@
 @media only screen and (max-width: 700px) {
     .video-title-text {
         font-size: 4vw; 
+    }
+    #channel-header-sub {
+        display: block;
+        float: none !important; 
     }
 }

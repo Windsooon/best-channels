@@ -107,7 +107,7 @@
 
 .channel-content-span {
     font-size: 1.3vw;
-    word-wrap: break-word;
+    word-break: break-all;
     color: grey;
 }
 
@@ -179,6 +179,9 @@
     .channel-sub-div {
         display: block;
         float: none !important;
+    }
+    .details-title-span {
+        font-size: 1.5em; 
     }
 }
 
