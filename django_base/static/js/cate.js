@@ -98,14 +98,10 @@ function set_channel_block(data, container) {
                  "class": "details-title-img",
                  "src": "../static/imgs/tv.png"
              });
-             var $details_title_a = $("<a />", {
-                 "class": "details-title-a",
-                 "href": "javascript:void(0)",
-                 "id": v["name"].replace(' ', '-'),
-             });
              var $details_title_span = $("<h1 />", {
                  "class": "details-title-span",
                  "text": v["name"].toUpperCase(),
+                 "id": v["name"].replace(' ', '-'),
              });
              var $details_content = $("<div />", {
                  "class": "details-content"
@@ -113,8 +109,7 @@ function set_channel_block(data, container) {
 
              $details_outside_div.append($details_div);
              $details_title.append($details_title_img);
-             $details_title.append($details_title_a);
-             $details_title_a.append($details_title_span);
+             $details_title.append($details_title_span);
              $details_div.append($details_title);
              $details_div.append($details_content);
              get_channel_info(v["playlist"], v["name"], $details_content);
