@@ -40,6 +40,10 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
         category = self.request.query_params.get('category', None)
         if category is not None:
             queryset = queryset.filter(outer__name=category)
+
+        name = self.request.query_params.get('name', None)
+        if name is not None:
+            queryset = queryset.filter(name=name)
         return queryset
 
 

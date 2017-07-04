@@ -1,17 +1,17 @@
 // get category by name, like Science
-function get_category(url, container) {
+function get_category(url, container, pre) {
 	$.ajax({
 		url: url,
 		type: "GET",
 		dataType: "json",
 		success:function(data){
-            set_category_block(data.results, container);
+            set_category_block(data.results, container, pre);
         }
     });
 };
 
 // set category block
-function set_category_block(data, container) {
+function set_category_block(data, container, pre) {
      var $cate_block_pure = $("<div />", {
             "class": "pure-g cate-block-pure"
         });
@@ -22,7 +22,7 @@ function set_category_block(data, container) {
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a",
-                "href": v["name"] + "/"
+                "href": pre + "/" + v["name"] + "/"
             });
          var $cate_block_outside = $("<div />", {
                 "class": "cate-block-outside"
@@ -33,21 +33,32 @@ function set_category_block(data, container) {
          var $cate_title = $("<div />", {
                 "class": "cate-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
             });
-         var $cate_img_span = $("<span />", {
-                "class": "cate-img-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
-            });
-         var $cate_img = $("<img />", {
-                "class": "cate-img",
-                "src": 'http://' + window.location.hostname + 
-                '/static/imgs/' + v["thumbnail"] + '.png'
-            });
+         if (pre == "/group") {
+             var $cate_img_span = $("<span />", {
+                    "class": "cate-count-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
+                    "text": v["playlist"].length
+                });
+             var $cate_img = $("<img />", {
+                    "class": "cate-count-span-inside",
+                });
+         }
+         else {
+             var $cate_img_span = $("<span />", {
+                    "class": "cate-img-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
+                });
+             var $cate_img = $("<img />", {
+                    "class": "cate-img",
+                    "src": 'http://' + window.location.hostname + 
+                    '/static/imgs/' + v["thumbnail"] + '.png'
+                });
+         }
          var $cate_grep = $("<span />", {
                 "class": "cate-grep pure-u-2-24 pure-u-sm-2-24 pure-u-md-2-24",
             });
          var $cate_wrapper_span = $("<span />", {
                 "class": "cate-wrapper-span pure-u-16-24 pure-u-sm-16-24 pure-u-md-16-24",
             });
-         var $cate_span = $("<span />", {
+         var $cate_span = $("<p />", {
                 "class": "cate-span",
                 "text": v["name"]
             });
@@ -67,9 +78,9 @@ function set_category_block(data, container) {
 }
 
 // get non empty channel by category
-function get_channel(category, container) {
+function get_channel(name, container) {
     $.ajax({
-		url: "/api/inner/?category=" + category,
+		url: "/api/inner/?name=" + name,
 		type: "GET",
 		dataType: "json",
 		success:function(data){
@@ -85,37 +96,34 @@ function set_channel_block(data, container) {
      var $details_outside_div = $("<div />", {
          "class": "pure-g details-outside-div"
      });
-     $.each(data, function(k, v) {
-         // if the category have soem channel inside
-         if (v["playlist"].length != 0) {
-             var $details_div = $("<div />", {
-                 "class": "pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div"
-             });
-             var $details_title = $("<div />", {
-                 "class": "details-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
-             });
-             var $details_title_img = $("<img />", {
-                 "class": "details-title-img",
-                 "src": "../static/imgs/tv.png"
-             });
-             var $details_title_span = $("<h1 />", {
-                 "class": "details-title-span",
-                 "text": v["name"].toUpperCase(),
-                 "id": v["name"].replace(' ', '-'),
-             });
-             var $details_content = $("<div />", {
-                 "class": "details-content"
-             });
+     if (data[0].length != 0) {
+         var $details_div = $("<div />", {
+             "class": "pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div"
+         });
+         var $details_title = $("<div />", {
+             "class": "details-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
+         });
+         var $details_title_img = $("<img />", {
+             "class": "details-title-img",
+             "src": "../../static/imgs/tv.png"
+         });
+         var $details_title_span = $("<h1 />", {
+             "class": "details-title-span",
+             "text": data[0]["name"].toUpperCase(),
+             "id": data[0]["name"].replace(' ', '-'),
+         });
+         var $details_content = $("<div />", {
+             "class": "details-content"
+         });
 
-             $details_outside_div.append($details_div);
-             $details_title.append($details_title_img);
-             $details_title.append($details_title_span);
-             $details_div.append($details_title);
-             $details_div.append($details_content);
-             get_channel_info(v["playlist"], v["name"], $details_content);
-         }
-     });
-     container.append($details_outside_div);
+         $details_outside_div.append($details_div);
+         $details_title.append($details_title_img);
+         $details_title.append($details_title_span);
+         $details_div.append($details_title);
+         $details_div.append($details_content);
+         get_channel_info(data[0]["playlist"], data[0]["name"], $details_content);
+    }
+    container.append($details_outside_div);
 }
 
 
@@ -193,7 +201,7 @@ function get_channel_info(data, type, container) {
                  });
                  var $channel_sub_img = $("<img />", {
                      "class": "channel-sub-img",
-                     "src": "../static/imgs/youtube_64.png"
+                     "src": "../../static/imgs/youtube_64.png"
                  });
                  var $channel_img = $("<img />", {
                      "class": "channel-img",

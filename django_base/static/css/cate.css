@@ -32,7 +32,6 @@
 }
 
 .cate-wrapper-span {
-    margin-top: 15px;
     text-align: center;
 }
 
@@ -53,8 +52,8 @@
 
 .cate-span {
     display: inline-block;
-    white-space: nowrap;
     font-size: 1.8vw;
+    white-space: nowrap;
 }
 
 .cate-block-inside {
@@ -154,20 +153,19 @@
         margin: 0 auto; 
         display: block;
     }
-    .cate-wrapper-span {
-        margin-top: 10px; 
-    }
-    .cate-span {
-        font-size: 1.1em;
-    }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
+    .cate-count-span {
+        font-size: 8vw !important;
+    }
     .cate-wrapper-span {
         margin-top: 10px; 
     }
     .cate-span {
         font-size: 6vw;
+        margin-top: 0em;
+        margin-bottom: 0em;
     }
     .channel-name {
         font-size: 6vw;
@@ -218,4 +216,15 @@
     font-size: 20px;
     font-weight: bold;
     margin-top: 6px;
+}
+
+.cate-count-span {
+    font-size: 3vw;
+    color: white;
+    background-color: #0078e7;
+    border-radius: 50%;
+}
+
+.cate-count-span-inside {
+    max-width: 100%;
 }

@@ -1,4 +1,3 @@
-from django.views.decorators.cache import cache_page
 from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
@@ -6,6 +5,8 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'channel/(?P<title>.+)/$', views.channel, name='channel'),
+    url(r'category/(?P<title>.+)/$', views.category, name='category'),
+    url(r'group/(?P<title>.+)/$', views.group, name='group'),
     url(r'^api/', include('api.urls')),
     url(r'^api-auth/', include(
         'rest_framework.urls', namespace='rest_framework')),

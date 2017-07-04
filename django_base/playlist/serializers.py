@@ -3,6 +3,7 @@ from .models import Playlist
 
 
 class PlaylistSerializer(serializers.ModelSerializer):
+    inner = serializers.ReadOnlyField(source='inner.name')
 
     class Meta:
         model = Playlist

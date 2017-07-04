@@ -12,7 +12,9 @@
 {% block extra_scripts %}
 <script>
     $(document).ready(function() {
-        get_category("/api/outer/", $(".cate-content"), "category"); 
+        var title = "{{title}}"
+        get_category("/api/inner/?category=" + title , $(".cate-content"), "/group"); 
     });
+
 </script>
 {% endblock %}

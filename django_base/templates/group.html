@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block extra_styles %}
 {% endblock %}
-{% block title %}Best Youtube Classified{% endblock %}
+{% block title %}{{ title }} - Best Youtube Classified{% endblock %}
 
 {% block content %}
 <div class="cate-content">
@@ -12,7 +12,9 @@
 {% block extra_scripts %}
 <script>
     $(document).ready(function() {
-        get_category("/api/outer/", $(".cate-content"), "category"); 
+        var title = "{{title}}"
+        get_channel(title , $(".cate-content")); 
     });
+
 </script>
 {% endblock %}

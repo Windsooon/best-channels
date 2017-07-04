@@ -9,4 +9,4 @@ class InnerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Inner
-        fields = ('id', 'outer', 'playlist', 'name',)
+        fields = ('id', 'name', 'outer', 'playlist',)
