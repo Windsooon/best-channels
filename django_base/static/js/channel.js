@@ -8,6 +8,7 @@ function get_video_playlist(order, id, container, name, type="video") {
     $.ajax({ url: url,
 		type: "GET",
 		dataType: "json",
+        cache: true,
 		success:function(data){
             $.each(data["items"], function(key, value) {
                 var $video_block = $("<div />", {
@@ -91,6 +92,7 @@ function get_channel_details(id) {
         url: url,
         type: "GET",
         dataType: "json",
+        cache: true,
         success:function(data){
             var title = data["items"][0]["snippet"]["title"];
             var description = data["items"][0]["snippet"]["description"];

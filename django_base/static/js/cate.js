@@ -131,6 +131,7 @@ function get_channel_info(data, type, container) {
 	    	url: url,
 	    	type: "GET",
 	    	dataType: "json",
+            cache: true,
             headers: {
                 'Cache-Control': 'max-age=1000',
             },
