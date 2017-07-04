@@ -13,7 +13,7 @@ body {
 #youtube-title {
   font-weight: bold;
   color: #333;
-  font-size: 2em;
+  font-size: 2.6em;
 }
 
 .outside {
@@ -89,4 +89,8 @@ pre {
 .thank-you-span {
     font-size: 2em;
     color: #0078e7;
+}
+
+.selectize-input {
+    border: 1px solid #555;
 }
