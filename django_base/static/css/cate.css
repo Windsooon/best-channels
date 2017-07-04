@@ -107,6 +107,7 @@
 
 .channel-content-span {
     font-size: 1.3vw;
+    word-wrap: break-word;
     color: grey;
 }
 
@@ -127,7 +128,6 @@
 }
 
 .channel-details-inside {
-    margin-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -174,8 +174,16 @@
         font-weight: bold;
     }
     .channel-content-span {
-        font-size: 4vw;
+        font-size: 3vw;
     }
+    .channel-sub-div {
+        display: block;
+        float: none !important;
+    }
+}
+
+.channel-content {
+    max-width: 100%;
 }
 
 .details-title-img {
@@ -190,4 +198,25 @@
 
 .details-title-a {
     display: inline-block;
+}
+
+.channel-sub-div {
+    float: right;
+}
+
+.channel-img-sub-span {
+    display: inline-block;
+    width: 15px;
+    margin-left: 10px;
+}
+
+.channel-sub-img {
+    max-width: 100%;
+}
+
+.channel-sub-span {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 6px;
 }

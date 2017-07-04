@@ -186,6 +186,20 @@ function get_channel_info(data, type, container) {
                      "class": "channel-name",
                      "text": title
                  });
+                 var $channel_sub_div = $("<div />", {
+                     "class": "channel-sub-div",
+                 });
+                 var $channel_sub_span = $("<span />", {
+                     "class": "channel-sub-span",
+                     "text": readSub(sub_count)
+                 });
+                 var $channel_sub_img_span = $("<span />", {
+                     "class": "channel-img-sub-span",
+                 });
+                 var $channel_sub_img = $("<img />", {
+                     "class": "channel-sub-img",
+                     "src": "../static/imgs/youtube_64.png"
+                 });
                  var $channel_img = $("<img />", {
                      "class": "channel-img",
                      "src": thumbnails
@@ -201,6 +215,10 @@ function get_channel_info(data, type, container) {
                  $channel_inside_div.append($channel_clear);
                  $channel_content.append($channel_content_span);
                  $channel_title.append($channel_name);
+                 $channel_title.append($channel_sub_div);
+                 $channel_sub_img_span.append($channel_sub_img);
+                 $channel_sub_div.append($channel_sub_span);
+                 $channel_sub_div.append($channel_sub_img_span);
                  $channel_thumbnail.append($channel_thumbnail_inside);
                  $channel_thumbnail_inside.append($channel_img);
                  container.append($channel_div);
