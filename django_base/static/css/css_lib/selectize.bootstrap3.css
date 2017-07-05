@@ -406,3 +406,7 @@
   -moz-border-radius: 0;
   border-radius: 0;
 }
+
+.selectize-input {
+    border: 1px solid #555;
+}
