@@ -4,7 +4,11 @@ from .models import Outer
 
 
 class OuterAdmin(admin.ModelAdmin):
-    list_display = ('name', 'id', 'create_time',)
+    def inner_count(self, obj):
+        return obj.inner.count()
+
+    list_display = ('name', 'inner_count', 'id', 'create_time',)
+    list_filter = ('name',)
     search_fields = ['name']
 
 admin.site.register(Outer, OuterAdmin)
