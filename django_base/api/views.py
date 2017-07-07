@@ -1,4 +1,7 @@
+import requests
+from requests.auth import HTTPBasicAuth
 from django.db.models import Count
+from django.http import HttpResponse
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -11,8 +14,6 @@ from playlist.models import Playlist
 from playlist.serializers import PlaylistSerializer
 from recommend.models import Recommend
 from recommend.serializers import RecommendSerializer
-from sub_email.models import SubEmail
-from sub_email.serializers import SubEmailSerializer
 from .permissions import IsAdminOrReadOnly, IsAdminOrCreate
 
 
@@ -59,10 +60,19 @@ class RecommendViewSet(viewsets.ModelViewSet):
     serializer_class = RecommendSerializer
 
 
-class SubViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAdminOrCreate, )
-    queryset = SubEmail.objects.all()
-    serializer_class = SubEmailSerializer
+def sub_list(request):
+    email = request.POST.get("email", None)
+    category = request.POST.get("category", None)
+    url = 'https://us16.api.mailchimp.com/3.0/lists/b70ba3fa75/members'
+    auth = HTTPBasicAuth('Windson', '531214a4d6a1ae9d1148c6bbf5485221-us16')
+    headers = {'content-type': 'application/json'}
+    data = {
+        'email_address': email,
+        'status': 'subscribed',
+        'interests': {'category': category}
+    }
+    res = requests.post(url=url, auth=auth, headers=headers, json=data)
+    return HttpResponse(res.content, status=res.status_code)
 
 
 @api_view(['GET'])
@@ -72,5 +82,4 @@ def api_root(request, format=None):
         'inner': reverse('inner_list', request=request, format=format),
         'playlist': reverse('playlist_list', request=request, format=format),
         'recommend': reverse('recommend_list', request=request, format=format),
-        'sub': reverse('sub_list', request=request, format=format),
     })

@@ -13,9 +13,7 @@ function subscribe_email_click(title) {
         $.ajax({
             url: '/api/sub/',
             type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'JSON',
-            data: JSON.stringify(data),
+            data: data,
             beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-CSRFToken', csrftoken)
                 },
