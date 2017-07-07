@@ -99,7 +99,7 @@ pre {
     margin: 0 auto;
     text-align: center;
     box-shadow: 0px 6px 9px #ccc;
-    background: -webkit-linear-gradient(left top, red , orange);
+    background: -webkit-linear-gradient(left top, red , #fe7f03);
 }
 
 #subscribe-form {
