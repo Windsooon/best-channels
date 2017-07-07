@@ -26,10 +26,10 @@ def category(request, title):
     )
 
 
-def group(request, title):
+def sub_category(request, sub):
     return render(
-        request, 'group.html',
+        request, 'sub_category.html',
         {
-            'title': title
+            'title': sub
         }
     )

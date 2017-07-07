@@ -4,6 +4,7 @@ $(document).ready(function() {
         labelField: 'name',
         searchField: 'name',
         preload: true,
+        placeholder: "Search category or subcategory",
         options: [],
         closeAfterSelect: true,
         create: false,
@@ -37,6 +38,15 @@ $(document).ready(function() {
             });
         }
     });
+
+    $("#subscribe-email-btn").on("click", function() {
+        var csrftoken = getCookie('csrftoken');
+        if (!$("#subscribe-email").val()) {
+            alert("Please submit correct email address.");
+            return false;
+        }
+        email = $("#subscribe-email").val();
+    })
 
     $(".sub-btn").on("click", function() {
         var csrftoken = getCookie('csrftoken');
