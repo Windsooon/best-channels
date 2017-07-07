@@ -106,6 +106,3 @@ function get_channel_details(id) {
         },
     });
 }
-
-function get_playlist(type, id, container, name) {
-}

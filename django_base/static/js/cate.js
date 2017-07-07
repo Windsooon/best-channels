@@ -33,7 +33,7 @@ function set_category_block(data, container, pre) {
          var $cate_title = $("<div />", {
                 "class": "cate-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
             });
-         if (pre == "/group") {
+         if (pre == "/subcategory") {
              var $cate_img_span = $("<span />", {
                     "class": "cate-count-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
                     "text": v["playlist"].length
