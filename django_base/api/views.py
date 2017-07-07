@@ -11,8 +11,9 @@ from playlist.models import Playlist
 from playlist.serializers import PlaylistSerializer
 from recommend.models import Recommend
 from recommend.serializers import RecommendSerializer
-from .permissions import IsAdminOrReadOnly
-from rest_framework import permissions
+from sub_email.models import SubEmail
+from sub_email.serializers import SubEmailSerializer
+from .permissions import IsAdminOrReadOnly, IsAdminOrCreate
 
 
 class DefaultsMixin(object):
@@ -53,9 +54,15 @@ class PlaylistViewSet(DefaultsMixin, viewsets.ModelViewSet):
 
 
 class RecommendViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.AllowAny, )
+    permission_classes = (IsAdminOrCreate, )
     queryset = Recommend.objects.all()
     serializer_class = RecommendSerializer
+
+
+class SubViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrCreate, )
+    queryset = SubEmail.objects.all()
+    serializer_class = SubEmailSerializer
 
 
 @api_view(['GET'])
@@ -65,4 +72,5 @@ def api_root(request, format=None):
         'inner': reverse('inner_list', request=request, format=format),
         'playlist': reverse('playlist_list', request=request, format=format),
         'recommend': reverse('recommend_list', request=request, format=format),
+        'sub': reverse('sub_list', request=request, format=format),
     })

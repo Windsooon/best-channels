@@ -45,9 +45,27 @@ recommend_list = views.RecommendViewSet.as_view({
 
 recommend_detail = views.RecommendViewSet.as_view({
     'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+
+sub_list = views.SubViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+
+sub_detail = views.SubViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
 })
 
 urlpatterns = format_suffix_patterns([
+    url(r'sub/$', sub_list, name='sub_list'),
+    url(r'sub/(?P<pk>[0-9]+)/$',
+        sub_detail, name='sub_detail'),
     url(r'recommend/$', recommend_list, name='recommend_list'),
     url(r'recommend/(?P<pk>[0-9]+)/$',
         recommend_detail, name='recommend_detail'),
