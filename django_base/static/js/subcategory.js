@@ -27,5 +27,5 @@ function subscribe_email_click(title) {
 }
 
 function update_sub(title) {
-    $("#sub-legend").text("Get Trending " + title + " channel weekly !");
+    $("#sub-legend").text("Get Trending " + title + " Channel Recommendations !");
 }
