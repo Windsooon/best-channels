@@ -107,3 +107,7 @@ function getAnchor(url) {
     if (index != -1)
         return url.substring(index);
 }
+
+function replaceSpace(title) {
+    return title.replace(/ /g, "-");
+}

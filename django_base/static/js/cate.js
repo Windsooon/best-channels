@@ -22,7 +22,7 @@ function set_category_block(data, container, pre) {
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a",
-                "href": pre + "/" + v["name"] + "/"
+                "href": pre + "/" + replaceSpace(v["name"]) + "/"
             });
          var $cate_block_outside = $("<div />", {
                 "class": "cate-block-outside"
