@@ -106,7 +106,6 @@
 
 .channel-content-span {
     font-size: 1.3vw;
-    word-break: break-all;
     color: grey;
 }
 
@@ -120,7 +119,8 @@
 }
 
 .channel-indide-a {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     text-align: left;
     text-decoration: none;
     box-shadow: 0px 3px 4px rgba(170,170,170,0.1);
@@ -185,6 +185,7 @@
 
 .channel-content {
     max-width: 100%;
+    overflow: hidden;
 }
 
 .details-title-img {

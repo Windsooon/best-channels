@@ -13,7 +13,6 @@
 }
 
 #channel-header-img {
-    padding: 20px;
     text-align: center;
 }
 
@@ -52,6 +51,7 @@
 #channel-header-content {
     margin-right: 20px;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 #channel-header-outside {
@@ -169,12 +169,8 @@
 }
 
 #channel-header-details-wrapper {
-    margin-left: 20px;
+    padding: 20px;
     margin-bottom: 40px;
-}
-
-#channel-header-content-span {
-    word-break: break-all; 
 }
 
 .channel-title-href {
