@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/slider.css' %}" />
 {% endblock %}
 {% block title %}{{ title }} - Best Youtube Classified{% endblock %}
 
@@ -11,12 +12,14 @@
 
 {% block extra_scripts %}
 <script src="{% static 'js/subcategory.js' %}"></script>
+<script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
         var title = "{{title}}"
         get_channel(title , $(".cate-content")); 
         update_sub(title);
         subscribe_email_click(title);
+        slick_init();
     });
 </script>
 {% endblock %}
