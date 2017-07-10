@@ -65,5 +65,5 @@ urlpatterns = format_suffix_patterns([
         cache_page(60 * 200)(playlist_list), name='playlist_list'),
     url(r'playlist/(?P<pk>[0-9]+)/$',
         cache_page(60 * 200)(playlist_detail), name='playlist_detail'),
-    url(r'$', views.api_root),
+    url(r'$', cache_page(60 * 200)(views.api_root)),
 ])

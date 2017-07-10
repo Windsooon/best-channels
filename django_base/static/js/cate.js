@@ -4,6 +4,7 @@ function get_category(url, container, pre) {
 		url: url,
 		type: "GET",
 		dataType: "json",
+        cache: true,
 		success:function(data){
             set_category_block(data.results, container, pre);
         }
@@ -83,6 +84,7 @@ function get_channel(name, container) {
 		url: "/api/inner/?name=" + name,
 		type: "GET",
 		dataType: "json",
+        cache: true,
 		success:function(data){
             set_channel_block(data.results, container);
         },

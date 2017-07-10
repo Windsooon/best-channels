@@ -14,6 +14,7 @@ function subscribe_email_click(title) {
             url: '/api/sub/',
             type: 'POST',
             data: data,
+            cache: true,
             beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-CSRFToken', csrftoken)
                     $('#subscribe-email-btn').text('Waiting...')
