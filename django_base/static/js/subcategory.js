@@ -16,12 +16,16 @@ function subscribe_email_click(title) {
             data: data,
             beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-CSRFToken', csrftoken)
+                    $('#subscribe-email-btn').text('Waiting...')
                 },
             error: function() {
             },
             success: function(res) {
-                $("#subscribe-email-btn").text("Got it!");
             },
+            complete: function() {
+                $("#subscribe-email-btn").text("Got it!");
+            }
+            
         });
     });
 }

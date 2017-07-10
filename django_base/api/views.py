@@ -50,7 +50,7 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
 
 
 class PlaylistViewSet(DefaultsMixin, viewsets.ModelViewSet):
-    queryset = Playlist.objects.all()
+    queryset = Playlist.objects.all().order_by('-update_time')
     serializer_class = PlaylistSerializer
 
 
@@ -63,16 +63,38 @@ class RecommendViewSet(viewsets.ModelViewSet):
 def sub_list(request):
     email = request.POST.get("email", None)
     category = request.POST.get("category", None)
-    url = 'https://us16.api.mailchimp.com/3.0/lists/b70ba3fa75/members'
     auth = HTTPBasicAuth('Windson', '531214a4d6a1ae9d1148c6bbf5485221-us16')
     headers = {'content-type': 'application/json'}
-    data = {
+
+    # create a group
+    group_url = 'https://us16.api.mailchimp.com' + \
+        '/3.0/lists/b70ba3fa75/interest-categories/7f004df895/interests'
+    group_data = {
+        'name': category,
+    }
+    requests.post(
+        url=group_url, auth=auth,
+        headers=headers, json=group_data)
+
+    # get group interest from name
+    interest_url = (
+        'https://us16.api.mailchimp.com/3.0/lists/' +
+        'b70ba3fa75/interest-categories/7f004df895/interests')
+    interest_res = requests.get(url=interest_url, auth=auth, headers=headers)
+    for ins in interest_res.json()['interests']:
+        if ins['name'] == category:
+            id = ins['id']
+
+    # add a member to list
+    member_url = 'https://us16.api.mailchimp.com/3.0/lists/b70ba3fa75/members'
+    member_data = {
         'email_address': email,
         'status': 'subscribed',
-        'interests': {'category': category}
+        'interests': {id: True}
     }
-    res = requests.post(url=url, auth=auth, headers=headers, json=data)
-    return HttpResponse(res.content, status=res.status_code)
+    member_res = requests.post(
+        url=member_url, auth=auth, headers=headers, json=member_data)
+    return HttpResponse(member_res.content, status=member_res.status_code)
 
 
 @api_view(['GET'])
