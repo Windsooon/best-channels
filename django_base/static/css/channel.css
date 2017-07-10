@@ -177,7 +177,7 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
     .video-title-text {
         font-size: 4vw; 
     }

@@ -9,6 +9,10 @@
     margin-bottom: 40px;
 }
 
+#subscribe-email {
+    display: inline-block;
+}
+
 .cate-block-a {
     display: block;
     margin: 20px;
@@ -145,6 +149,9 @@
     .channel-img {
         display: block; 
         margin: 0 auto;
+    }
+    #sub-legend {
+        font-size: 6vw; 
     }
 }
 
