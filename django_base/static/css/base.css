@@ -13,7 +13,7 @@ body {
 #youtube-title {
   font-weight: bold;
   color: #333;
-  font-size: 2.6em;
+  font-size: 2.4em;
 }
 
 .outside {
@@ -112,4 +112,8 @@ pre {
 #sub-legend {
     font-size: 2.3vw;
     color: white;
+}
+
+#best-title {
+    text-align: center;
 }

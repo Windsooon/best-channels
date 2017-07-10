@@ -4,7 +4,7 @@ $(document).ready(function() {
         labelField: 'name',
         searchField: 'name',
         preload: true,
-        placeholder: "Search category or subcategory",
+        placeholder: "Search for subcategory",
         options: [],
         closeAfterSelect: true,
         create: false,
