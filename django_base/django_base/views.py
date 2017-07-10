@@ -30,6 +30,6 @@ def sub_category(request, sub):
     return render(
         request, 'sub_category.html',
         {
-            'title': sub
+            'title': sub.replace('-', ' ')
         }
     )

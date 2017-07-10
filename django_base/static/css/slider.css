@@ -1,0 +1,11 @@
+.slider-div {
+}
+.slider-h3 {
+    margin: 10px 30px 20px 30px;
+    height: 200px;
+    background: white;
+}
+
+.slider-title, .slider-footer {
+    text-align: center;
+}
