@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^why/$', views.why),
     url(r'channel/(?P<title>.+)/$',
         cache_page(60 * 200)(views.channel), name='channel'),
     url(r'subcategory/(?P<sub>.+)/$',
