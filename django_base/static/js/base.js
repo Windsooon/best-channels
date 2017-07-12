@@ -21,7 +21,7 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            var host = "http://"+ window.location.hostname;
+            var host = "https://"+ window.location.hostname;
             window.location = host + "/subcategory" + "/" + replaceSpace(value) + "/";
         },
         load: function(query, callback) {
