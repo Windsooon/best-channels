@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    var select_cate =  $('#select-cate').selectize({
-        valueField: 'name',
-        labelField: 'name',
-        searchField: 'name',
+    var select_cate =  $("#select-cate").selectize({
+        valueField: "name",
+        labelField: "name",
+        searchField: "name",
         preload: true,
         placeholder: "Search subcategory",
         options: [],
@@ -10,14 +10,16 @@ $(document).ready(function() {
         create: false,
         render: {
             item: function(item, escape) {
-                return '<div>' +
-                    ('<span class=' + item.outer + '>' + item.name + '</span>') +
-                '</div>';
+                return "<div>" +
+                    ("<span class=" + item.outer + ">" + item.name + "</span>") +
+                "</div>";
             },
             option: function(item, escape) {
-                return '<div>' +
-                    ('<span>' + item.name + '</span>') +
-                '</div>';
+                return "<div>" +
+                    ("<span class='search-name'>" + item.name + "</span>") +
+                    ("<span>&nbsp;&nbsp;&nbsp;</span>") +
+                    ("<span class='search-outer'>" + item.outer + "</span>") +
+                "</div>";
             },
         },
         onItemAdd: function (value, item) {
@@ -26,10 +28,10 @@ $(document).ready(function() {
         },
         load: function(query, callback) {
             $.ajax({
-                url: '/api/inner/?limit=1000',
-                type: 'GET',
+                url: "/api/inner/?limit=1000",
+                type: "GET",
                 cache: true,
-                dataType: 'JSON',
+                dataType: "JSON",
                 error: function() {
                     callback();
                 },
@@ -41,7 +43,7 @@ $(document).ready(function() {
     });
 
     $(".sub-btn").on("click", function() {
-        var csrftoken = getCookie('csrftoken');
+        var csrftoken = getCookie("csrftoken");
         if (!$(".sub-email").val() || !$(".sub-text").val() 
             || !$(".sub-textarea").val()) {
 
@@ -54,13 +56,13 @@ $(document).ready(function() {
             "reason": $(".sub-textarea").val(),
         }
         $.ajax({
-            url: '/api/recommend/',
-            type: 'POST',
+            url: "/api/recommend/",
+            type: "POST",
             contentType: "application/json; charset=utf-8",
-            dataType: 'JSON',
+            dataType: "JSON",
             data: JSON.stringify(data),
             beforeSend: function(xhr) {
-                    xhr.setRequestHeader('X-CSRFToken', csrftoken)
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken)
                 },
             error: function() {
             },
@@ -83,12 +85,12 @@ $(document).ready(function() {
 
 function getCookie(name) {
     var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
+    if (document.cookie && document.cookie !== "") {
+        var cookies = document.cookie.split(";");
         for (var i = 0; i < cookies.length; i++) {
             var cookie = jQuery.trim(cookies[i]);
             // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            if (cookie.substring(0, name.length + 1) === (name + "=")) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                 break;
             }
@@ -98,13 +100,13 @@ function getCookie(name) {
 }
 
 function readSub(number) {
-    var s = [' ', 'K', 'M']
+    var s = [" ", "K", "M"]
     var e = Math.floor(Math.log(number) / Math.log(1000));
     return (number / Math.pow(1000, e)).toFixed(1) + " " + s[e];
 }
 
 function getAnchor(url) {
-    var index = url.lastIndexOf('#');
+    var index = url.lastIndexOf("#");
     if (index != -1)
         return url.substring(index);
 }

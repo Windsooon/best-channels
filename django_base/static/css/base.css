@@ -136,3 +136,11 @@ pre {
     background-color: white;
     margin: 0 auto;
 }
+
+.search-name {
+    color: #e35336;
+}
+
+.search-outer {
+    color: grey;
+}
