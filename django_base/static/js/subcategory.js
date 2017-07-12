@@ -19,7 +19,8 @@ function subscribe_email_click(title) {
                     xhr.setRequestHeader('X-CSRFToken', csrftoken)
                     $('#subscribe-email-btn').text('Waiting...')
                 },
-            error: function() {
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
             },
             success: function(res) {
             },

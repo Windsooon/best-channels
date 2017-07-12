@@ -9,6 +9,9 @@ function get_video_playlist(order, id, container, name, type="video") {
 		type: "GET",
 		dataType: "json",
         cache: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
 		success:function(data){
             $.each(data["items"], function(key, value) {
                 var $video_block = $("<div />", {
@@ -93,6 +96,9 @@ function get_channel_details(id) {
         type: "GET",
         dataType: "json",
         cache: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
         success:function(data){
             var title = data["items"][0]["snippet"]["title"];
             var description = data["items"][0]["snippet"]["description"];

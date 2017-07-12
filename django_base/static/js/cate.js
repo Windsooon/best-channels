@@ -138,7 +138,7 @@ function get_channel_info(data, type, container) {
 	    	dataType: "json",
             cache: true,
             headers: {
-                'Cache-Control': 'max-age=1000',
+                'Access-Control-Allow-Origin': '*'
             },
 	    	success:function(data){
                 var title = data["items"][0]["snippet"]["title"];
