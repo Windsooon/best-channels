@@ -4,7 +4,7 @@ from django.views.decorators.cache import cache_page
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^here_is_normal_admin/', admin.site.urls),
     url(r'^why/$', cache_page(60 * 100)(views.why)),
     url(r'channel/(?P<title>.+)/$',
         cache_page(60 * 200)(views.channel), name='channel'),
