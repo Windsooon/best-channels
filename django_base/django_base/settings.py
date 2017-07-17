@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'playlist.apps.PlaylistConfig',
     'api.apps.ApiConfig',
     'group_slider.apps.GroupSliderConfig',
+    'answered.apps.AnsweredConfig',
 ]
 
 MIDDLEWARE = [
