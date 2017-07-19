@@ -121,7 +121,7 @@
 }
 
 .video-content-div {
-    display: inline-block;
+    display: block;
     margin-bottom: 35px;
 }
 
@@ -132,7 +132,7 @@
 }
 
 .video-outside-a {
-    display: inline-block;
+    display: block;
     margin: 25px;
     padding: 10px;
     text-decoration: none;
