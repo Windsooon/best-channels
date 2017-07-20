@@ -1,6 +1,7 @@
 import requests
 from requests.auth import HTTPBasicAuth
 from django.db.models import Count
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
@@ -60,6 +61,7 @@ class RecommendViewSet(viewsets.ModelViewSet):
     serializer_class = RecommendSerializer
 
 
+@csrf_exempt
 def sub_list(request):
     email = request.POST.get("email", None)
     category = request.POST.get("category", None)
