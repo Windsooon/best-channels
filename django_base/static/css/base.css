@@ -144,3 +144,7 @@ pre {
 .search-outer {
     color: grey;
 }
+
+.sub-tags {
+    margin-right: 15px;
+}
