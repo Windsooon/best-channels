@@ -79,14 +79,14 @@ function set_category_block(data, container, pre) {
 }
 
 // get non empty channel by category
-function get_channel(name, container) {
+function get_channel(name, container, set_after=set_channel_block) {
     $.ajax({
 		url: "/api/inner/?name=" + name,
 		type: "GET",
 		dataType: "json",
         cache: true,
 		success:function(data){
-            set_channel_block(data.results, container);
+            set_after(data.results, container);
         },
         error: function(){
         }
@@ -114,6 +114,11 @@ function set_channel_block(data, container) {
              "text": data[0]["name"].toUpperCase(),
              "id": data[0]["name"].replace(' ', '-'),
          });
+         var $details_title_link = $("<a />", {
+             "class": "details-title-link",
+             "text": "50 Newest Videos Under " + data[0]["name"],
+             "href": ""
+         });
          var $details_content = $("<div />", {
              "class": "details-content"
          });
@@ -121,6 +126,7 @@ function set_channel_block(data, container) {
          $details_outside_div.append($details_div);
          $details_title.append($details_title_img);
          $details_title.append($details_title_span);
+         $details_title.append($details_title_link);
          $details_div.append($details_title);
          $details_div.append($details_content);
          get_channel_info(data[0]["playlist"], data[0]["name"], $details_content);
