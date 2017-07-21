@@ -10,6 +10,8 @@ urlpatterns = [
         cache_page(60 * 200)(views.channel), name='channel'),
     url(r'subcategory/(?P<sub>.+)/$',
         cache_page(60 * 200)(views.sub_category), name='sub_category'),
+    url(r'videos/(?P<title>.+)/$',
+        cache_page(60 * 200)(views.videos), name='videos'),
     url(r'category/(?P<title>.+)/$',
         cache_page(60 * 200)(views.category), name='category'),
     url(r'^api/', include('api.urls')),

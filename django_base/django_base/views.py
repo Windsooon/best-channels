@@ -37,3 +37,12 @@ def sub_category(request, sub):
             'title': sub.replace('-', ' ')
         }
     )
+
+
+def videos(request, title):
+    return render(
+        request, 'videos.html',
+        {
+            'title': title.replace('-', ' ')
+        }
+    )

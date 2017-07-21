@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/videos.css' %}" />
+{% endblock %}
+{% block title %} {{ title }} - Best Youtube Classified{% endblock %}
+{% block subscribe %}
+{% endblock %}
+{% block content %}
+<div class="video-content">
+  <div class="video-outside-div">
+    <div class="video-inside-div pure-g">
+      <div class="video-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3">
+        <img class="video-title-img" src="{% static 'imgs/tv.png' %}" />
+        <h1 class="video-title-h1">{{ title }}</h1>
+        <h1 id="newest-content-title-text">Newest Videos</h1>
+      </div> <!-- end video-title -->
+    </div> <!-- end video-inside-div -->
+    <div class="video-list-div pure-g">
+    </div> <!-- end video-list-div -->
+  </div> <!-- end video-outside-div -->
+</div> <!-- end video-content -->
+
+{% endblock %}
+
+{% block slider %}
+{% endblock %}
+
+{% block slider_scripts %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/js_lib/moment.js' %}"></script>
+<script src="{% static 'js/channel.js' %}"></script>
+<script src="{% static 'js/videos.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        var title = "{{title}}"
+        get_channel(title , $(".video-list-div"), set_videos_block); 
+    });
+</script>
+{% endblock %}
+
