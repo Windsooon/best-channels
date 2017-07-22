@@ -2,7 +2,7 @@ function get_newest_videos(data, container) {
     if (data[0]["playlist"].length != 0) {
         var requests = Array();
         $.each(data[0]["playlist"], function(k, v) {
-            url = "https://www.googleapis.com/youtube/v3/search?type=video&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + v["channel_id"] + "&part=snippet&order=date&maxResults=3"
+            url = "https://www.googleapis.com/youtube/v3/search?type=video&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + v["channel_id"] + "&part=snippet&order=date&maxResults=5"
             r = $.ajax({ 
                     url: url,
                     type: "GET",
