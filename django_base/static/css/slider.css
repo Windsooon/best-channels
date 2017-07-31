@@ -7,18 +7,19 @@
 
 .slider-a {
     text-decoration: none;
+    display: inline-block;
 }
 
 .slider-h2 {
     font-size: 3vw;
-    line-height: 8vw;
+    line-height: 3vw;
     color: #0078e7;
 }
 
 @media only screen and (max-width: 767px) {
     .slider-h2 {
         font-size: 12vw;
-        line-height: 28vw;
+        line-height: 3vw;
         color: #0078e7;
     }
 }
