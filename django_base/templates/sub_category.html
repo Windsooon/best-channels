@@ -10,6 +10,29 @@
 </div> <!-- end country-content -->
 {% endblock %}
 
+{% block slider %}
+<div class="slider-title">
+  <h2>Suggested Subcategories</h2>
+</div>
+<div class="slider responsive">
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block extra_scripts %}
 <script src="{% static 'js/subcategory.js' %}"></script>
 <script src="{% static 'js/slider.js' %}"></script>
@@ -19,6 +42,7 @@
         get_channel(title , $(".cate-content")); 
         update_sub(title);
         subscribe_email_click(title);
+        update_slider(title);
         slick_init();
     });
 </script>

@@ -2,10 +2,13 @@
 {% load staticfiles %}
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/channel.css' %}" />
+<link rel="stylesheet" href="{% static 'css/slider.css' %}" />
 {% endblock %}
 {% block title %} {{ title }} - Best Youtube Classified{% endblock %}
+
 {% block subscribe %}
 {% endblock %}
+
 {% block content %}
 <div class="channel-header">
   <div class="pure-g channel-pure">
@@ -76,13 +79,28 @@
 {% endblock %}
 
 {% block slider %}
-{% endblock %}
-
-{% block slider_scripts %}
+<div class="slider-title">
+  <h2>Suggested Websites</h2>
+</div>
+<div class="slider responsive">
+  <div class="slider-div">
+    <h2 class="slider-h3"></h2>
+  </div>
+  <div class="slider-div">
+    <h2 class="slider-h3"></h2>
+  </div>
+  <div class="slider-div">
+    <h2 class="slider-h3"></h2>
+  </div>
+</div>
+<div class="slider-footer">
+  <a href="mailto:contact@youtubeclassified.com?subject=Website/Book/Store?"><p>Add Resources?</p></a>
+</div>
 {% endblock %}
 
 {% block extra_scripts %}
 <script src="{% static 'js/js_lib/moment.js' %}"></script>
+<script src="{% static 'js/slider.js' %}"></script>
 <script src="{% static 'js/channel.js' %}"></script>
 <script>
     channel_id = $("#channel-id-input").val();
@@ -90,6 +108,8 @@
     get_video_playlist("date", channel_id, $(".hostest-content-g"), "video");
     get_video_playlist("viewCount", channel_id, $(".newest-content-g"), "video");
     get_video_playlist("date", channel_id, $(".playlist-content-g"), "video", "playlist");
+    $(document).ready(function() {
+        slick_init();
+    });
 </script>
 {% endblock %}
-

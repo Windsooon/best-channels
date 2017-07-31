@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {% block styles %}
     <link rel="shortcut icon" href="{% static 'imgs/youtube_64.png' %}"/>
-    <link rel="stylesheet" href="{% static 'css/css_lib/font-awesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
@@ -58,13 +57,13 @@
             <select id="select-cate" class="select-category" placeholder="Select a Category...">
             </select>
           </div> <!-- end control-group -->
-          <a class="sub-tags" target="_blank" href="/subcategory/Comedian/"><span>Comedian</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/General-Science/"><span>General-Science</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/Worldwide/"><span>Worldwide</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/Video-Games/"><span>Video-Games</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/Tech-Products/"><span>Tech-Products</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/Cooking/"><span>Cooking</span></a>
-          <a class="sub-tags" target="_blank" href="/subcategory/Hip-hop/"><span>Hip-hop</span></a>
+          <a class="sub-tags" href="/subcategory/Comedian/"><span>Comedian</span></a>
+          <a class="sub-tags" href="/subcategory/General-Science/"><span>General-Science</span></a>
+          <a class="sub-tags" href="/subcategory/Worldwide/"><span>Worldwide</span></a>
+          <a class="sub-tags" href="/subcategory/Video-Games/"><span>Video-Games</span></a>
+          <a class="sub-tags" href="/subcategory/Tech-Products/"><span>Tech-Products</span></a>
+          <a class="sub-tags" href="/subcategory/Cooking/"><span>Cooking</span></a>
+          <a class="sub-tags" href="/subcategory/Hip-hop/"><span>Hip-hop</span></a>
         </div> <!-- end pure-u-1 -->
       </div> <!-- end pure-g -->
     </div> <!-- end cate-search -->
@@ -93,25 +92,8 @@
   {% endblock %}
   
   {% block slider %}
-  <div class="slider-title">
-    <h2>Suggested Websites</h2>
-  </div>
-  <div class="slider responsive">
-    <div class="slider-div">
-      <h2 class="slider-h3"></h2>
-    </div>
-    <div class="slider-div">
-      <h2 class="slider-h3"></h2>
-    </div>
-    <div class="slider-div">
-      <h2 class="slider-h3"></h2>
-    </div>
-  </div>
-  <div class="slider-footer">
-    <a href="mailto:contact@youtubeclassified.com?subject=Website/Book/Store?"><p>Add Resources?</p></a>
-  </div>
   {% endblock %}
-
+  
   {% block sub %}
   <div class="sub-form">
       <h1>Add Channels You love!</h1>
@@ -142,9 +124,6 @@
   {% block extra_scripts %}
   {% endblock %}
 
-  {% block slider_scripts %}
-  <script src="{% static 'js/slider.js' %}"></script>
-  {% endblock %}
   </body>
   {% block footer %}
   <footer>

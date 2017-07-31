@@ -1,9 +1,26 @@
-.slider-div {
-}
 .slider-h3 {
     margin: 10px 30px 20px 30px;
     height: 200px;
     background: white;
+    text-align: center;
+}
+
+.slider-a {
+    text-decoration: none;
+}
+
+.slider-h2 {
+    font-size: 3vw;
+    line-height: 8vw;
+    color: #0078e7;
+}
+
+@media only screen and (max-width: 767px) {
+    .slider-h2 {
+        font-size: 12vw;
+        line-height: 28vw;
+        color: #0078e7;
+    }
 }
 
 .slider-title, .slider-footer {
