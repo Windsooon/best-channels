@@ -116,8 +116,9 @@ function set_channel_block(data, container) {
          });
          var $details_title_link = $("<a />", {
              "class": "details-title-link",
-             "text": "50 Newest Videos Under " + data[0]["name"],
-             "href": ""
+             "text": "Newest Videos Under " + data[0]["name"],
+             "target": "_blank",
+             "href": "http://" + window.location.hostname + "/videos/" + data[0]["name"] + "/"
          });
          var $details_content = $("<div />", {
              "class": "details-content"

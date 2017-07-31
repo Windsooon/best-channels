@@ -5,8 +5,8 @@ from .models import Recommend
 
 class RecommendAdmin(admin.ModelAdmin):
     list_display = (
-        'email', 'category', 'reason', 'create_time',)
-    list_filter = ('category',)
+        'checked', 'email', 'category', 'reason', 'create_time',)
+    list_filter = ('checked',)
     search_fields = ['email', 'category']
 
 admin.site.register(Recommend, RecommendAdmin)

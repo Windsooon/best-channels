@@ -99,7 +99,7 @@ pre {
     margin: 0 auto;
     text-align: center;
     box-shadow: 0px 6px 9px #ccc;
-    background: -webkit-linear-gradient(left, #E74C3C,  #3498DB, #2980B9);
+    background: -webkit-linear-gradient(left, #f68084,  #3498DB, #2980B9);
     background: -moz-linear-gradient(left top, red , #fe5c03);
     background: -ms-linear-gradient(left top, red , #fe5c03);
 }
@@ -151,4 +151,8 @@ pre {
 
 .sub-tags {
     margin-right: 15px;
+}
+
+.details-title-link {
+    color: #0078e7;
 }

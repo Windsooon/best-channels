@@ -144,8 +144,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .channel-thumbnail_inside {
-    }
     .channel-img {
         display: block; 
         margin: 0 auto;
@@ -176,7 +174,7 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 765px) {
     .video-title-text {
         font-size: 4vw; 
     }
