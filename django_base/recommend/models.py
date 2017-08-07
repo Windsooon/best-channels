@@ -9,7 +9,7 @@ class Recommend(models.Model):
        ('I', 'Ignore'),
        ('O', 'Others'),
      )
-    email = models.CharField(max_length=100, unique=True)
+    email = models.CharField(max_length=100, unique=True, blank=True)
     category = models.CharField(max_length=200)
     reason = models.CharField(max_length=1000)
     checked = models.CharField(max_length=5, choices=TYPE_CHOICES, default='N')

@@ -44,7 +44,7 @@ $(document).ready(function() {
 
     $(".sub-btn").on("click", function() {
         var csrftoken = getCookie("csrftoken");
-        if (!$(".sub-email").val() || !$(".sub-text").val() 
+        if (!$(".sub-text").val() 
             || !$(".sub-textarea").val()) {
 
             alert("Please complete this form");
