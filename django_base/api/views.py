@@ -50,13 +50,12 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
 
         related = self.request.query_params.get('related', None)
         if related is not None:
-            try:
-                queryset = queryset.get(name=related)
-            except queryset.DoesNotExist:
-                queryset = queryset.get(outer_id=1)
-            finally:
+            queryset = queryset.filter(name=related)
+            if queryset:
                 queryset = Inner.objects.filter(
-                    outer=queryset.outer)
+                        outer=queryset.outer)
+            else:
+                return Inner.objects.filter(outer_id=1)
         return queryset
 
 
