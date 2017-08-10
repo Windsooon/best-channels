@@ -5,38 +5,26 @@ from . import views
 
 outer_list = views.OuterViewSet.as_view({
     'get': 'list',
-    'post': 'create'
 })
 
 outer_detail = views.OuterViewSet.as_view({
     'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
 })
 
 inner_list = views.InnerViewSet.as_view({
     'get': 'list',
-    'post': 'create'
 })
 
 inner_detail = views.InnerViewSet.as_view({
     'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
 })
 
 playlist_list = views.PlaylistViewSet.as_view({
     'get': 'list',
-    'post': 'create'
 })
 
 playlist_detail = views.PlaylistViewSet.as_view({
     'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
 })
 
 recommend_list = views.RecommendViewSet.as_view({
@@ -46,9 +34,10 @@ recommend_list = views.RecommendViewSet.as_view({
 
 recommend_detail = views.RecommendViewSet.as_view({
     'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
+})
+
+weekly_list = views.WeeklyViewSet.as_view({
+    'get': 'list',
 })
 
 
@@ -65,5 +54,7 @@ urlpatterns = format_suffix_patterns([
         cache_page(60 * 200)(playlist_list), name='playlist_list'),
     url(r'playlist/(?P<pk>[0-9]+)/$',
         cache_page(60 * 200)(playlist_detail), name='playlist_detail'),
+    url(r'weekly/$',
+        cache_page(60 * 200)(weekly_list), name='weekly_list'),
     url(r'$', cache_page(60 * 200)(views.api_root)),
 ])

@@ -13,17 +13,15 @@ from inner.models import Inner
 from inner.serializers import InnerSerializer
 from playlist.models import Playlist
 from playlist.serializers import PlaylistSerializer
+from weekly_channels.models import Weekly
+from weekly_channels.serializers import WeeklySerializer
 from recommend.models import Recommend
 from recommend.serializers import RecommendSerializer
 from .permissions import IsAdminOrReadOnly, IsAdminOrCreate
 
 
-class DefaultsMixin(object):
+class OuterViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrReadOnly, )
-    paginate_by = 1
-
-
-class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):
     queryset = Outer.objects.all()
     serializer_class = OuterSerializer
 
@@ -33,7 +31,8 @@ class OuterViewSet(DefaultsMixin, viewsets.ModelViewSet):
         return queryset
 
 
-class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
+class InnerViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly, )
     serializer_class = InnerSerializer
 
     def get_queryset(self):
@@ -59,7 +58,8 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
         return queryset
 
 
-class PlaylistViewSet(DefaultsMixin, viewsets.ModelViewSet):
+class PlaylistViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly, )
     queryset = Playlist.objects.all().order_by('-update_time')
     serializer_class = PlaylistSerializer
 
@@ -68,6 +68,12 @@ class RecommendViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrCreate, )
     queryset = Recommend.objects.all()
     serializer_class = RecommendSerializer
+
+
+class WeeklyViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly, )
+    queryset = Weekly.objects.all()
+    serializer_class = WeeklySerializer
 
 
 @csrf_exempt
@@ -115,4 +121,5 @@ def api_root(request, format=None):
         'inner': reverse('inner_list', request=request, format=format),
         'playlist': reverse('playlist_list', request=request, format=format),
         'recommend': reverse('recommend_list', request=request, format=format),
+        'weekly': reverse('weekly_list', request=request, format=format),
     })
