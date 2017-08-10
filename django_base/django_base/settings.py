@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'group_slider.apps.GroupSliderConfig',
     'answered.apps.AnsweredConfig',
+    'weekly_channels.apps.WeeklyChannelsConfig',
 ]
 
 MIDDLEWARE = [

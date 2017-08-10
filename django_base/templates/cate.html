@@ -7,20 +7,39 @@
 {% block subscribe %}
 {% endblock %}
 
+{% block up_slider %}
+<div class="slider-title">
+  <h2>Recommandation Channels Weekly</h2>
+</div>
+<div class="slider responsive">
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+  <div class="slider-div">
+    <div class="slider-h3">
+      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="cate-content">
 </div> <!-- end country-content -->
 {% endblock %}
 
-{% block slider %}
-{% endblock %}
-
-{% block slider_scripts %}
-{% endblock %}
-
 {% block extra_scripts %}
+<script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
+        slick_init();
         get_category("/api/outer/", $(".cate-content"), "category"); 
     });
 </script>

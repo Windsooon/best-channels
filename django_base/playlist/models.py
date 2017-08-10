@@ -22,4 +22,4 @@ class Playlist(models.Model):
     update_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.channel_title
+        return self.channel_title + '  ----  ' + self.inner.name
