@@ -12,21 +12,57 @@
   <h2>Recommandation Channels Weekly</h2>
 </div>
 <div class="slider responsive">
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
-  </div>
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
-  </div>
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
-  </div>
+  <div class="channel-indide-div">
+    <div class="channel-thumbnail">
+      <div class="channel-thumbnail_inside">
+        <img class="channel-img" src=""/>
+      </div> <!-- end channel-thumbnail_inside -->
+    </div> <!-- end channel-thumbnail -->
+    <div class="channel-details">
+      <div class="channel-details-inside">
+        <div class="channel-title">
+          <span class="channel-name"></span>
+        </div> <!-- end channel-title -->
+        <div class="channel-content">
+          <span class="channel-content-span"></span>
+        </div> <!-- end channel-content -->
+      </div> <!-- end channel-details-inside -->
+    </div> <!-- end channel-details -->
+  </div> <!-- end channel-inside-div -->
+  <div class="channel-indide-div">
+    <div class="channel-thumbnail">
+      <div class="channel-thumbnail_inside">
+        <img class="channel-img" src=""/>
+      </div> <!-- end channel-thumbnail_inside -->
+    </div> <!-- end channel-thumbnail -->
+    <div class="channel-details">
+      <div class="channel-details-inside">
+        <div class="channel-title">
+          <span class="channel-name"></span>
+        </div> <!-- end channel-title -->
+        <div class="channel-content">
+          <span class="channel-content-span"></span>
+        </div> <!-- end channel-content -->
+      </div> <!-- end channel-details-inside -->
+    </div> <!-- end channel-details -->
+  </div> <!-- end channel-inside-div -->
+  <div class="channel-indide-div">
+    <div class="channel-thumbnail">
+      <div class="channel-thumbnail_inside">
+        <img class="channel-img" src=""/>
+      </div> <!-- end channel-thumbnail_inside -->
+    </div> <!-- end channel-thumbnail -->
+    <div class="channel-details">
+      <div class="channel-details-inside">
+        <div class="channel-title">
+          <span class="channel-name"></span>
+        </div> <!-- end channel-title -->
+        <div class="channel-content">
+          <span class="channel-content-span"></span>
+        </div> <!-- end channel-content -->
+      </div> <!-- end channel-details-inside -->
+    </div> <!-- end channel-details -->
+  </div> <!-- end channel-inside-div -->
 </div>
 {% endblock %}
 
@@ -39,7 +75,7 @@
 <script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
-        slick_init();
+        slick_init(2);
         get_category("/api/outer/", $(".cate-content"), "category"); 
         get_weekly($(".responsive"));
     });
