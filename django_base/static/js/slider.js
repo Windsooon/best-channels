@@ -32,3 +32,19 @@ function slick_init() {
         ]
     });
 }
+
+function get_weekly(container) {
+    $.ajax({ 
+        url: "/api/week/",
+		type: "GET",
+		dataType: "json",
+        cache: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
+		success:function(data){
+        }, 
+        error: function(){
+        }
+    });
+}

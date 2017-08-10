@@ -8,7 +8,7 @@ class WeeklyAdmin(admin.ModelAdmin):
     search_fields = ['playlist']
 
     def get_ordering(self, request):
-        return ['playlist.inner']
+        return ['playlist']
 
 
 admin.site.register(Weekly, WeeklyAdmin)

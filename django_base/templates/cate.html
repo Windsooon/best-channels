@@ -41,6 +41,7 @@
     $(document).ready(function() {
         slick_init();
         get_category("/api/outer/", $(".cate-content"), "category"); 
+        get_weekly($(".responsive"));
     });
 </script>
 {% endblock %}
