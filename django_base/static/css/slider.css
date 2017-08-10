@@ -24,6 +24,42 @@
     }
 }
 
+.slick-slide {
+    padding-right: 20px;
+}
+
 .slider-title, .slider-footer {
     text-align: center;
+}
+
+.weekly-thumbnail {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.weekly-img {
+    border-radius: 50%;
+    width: 70%;
+}
+
+.weekly-a {
+    display: inline-block;
+    background-color: white;
+    padding: 40px 20px 20px 20px;
+    height: 220px;
+}
+
+.weekly-name {
+    display: block;
+    font-size: 3vw;
+}
+
+.weekly-content-span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    max-height: 45px;
 }

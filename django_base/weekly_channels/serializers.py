@@ -3,9 +3,10 @@ from .models import Weekly
 
 
 class WeeklySerializer(serializers.ModelSerializer):
+    channel_id = serializers.ReadOnlyField(source='playlist.channel_id')
 
     class Meta:
         model = Weekly
         fields = (
-            'playlist', 'position', 'create_time'
+            'channel_id', 'position', 'create_time'
         )
