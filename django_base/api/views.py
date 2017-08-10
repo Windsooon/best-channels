@@ -53,7 +53,7 @@ class InnerViewSet(DefaultsMixin, viewsets.ModelViewSet):
             queryset = queryset.filter(name=related)
             if queryset:
                 queryset = Inner.objects.filter(
-                        outer=queryset.outer)
+                        outer=queryset[0].outer)
             else:
                 return Inner.objects.filter(outer_id=1)
         return queryset
