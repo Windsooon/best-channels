@@ -15,7 +15,7 @@
   </div>
   <div class="slider responsive">
     <div class="weekly-div">
-      <a class="weekly-a" href="#"/>
+      <a id="weekly-a-0" class="weekly-a" href="#"/>
         <div class="weekly-inside-div">
           <div class="weekly-thumbnail">
             <img id="weekly-img-0" class="weekly-img" src=""/>
@@ -28,7 +28,7 @@
       </a> <!-- end channel-indide-a -->
     </div> <!-- end weekly-div -->
     <div class="weekly-div">
-      <a class="weekly-a" href="#"/>
+      <a id="weekly-a-1" class="weekly-a" href="#"/>
         <div class="weekly-inside-div">
           <div class="weekly-thumbnail">
             <img id="weekly-img-1" class="weekly-img" src=""/>
@@ -41,7 +41,7 @@
       </a> <!-- end channel-indide-a -->
     </div> <!-- end weekly-div -->
     <div class="weekly-div">
-      <a class="weekly-a" href="#"/>
+      <a id="weekly-a-2" class="weekly-a" href="#"/>
         <div class="weekly-inside-div">
           <div class="weekly-thumbnail">
             <img id="weekly-img-2" class="weekly-img" src=""/>
@@ -54,7 +54,7 @@
       </a> <!-- end channel-indide-a -->
     </div> <!-- end weekly-div -->
     <div class="weekly-div">
-      <a class="weekly-a" href="#"/>
+      <a id="weekly-a-3" class="weekly-a" href="#"/>
         <div class="weekly-inside-div">
           <div class="weekly-thumbnail">
             <img id="weekly-img-3" class="weekly-img" src=""/>
@@ -79,7 +79,7 @@
 <script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
-        slick_init(2);
+        slick_init(2, 2);
         get_category("/api/outer/", $(".cate-content"), "category"); 
         get_weekly($(".responsive"));
     });

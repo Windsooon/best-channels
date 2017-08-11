@@ -1,16 +1,16 @@
-function slick_init(big=3) {
+function slick_init(big=3, scroll=3) {
     $('.responsive').slick({
         dots: true,
         infinite: false,
         speed: 300,
         slidesToShow: big,
-        slidesToScroll: 1,
+        slidesToScroll: scroll,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: big,
-              slidesToScroll: 1,
+              slidesToScroll: scroll,
               infinite: true,
               dots: true
             }
@@ -69,6 +69,7 @@ function set_weekly(data) {
                 $("#weekly-name-" + k).text(title);
                 $("#weekly-content-" + k).text(description);
                 $("#weekly-img-" + k).attr("src", thumbnails);
+                $("#weekly-a-" + k).attr("href", host + "/channel/" + title + "/");
             },
         });
     });
