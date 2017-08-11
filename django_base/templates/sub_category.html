@@ -8,29 +8,33 @@
 {% endblock %}
 
 {% block slider %}
-<div class="slider-title">
-  <h2>You may also like</h2>
-</div>
-<div class="slider responsive">
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
+<div class="slider-outside-div">
+  <div class="slider-title">
+    <img class="details-title-img" src="{% static 'imgs/like_others.png' %}" />
+    <h2>You may also like</h2>
   </div>
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
-  </div>
-  <div class="slider-div">
-    <div class="slider-h3">
-      <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-    </div>
-  </div>
-</div>
+  <div class="slider responsive">
+    <div class="slider-div">
+      <div class="slider-h3">
+        <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+      </div>
+    </div> <!-- end slider-div -->
+    <div class="slider-div">
+      <div class="slider-h3">
+        <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+      </div>
+    </div> <!-- end slider-div -->
+    <div class="slider-div">
+      <div class="slider-h3">
+        <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
+      </div>
+    </div> <!-- end slider-div -->
+  </div> <!-- end slider responsive -->
+</div> <!-- end slider-outside-div -->
 {% endblock %}
 
 {% block extra_scripts %}
+<script src="{% static 'js/subcategory.js' %}"></script>
 <script>
     $(document).ready(function() {
         var title = "{{title}}"
