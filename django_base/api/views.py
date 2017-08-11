@@ -72,7 +72,7 @@ class RecommendViewSet(viewsets.ModelViewSet):
 
 class WeeklyViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrReadOnly, )
-    queryset = Weekly.objects.all()
+    queryset = Weekly.objects.all().order_by('-position')
     serializer_class = WeeklySerializer
 
 
