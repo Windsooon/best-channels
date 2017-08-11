@@ -30,6 +30,9 @@
 
 .slider-title, .slider-footer {
     text-align: center;
+    background-color: white;
+    margin-top: 40px;
+    padding: 20px;
 }
 
 .weekly-thumbnail {
@@ -46,20 +49,44 @@
 }
 
 .weekly-a {
-    display: inline-block;
+    display: block;
     background-color: white;
-    padding: 40px 20px 20px 20px;
-    height: 220px;
+    padding: 40px 40px 40px 10px;
+    min-height: 180px;
 }
 
 .weekly-name {
     display: block;
-    font-size: 3vw;
+    font-size: 2vw;
+    margin-bottom: 20px;
 }
 
 .weekly-content-span {
-    overflow: hidden;
+    display: block;
     text-overflow: ellipsis;
-    line-height: 15px;
-    max-height: 45px;
+    overflow: hidden;
+    max-height: 5.4em;
+    line-height: 1.8em;
+}
+
+.weekly-div {
+    padding: 10px;
+}
+
+.slider-outside-div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#weekly-re {
+    font-size: 2.5vw;
+}
+
+@media only screen and (max-width: 767px) {
+    #weekly-re {
+        font-size: 8vw;
+    }
+    .weekly-name {
+        font-size: 5vw;
+    }    
 }
