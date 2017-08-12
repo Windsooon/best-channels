@@ -1,5 +1,5 @@
-function slick_init(big=3, scroll=3) {
-    $('.responsive').slick({
+function slick_init(big=3, scroll=3, container=$(".responsive")) {
+    container.slick({
         dots: true,
         infinite: false,
         speed: 300,
