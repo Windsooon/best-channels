@@ -56,7 +56,6 @@
     <div class="pure-g hostest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
-
   <div class="newest-video">
     <div id="newest-content-title">
       <img class="content-img-icon" src="{% static 'imgs/Like.png' %}" />
@@ -65,16 +64,6 @@
     <div class="pure-g newest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
-
-  <div class="playlist-intro">
-    <div id="hostest-playlist-title">
-      <img class="content-img-icon" src="{% static 'imgs/Movie.png' %}" />
-      <h1 id="hostest-playlist-title-text">Hostest Playlists</h1>
-    </div>
-    <div class="pure-g playlist-content-g">
-    </div> <!-- end channel-content-g -->
-  </div> <!-- end hostest-video -->
-
 </div> <!-- end channel-content -->
 {% endblock %}
 
@@ -107,7 +96,6 @@
     get_channel_details(channel_id);
     get_video_playlist("date", channel_id, $(".hostest-content-g"), "video");
     get_video_playlist("viewCount", channel_id, $(".newest-content-g"), "video");
-    get_video_playlist("date", channel_id, $(".playlist-content-g"), "video", "playlist");
     $(document).ready(function() {
         slick_init();
     });
