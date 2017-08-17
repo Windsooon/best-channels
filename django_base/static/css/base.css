@@ -156,3 +156,11 @@ pre {
 .details-title-link {
     color: #0078e7;
 }
+
+.newest-inside-div {
+    padding: 40px 40px 40px 10px;
+}
+
+.newest-img {
+    max-width: 100%;
+}

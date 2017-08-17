@@ -95,44 +95,17 @@ function get_channel(name, container, set_after=set_channel_block) {
 
 
 function set_channel_block(data, container) {
-     var $details_outside_div = $("<div />", {
-         "class": "pure-g details-outside-div"
-     });
      if (data[0].length != 0) {
-         var $details_div = $("<div />", {
-             "class": "pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div"
-         });
-         var $details_title = $("<div />", {
-             "class": "details-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
-         });
-         var $details_title_img = $("<img />", {
-             "class": "details-title-img",
-             "src": "../../static/imgs/tv.png"
-         });
-         var $details_title_span = $("<h1 />", {
-             "class": "details-title-span",
-             "text": data[0]["name"].toUpperCase(),
-             "id": data[0]["name"].replace(' ', '-'),
-         });
-         var $details_title_link = $("<a />", {
-             "class": "details-title-link",
-             "text": "Newest Videos Under " + data[0]["name"],
-             "target": "_blank",
-             "href": "http://" + window.location.hostname + "/videos/" + data[0]["name"] + "/"
-         });
+         $(".details-title-span").text(data[0]["name"].toUpperCase());
+         $(".details-title-span").attr("id", data[0]["name"].replace(' ', '-'));
+         // $(".details-title-link").text("Newest Videos Under " + data[0]["name"]);
+         // $(".details-title-link").attr("href", "http://" + window.location.hostname + "/videos/" + data[0]["name"] + "/");
          var $details_content = $("<div />", {
              "class": "details-content"
          });
-
-         $details_outside_div.append($details_div);
-         $details_title.append($details_title_img);
-         $details_title.append($details_title_span);
-         $details_title.append($details_title_link);
-         $details_div.append($details_title);
-         $details_div.append($details_content);
+         container.append($details_content);
          get_channel_info(data[0]["playlist"], data[0]["name"], $details_content);
     }
-    container.append($details_outside_div);
 }
 
 

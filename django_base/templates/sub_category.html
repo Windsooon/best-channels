@@ -1,9 +1,48 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block title %}{{ title }} - Best Youtube Classified{% endblock %} 
+{% block title %}{{ title }} - Best Youtube Channels{% endblock %} 
 {% block content %}
+<div class="slider-outside-div">
+  <div class="slider-title">
+    <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
+    <h2 class="details-title-span"></h2>
+  </div> <!-- end slider-title -->
+  <div class="slider newest-responsive">
+    <div class="newest-div">
+      <a id="newest-a-0" class="newest-a" href="#"/>
+        <div class="newest-inside-div">
+          <div class="newest-thumbnail">
+            <img id="newest-img-0" class="newest-img" src="https://i.ytimg.com/vi/iFgIptFmv8g/hqdefault.jpg"/>
+          </div> <!-- end channel-thumbnail -->
+        </div> <!-- end channel-inside-div -->
+      </a> <!-- end channel-inside-a -->
+    </div> <!-- end newest-div -->
+    <div class="newest-div">
+      <a id="newest-a-1" class="newest-a" href="#"/>
+        <div class="newest-inside-div">
+          <div class="newest-thumbnail">
+            <img id="newest-img-1" class="newest-img" src="https://i.ytimg.com/vi/iFgIptFmv8g/hqdefault.jpg"/>
+          </div> <!-- end channel-thumbnail -->
+        </div> <!-- end channel-inside-div -->
+      </a> <!-- end channel-inside-a -->
+    </div> <!-- end newest-div -->
+    <div class="newest-div">
+      <a id="newest-a-2" class="newest-a" href="#"/>
+        <div class="newest-inside-div">
+          <div class="newest-thumbnail">
+            <img id="newest-img-2" class="newest-img" src="https://i.ytimg.com/vi/iFgIptFmv8g/hqdefault.jpg"/>
+          </div> <!-- end channel-thumbnail -->
+        </div> <!-- end channel-inside-div -->
+      </a> <!-- end channel-inside-a -->
+    </div> <!-- end newest-div -->
+  </div> <!-- end newest-responsive -->
+</div> <!-- end slider-outiside-div -->
 <div class="cate-content">
-</div> <!-- end country-content -->
+  <div class="pure-g details-outside-div">
+    <div class="pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div">
+    </div> <!--end details-div -->
+  </div> <!-- end details-outside-div -->
+</div> <!-- end cate-content -->
 {% endblock %}
 
 {% block slider %}
@@ -37,11 +76,12 @@
 <script>
     $(document).ready(function() {
         var title = "{{title}}"
-        get_channel(title , $(".cate-content")); 
+        get_channel(title , $(".details-div")); 
         update_sub(title);
         subscribe_email_click(title);
         update_slider(title);
         slick_init();
+        slick_init(3, 3, 2, $(".newest-responsive"));
     });
 </script>
 {% endblock %}
