@@ -11,9 +11,10 @@ body {
 }
 
 #youtube-title {
+  display: block;
   font-weight: bold;
   color: #333;
-  font-size: 2.4em;
+  font-size: 4vw;
 }
 
 .outside {
@@ -163,4 +164,18 @@ pre {
 
 .newest-img {
     max-width: 100%;
+}
+
+#youtube-count {
+    font-size: 2.5vw;
+}
+
+.youtube-wrapper {
+    font-size: 1.8vw;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.youtube-count-span {
+    color: #ff6a48;
 }

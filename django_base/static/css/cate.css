@@ -162,7 +162,18 @@
     }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 767px) {
+    #youtube-title {
+        font-size: 8vw;
+    }
+    #youtube-count {
+        font-size: 6vw;
+    }
+
+    .youtube-wrapper {
+        font-size: 5vw;
+    }
+
     .cate-count-span {
         font-size: 8vw !important;
     }

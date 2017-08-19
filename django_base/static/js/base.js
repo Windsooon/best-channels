@@ -114,3 +114,17 @@ function getAnchor(url) {
 function replaceSpace(title) {
     return title.replace(/ /g, "-");
 }
+
+function get_channels_count() {
+    $.ajax({
+        url: "/api/playlist/",
+        type: "GET",
+        cache: true,
+        dataType: "JSON",
+        success: function(data) {
+            $("#youtube-count").text(data["count"]);
+        },
+        error: function() {
+        },
+    });
+}

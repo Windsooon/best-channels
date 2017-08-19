@@ -46,6 +46,11 @@
         </a>
         <div id="best-title">
           <span id="youtube-title">Best YouTube Classified</span>
+          <div class="youtube-wrapper">
+            <span class="youtube-count-span">We classified </span>
+            <span id="youtube-count" class="youtube-count-span"></span>
+            <span class="youtube-count-span"> awesome YouTube channels for you</span>
+          </div><!-- youtube-wrapper -->
           <div class="twitter-div"><a href="https://twitter.com/youtubeclassifi" class="twitter-follow-button" data-show-count="false">Follow @youtubeclassifi</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
         </div> <!-- end for humans -->
       </div> <!-- end youtube-header -->
@@ -124,6 +129,11 @@
   <script src="{% static 'js/slider.js' %}"></script>
   <script src="{% static 'js/base.js' %}"></script>
   <script src="{% static 'js/cate.js' %}"></script>
+  <script>
+    $(document).ready(function(){
+        get_channels_count();
+    });
+  </script>
   {% endblock %}
 
   {% block extra_scripts %}
