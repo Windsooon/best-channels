@@ -48,13 +48,16 @@ function update_slider(title) {
                     related_subcategory.push(v["name"]);
                }
             });
-            var related_subcategory = related_subcategory.sort(function() { return 0.5 - Math.random()});
-            $('.slider-a').each(function(k, obj) {
-                $(obj).attr("href", host + "/subcategory/" + replaceSpace(related_subcategory[k]) + "/");
-            });
-            $('.slider-h2').each(function(k, obj) {
-                $(obj).text(related_subcategory[k]);
-            });
+
+            if (related_subcategory.length > 0){
+                var related_subcategory = related_subcategory.sort(function() { return 0.5 - Math.random()});
+                $('.slider-a').each(function(k, obj) {
+                    $(obj).attr("href", host + "/subcategory/" + replaceSpace(related_subcategory[k]) + "/");
+                });
+                $('.slider-h2').each(function(k, obj) {
+                    $(obj).text(related_subcategory[k]);
+                });
+            }
         },
         error: function(xhr, status, error) {
         } 
