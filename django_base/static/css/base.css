@@ -158,10 +158,6 @@ pre {
     color: #0078e7;
 }
 
-.newest-inside-div {
-    padding: 40px 40px 40px 10px;
-}
-
 .newest-img {
     max-width: 100%;
 }
@@ -178,4 +174,16 @@ pre {
 
 .youtube-count-span {
     color: #ff6a48;
+
+.newest-responsive {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.newest-a {
+    display: inline-block;
+}
+
+.slider-wrapper {
+    background-color: white;
 }
