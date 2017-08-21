@@ -6,22 +6,23 @@
   <div class="slider-title">
     <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
     <h2 class="details-title-span"></h2>
+    <div class="slider-wrapper">
+      <div class="slider newest-responsive">
+        {% for i in "012" %}
+        <div class="newest-div">
+          <a id="newest-a-{{ i }}" class="newest-a" href="../../videos/{{ title }}/"/>
+            <div class="newest-inside-div">
+              <div class="newest-thumbnail">
+                <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.png' %}"/>
+              </div> <!-- end channel-thumbnail -->
+            </div> <!-- end channel-inside-div -->
+          </a> <!-- end channel-inside-a -->
+        </div> <!-- end newest-div -->
+        {% endfor %}
+      </div> <!-- end newest-responsive -->
+      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span id="newest-videos-span">Newest Videos Under {{ title }}</span></a>
+    </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
-  <div class="slider-wrapper">
-    <div class="slider newest-responsive">
-      {% for i in "012" %}
-      <div class="newest-div">
-        <a id="newest-a-{{ i }}" class="newest-a" href="#"/>
-          <div class="newest-inside-div">
-            <div class="newest-thumbnail">
-              <img id="newest-img-{{ i }}" class="newest-img" src="https://i.ytimg.com/vi/iFgIptFmv8g/hqdefault.jpg"/>
-            </div> <!-- end channel-thumbnail -->
-          </div> <!-- end channel-inside-div -->
-        </a> <!-- end channel-inside-a -->
-      </div> <!-- end newest-div -->
-      {% endfor %}
-    </div> <!-- end newest-responsive -->
-  </div> <!-- end slider-wrapper -->
 </div> <!-- end slider-outiside-div -->
 <div class="cate-content">
   <div class="pure-g details-outside-div">

@@ -187,3 +187,7 @@ pre {
 .slider-wrapper {
     background-color: white;
 }
+
+#newest-videos-a {
+    color: #ff6a48 !important;
+}
