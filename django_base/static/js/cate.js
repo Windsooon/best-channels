@@ -78,6 +78,34 @@ function set_category_block(data, container, pre) {
      });
 }
 
+function get_three_videos(data) {
+    if (data[0]["playlist"].length < 3) {
+        $(".slider-wrapper").css("display", "none");
+    }
+    else {
+        var three_channels = new Array();
+        three_channels[0] = data[0]["playlist"][0]["channel_id"];
+        three_channels[1] = data[0]["playlist"][1]["channel_id"];
+        three_channels[2] = data[0]["playlist"][2]["channel_id"];
+
+        $.each(three_channels, function(k, v) {
+            url = "https://www.googleapis.com/youtube/v3/search?type=video&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + v + "&part=snippet&order=date&maxResults=1"
+            $.ajax({ 
+                url: url,
+                type: "GET",
+                dataType: "json",
+                cache: true,
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                success:function(data){
+                    $("#newest-img-" + k).attr("src", data["items"][0]["snippet"]["thumbnails"]["high"]["url"]);
+                }
+            });
+        });
+    }
+}
+
 // get non empty channel by category
 function get_channel(name, container, set_after=set_channel_block) {
     $.ajax({
@@ -87,6 +115,7 @@ function get_channel(name, container, set_after=set_channel_block) {
         cache: true,
 		success:function(data){
             set_after(data.results, container);
+            get_three_videos(data.results);
         },
         error: function(){
         }

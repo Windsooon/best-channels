@@ -1,16 +1,16 @@
-function slick_init(big=3, scroll=3, small=1, container=$(".responsive")) {
+function slick_init(big=3, small=1, container=$(".responsive")) {
     container.slick({
         dots: true,
         infinite: false,
         speed: 300,
         slidesToShow: big,
-        slidesToScroll: scroll,
+        slidesToScroll: big,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: big,
-              slidesToScroll: scroll,
+              slidesToScroll: big,
               infinite: true,
               dots: true
             }

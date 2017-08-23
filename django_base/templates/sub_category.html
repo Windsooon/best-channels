@@ -6,9 +6,23 @@
   <div class="slider-title">
     <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
     <h2 class="details-title-span"></h2>
+    <div class="slider-wrapper">
+      <div class="slider newest-responsive">
+        {% for i in "012" %}
+        <div class="newest-div">
+          <a id="newest-a-{{ i }}" class="newest-a" href="../../videos/{{ title }}/"/>
+            <div class="newest-inside-div">
+              <div class="newest-thumbnail">
+                <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.png' %}"/>
+              </div> <!-- end channel-thumbnail -->
+            </div> <!-- end channel-inside-div -->
+          </a> <!-- end channel-inside-a -->
+        </div> <!-- end newest-div -->
+        {% endfor %}
+      </div> <!-- end newest-responsive -->
+      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span id="newest-videos-span">Newest Videos Under {{ title }}</span></a>
+    </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
-  <div class="slider newest-responsive">
-  </div> <!-- end newest-responsive -->
 </div> <!-- end slider-outiside-div -->
 <div class="cate-content">
   <div class="pure-g details-outside-div">
@@ -25,20 +39,13 @@
     <h2>You may also like</h2>
   </div>
   <div class="slider responsive">
+    {% for i in "012" %}
     <div class="slider-div">
       <div class="slider-h3">
         <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
       </div>
     </div> <!-- end slider-div -->
-    <div class="slider-div">
-      <div class="slider-h3">
-        <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-      </div>
-    </div> <!-- end slider-div -->
-    <div class="slider-div">
-      <div class="slider-h3">
-        <a class="slider-a" href=""><h2 class="slider-h2"></h2></a>
-      </div>
+    {% endfor %} 
     </div> <!-- end slider-div -->
   </div> <!-- end slider responsive -->
 </div> <!-- end slider-outside-div -->
@@ -54,7 +61,7 @@
         subscribe_email_click(title);
         update_slider(title);
         slick_init();
-        slick_init(3, 3, 2, $(".newest-responsive"));
+        slick_init(3, 2, $(".newest-responsive"));
     });
 </script>
 {% endblock %}
