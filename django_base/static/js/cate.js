@@ -132,7 +132,8 @@ function get_channel_info(data, type, container) {
                  var $channel_inside_a = $("<a />", {
                      "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
                      "id": "channel-" + v["channel_id"],
-                     "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/"
+                     "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/",
+                     "target": "_blank"
                  });
                  var $channel_inside_type = $("<input />", {
                      "class": "channel-indide-type",
