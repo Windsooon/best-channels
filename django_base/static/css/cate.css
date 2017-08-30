@@ -144,6 +144,9 @@
         margin: 0 auto; 
         display: block;
     }
+    .weekly-thumbnail {
+        width: 45%; 
+    }
     .channel-thumbnail_inside {
         margin-bottom: 20px;
     }
