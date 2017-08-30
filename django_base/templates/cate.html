@@ -105,7 +105,7 @@
 <script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
-        slick_init(2, 2);
+        slick_init(2, 1);
         get_category("/api/outer/", $(".cate-content"), "category"); 
         get_weekly($(".responsive"));
     });
