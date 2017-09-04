@@ -36,8 +36,8 @@ function get_newest_videos(data, container) {
             //     date: "2017-07-21T10:03:29.000Z",
             //     id: "SYdg_zvvYwU"
             // }
-            var top_50 = id_time.slice(0, 50);
-            $.each(top_50, function(k, v) {
+            var top_80 = id_time.slice(0, 80);
+            $.each(top_80, function(k, v) {
                 url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + v["id"] + "&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY"
                 $.ajax({ 
                     url: url,
