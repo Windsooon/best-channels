@@ -3,7 +3,7 @@ function get_video_playlist(order, id, container, name, type="video") {
         url = "https://www.googleapis.com/youtube/v3/search?type=playlist&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + id + "&part=snippet,id&order=date&maxResults=12";
     }
     else {
-        url = "https://www.googleapis.com/youtube/v3/search?type=video&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + id + "&part=snippet,id&maxResults=12&order=" + order
+        url = "https://www.googleapis.com/youtube/v3/search?type=video&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&channelId=" + id + "&part=snippet,id&maxResults=18&order=" + order
     }
     $.ajax({ url: url,
 		type: "GET",
