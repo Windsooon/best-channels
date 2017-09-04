@@ -32,12 +32,26 @@
 </div> <!-- end cate-content -->
 {% endblock %}
 
+{% block slider-ad %}
+<div class="slider-ad-wrapper">
+  <div class="slider-ad-title">
+    <h2>Suggested Websites</h2>
+  </div>
+  <div class="slider responsive">
+    {% for i in "012" %}
+    <div class="slider-ad-div">
+        <a href="" ><img class="slider-ad-img" src="{% static 'imgs/ad.png' %}" /></a>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="slider-ad-footer">
+    <a href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Add Resources?</p></a>
+  </div>
+</div>
+{% endblock %}
+
 {% block slider %}
 <div class="you-may-like slider-outside-div">
-  <div class="slider-title">
-    <img class="details-title-img" src="{% static 'imgs/like_others.png' %}" />
-    <h2>You may also like</h2>
-  </div>
   <div class="slider responsive">
     {% for i in "012" %}
     <div class="slider-div">
