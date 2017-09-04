@@ -105,3 +105,22 @@
     width: 70%;
     margin: 0 auto;
 }
+
+.slider-ad-title {
+    text-align: center;
+}
+
+.slider-ad-footer {
+    text-align: center;
+}
+
+.slider-ad-wrapper {
+    background-color: white;
+}
+
+.slider-ad-div {
+}
+
+.slider-ad-img {
+    margin: 0 auto;
+}
