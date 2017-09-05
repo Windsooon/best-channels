@@ -17,6 +17,8 @@ from weekly_channels.models import Weekly
 from weekly_channels.serializers import WeeklySerializer
 from recommend.models import Recommend
 from recommend.serializers import RecommendSerializer
+from ad.models import Ad
+from ad.serializers import AdSerializer
 from .permissions import IsAdminOrReadOnly, IsAdminOrCreate
 
 
@@ -76,6 +78,12 @@ class WeeklyViewSet(viewsets.ModelViewSet):
     serializer_class = WeeklySerializer
 
 
+class AdViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAdminOrReadOnly, )
+    queryset = Ad.objects.all().order_by('-position')
+    serializer_class = AdSerializer
+
+
 @csrf_exempt
 def sub_list(request):
     email = request.POST.get("email", None)
@@ -122,4 +130,5 @@ def api_root(request, format=None):
         'playlist': reverse('playlist_list', request=request, format=format),
         'recommend': reverse('recommend_list', request=request, format=format),
         'weekly': reverse('weekly_list', request=request, format=format),
+        'ad': reverse('ad_list', request=request, format=format),
     })
