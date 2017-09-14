@@ -38,9 +38,9 @@
     <h2>Suggested Websites</h2>
   </div>
   <div class="slider responsive">
-    {% for i in "012" %}
+    {% for i in "012345" %}
     <div class="slider-ad-div">
-        <a href="" ><img class="slider-ad-img" src="{% static 'imgs/ad.png' %}" /></a>
+        <a id="slider-ad-a-{{i}}" class="slider-ad-a" href="" ><img id="slider-ad-{{i}}"class="slider-ad-img" src="{% static 'imgs/ad.png' %}" /></a>
     </div>
     {% endfor %}
   </div>
@@ -76,6 +76,7 @@
         update_slider(title);
         slick_init();
         slick_init(3, 2, $(".newest-responsive"));
+        update_ad(title);
     });
 </script>
 {% endblock %}

@@ -36,6 +36,24 @@ function update_sub(title) {
     $("#sub-legend").text("Get Trending " + title + " Channel Recommendations !");
 }
 
+function update_ad(title) {
+    $.ajax({
+        url: '/api/ad/' + '?inner=' + title,
+        type: 'GET',
+        cache: true,
+        success: function(data) {
+            $.each(data["results"], function(k, v) {
+                console.log(v);
+                $("#slider-ad-"+k).attr("src", "/static/imgs/ad/" + title + "/" + v["thumbnail"] + ".jpg");
+                $("#slider-ad-a-"+k).attr("href", v["url"]);
+                $("#slider-ad-a-"+k).attr("target", "_blank");
+            })
+        },
+        error: function(xhr, status, error) {
+        } 
+    });
+}
+
 function update_slider(title) {
     $.ajax({
         url: '/api/inner/' + '?related=' + title,
