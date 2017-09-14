@@ -83,6 +83,13 @@ class AdViewSet(viewsets.ModelViewSet):
     queryset = Ad.objects.all().order_by('-position')
     serializer_class = AdSerializer
 
+    def get_queryset(self):
+        queryset = Ad.objects.all().order_by('-position')
+        name = self.request.query_params.get('name', None)
+        if name is not None:
+            queryset = queryset.filter(name=name)
+        return queryset
+
 
 @csrf_exempt
 def sub_list(request):
