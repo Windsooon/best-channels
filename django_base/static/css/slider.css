@@ -119,8 +119,13 @@
 }
 
 .slider-ad-div {
+    text-align: center;
 }
 
 .slider-ad-img {
-    margin: 0 auto;
+    max-width: 100%;
+}
+
+.slider-ad-a {
+    display: inline-block;
 }
