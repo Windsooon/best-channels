@@ -137,5 +137,5 @@ def api_root(request, format=None):
         'playlist': reverse('playlist_list', request=request, format=format),
         'recommend': reverse('recommend_list', request=request, format=format),
         'weekly': reverse('weekly_list', request=request, format=format),
-        'ad': reverse('ad_list', request=request, format=format),
+        'resource': reverse('ad_list', request=request, format=format),
     })

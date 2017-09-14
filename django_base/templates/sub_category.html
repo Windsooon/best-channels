@@ -33,18 +33,18 @@
 {% endblock %}
 
 {% block slider-ad %}
-<div class="slider-ad-wrapper">
-  <div class="slider-ad-title">
+<div class="slider-rs-wrapper">
+  <div class="slider-rs-title">
     <h2>Suggested Websites</h2>
   </div>
   <div class="slider responsive">
     {% for i in "012345" %}
-    <div class="slider-ad-div">
-        <a id="slider-ad-a-{{i}}" class="slider-ad-a" href="" ><img id="slider-ad-{{i}}"class="slider-ad-img" src="{% static 'imgs/ad.png' %}" /></a>
+    <div class="slider-rs-div">
+        <a id="slider-rs-a-{{i}}" class="slider-rs-a" href="" ><img id="slider-rs-{{i}}"class="slider-rs-img" src="{% static 'imgs/ad.png' %}" /></a>
     </div>
     {% endfor %}
   </div>
-  <div class="slider-ad-footer">
+  <div class="slider-rs-footer">
     <a href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Add Resources?</p></a>
   </div>
 </div>
