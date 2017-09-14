@@ -38,15 +38,14 @@ function update_sub(title) {
 
 function update_ad(title) {
     $.ajax({
-        url: '/api/ad/' + '?inner=' + title,
+        url: '/api/resource/' + '?inner=' + title,
         type: 'GET',
         cache: true,
         success: function(data) {
             $.each(data["results"], function(k, v) {
-                console.log(v);
-                $("#slider-ad-"+k).attr("src", "/static/imgs/ad/" + title + "/" + v["thumbnail"] + ".jpg");
-                $("#slider-ad-a-"+k).attr("href", v["url"]);
-                $("#slider-ad-a-"+k).attr("target", "_blank");
+                $("#slider-rs-"+k).attr("src", "/static/imgs/resources/" + title + "/" + v["thumbnail"] + ".jpg");
+                $("#slider-rs-a-"+k).attr("href", v["url"] + "?ref=channelshunt");
+                $("#slider-rs-a-"+k).attr("target", "_blank");
             })
         },
         error: function(xhr, status, error) {

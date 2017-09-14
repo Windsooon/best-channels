@@ -106,26 +106,26 @@
     margin: 0 auto;
 }
 
-.slider-ad-title {
+.slider-rs-title {
     text-align: center;
 }
 
-.slider-ad-footer {
+.slider-rs-footer {
     text-align: center;
 }
 
-.slider-ad-wrapper {
+.slider-rs-wrapper {
     background-color: white;
 }
 
-.slider-ad-div {
+.slider-rs-div {
     text-align: center;
 }
 
-.slider-ad-img {
+.slider-rs-img {
     max-width: 100%;
 }
 
-.slider-ad-a {
+.slider-rs-a {
     display: inline-block;
 }
