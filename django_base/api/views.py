@@ -85,9 +85,9 @@ class AdViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Ad.objects.all().order_by('-position')
-        name = self.request.query_params.get('name', None)
-        if name is not None:
-            queryset = queryset.filter(name=name)
+        inner_name = self.request.query_params.get('inner', None)
+        if inner_name is not None:
+            queryset = queryset.filter(inner__name=inner_name)
         return queryset
 
 
