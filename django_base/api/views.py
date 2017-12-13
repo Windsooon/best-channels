@@ -111,7 +111,7 @@ def sub_list(request):
     # get group interest from name
     interest_url = (
         'https://us16.api.mailchimp.com/3.0/lists/' +
-        'b70ba3fa75/interest-categories/7f004df895/interests')
+        'b70ba3fa75/interest-categories/7f004df895/interests?count=1000')
     interest_res = requests.get(url=interest_url, auth=auth, headers=headers)
     for ins in interest_res.json()['interests']:
         if ins['name'] == category:
