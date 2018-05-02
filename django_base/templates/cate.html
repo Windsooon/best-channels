@@ -11,87 +11,24 @@
 <div class="slider-outside-div">
   <div class="slider-title">
     <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
-    <h2 id="weekly-re">Weekly Discoveries</h2>
+    <h2 id="weekly-re">Best of this week</h2>
   </div>
   <div class="slider responsive">
+    {% for i in "012345" %}
     <div class="weekly-div">
-      <a id="weekly-a-0" class="weekly-a" href="#"/>
+        <a id="weekly-a-{{i}}"  class="weekly-a" href="#"/>
         <div class="weekly-inside-div">
           <div class="weekly-thumbnail">
-            <img id="weekly-img-0" class="weekly-img" src=""/>
+            <img id="weekly-img-{{i}}" class="weekly-img" src=""/>
           </div> <!-- end channel-thumbnail -->
           <div class="weekly-details">
-            <span id="weekly-name-0" class="weekly-name"></span>
-            <span id="weekly-content-0" class="weekly-content-span"></span>
+            <span id="weekly-name-{{i}}" class="weekly-name"></span>
+            <span id="weekly-content-{{i}}" class="weekly-content-span"></span>
           </div> <!-- end channel-details -->
         </div> <!-- end channel-inside-div -->
       </a> <!-- end channel-indide-a -->
     </div> <!-- end weekly-div -->
-    <div class="weekly-div">
-      <a id="weekly-a-1" class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-1" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-1" class="weekly-name"></span>
-            <span id="weekly-content-1" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
-    <div class="weekly-div">
-      <a id="weekly-a-2" class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-2" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-2" class="weekly-name"></span>
-            <span id="weekly-content-2" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
-    <div class="weekly-div">
-      <a id="weekly-a-3" class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-3" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-3" class="weekly-name"></span>
-            <span id="weekly-content-3" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
-  <div class="weekly-div">
-      <a id="weekly-a-4" class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-4" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-4" class="weekly-name"></span>
-            <span id="weekly-content-4" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
-  <div class="weekly-div">
-      <a id="weekly-a-5" class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-5" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-5" class="weekly-name"></span>
-            <span id="weekly-content-5" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
+    {% endfor %}
   </div> <!-- end slider -->
 </div> <!-- end slider-outside-div -->
 {% endblock %}
