@@ -251,3 +251,7 @@
 .cate-count-span-inside {
     max-width: 100%;
 }
+
+#newest-videos-span {
+    font-size: 1.5vw;
+}
