@@ -225,3 +225,8 @@ pre {
 #newest-videos-a {
     color: #ff6a48 !important;
 }
+
+#new-channels-h2 {
+    font-size: 2.5vw;
+    text-align: center;
+}
