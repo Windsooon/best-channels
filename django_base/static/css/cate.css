@@ -9,6 +9,11 @@
     margin-bottom: 40px;
 }
 
+.select-add {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 #subscribe-email {
     display: inline-block;
 }
