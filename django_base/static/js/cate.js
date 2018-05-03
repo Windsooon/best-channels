@@ -4,7 +4,6 @@ function get_category(url, container, pre) {
 		url: url,
 		type: "GET",
 		dataType: "json",
-        cache: true,
 		success:function(data){
             set_category_block(data.results, container, pre);
         }
@@ -94,7 +93,6 @@ function get_three_videos(data) {
                 url: url,
                 type: "GET",
                 dataType: "json",
-                cache: true,
                 headers: {
                     'Access-Control-Allow-Origin': '*'
                 },
@@ -107,15 +105,18 @@ function get_three_videos(data) {
 }
 
 // get non empty channel by category
-function get_channel(name, container, set_after=set_channel_block) {
+function get_channel(
+    name, container, set_after=set_channel_block, api="inner") {
     $.ajax({
-		url: "/api/inner/?name=" + name,
+		url: "/api/" + api + "/?name=" + name,
 		type: "GET",
 		dataType: "json",
-        cache: true,
 		success:function(data){
             set_after(data.results, container);
-            get_three_videos(data.results);
+            // newest videos under category
+            if (api == "inner") {
+                get_three_videos(data.results);
+            }
         },
         error: function(){
         }
@@ -145,7 +146,6 @@ function get_channel_info(data, type, container) {
 	    	url: url,
 	    	type: "GET",
 	    	dataType: "json",
-            cache: true,
             headers: {
                 'Access-Control-Allow-Origin': '*'
             },

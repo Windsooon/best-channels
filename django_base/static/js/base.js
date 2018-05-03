@@ -1,5 +1,83 @@
 var host = "https://"+ window.location.hostname;
 $(document).ready(function() {
+    var category_list=new Array();
+    var select_type = $('#select-add-type').selectize({
+        valueField: "name",
+        labelField: "name",
+        searchField: "name",
+        preload: true,
+        placeholder: "Choose type",
+        options: [],
+        closeAfterSelect: true,
+        create: false,
+        render: {
+            item: function(item, escape) {
+                return "<div>" +
+                    ("<span class=" + item.name + ">" + item.name + "</span>") +
+                "</div>";
+            },
+            option: function(item, escape) {
+                return "<div>" +
+                    ("<span class='search-name'>" + item.name + "</span>") +
+                "</div>";
+            },
+        },
+        onItemAdd: function (value, item) {
+            $.ajax({
+                url: "/api/inner/?category=" + value + "&limit=1000",
+                type: "GET",
+                dataType: "JSON",
+                success: function(res) {
+                    category_list = [];
+                    $.each(res.results, function(k, v) {
+                        category_list.push({"name": v.name});
+                    });
+                    var selectize = select_category[0].selectize;
+                    selectize.clear();
+                    selectize.clearOptions();
+                    selectize.load(function(callback) {
+                        callback(category_list);
+                    }); 
+                }
+            });
+        },
+        load: function(query, callback) {
+            $.ajax({
+                url: "/api/outer/?limit=1000",
+                type: "GET",
+                cache: true,
+                dataType: "JSON",
+                error: function() {
+                    callback();
+                },
+                success: function(res) {
+    			    callback(res.results);
+                }
+            });
+        }
+    });
+    var select_category = $('#select-add-category').selectize({
+        valueField: "name",
+        labelField: "name",
+        searchField: "name",
+        preload: true,
+        placeholder: "Choose category",
+        options: [],
+        closeAfterSelect: true,
+        create: false,
+        render: {
+            item: function(item, escape) {
+                return "<div>" +
+                    ("<span class=" + item.name + ">" + item.name + "</span>") +
+                "</div>";
+            },
+            option: function(item, escape) {
+                return "<div>" +
+                    ("<span class='search-name'>" + item.name + "</span>") +
+                "</div>";
+            },
+        },
+    });
     var select_cate =  $("#select-cate").selectize({
         valueField: "name",
         labelField: "name",
