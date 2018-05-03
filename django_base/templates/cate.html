@@ -35,6 +35,11 @@
 
 {% block content %}
 <div class="cate-content">
+  <div class="pure-g details-outside-div">
+    <div class="pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div">
+      <p id="new-channels-h2">New channels in last 30 days</p>
+    </div> <!--end details-div -->
+  </div> <!-- end details-outside-div -->
 </div> <!-- end country-content -->
 {% endblock %}
 
@@ -42,8 +47,8 @@
 <script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
+        get_newest_channel($(".details-div"));
         slick_init(2, 1);
-        get_category("/api/outer/", $(".cate-content"), "category"); 
         get_weekly($(".responsive"));
     });
 </script>

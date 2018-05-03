@@ -106,26 +106,50 @@ function get_three_videos(data) {
 
 // get non empty channel by category
 function get_channel(
-    name, container, set_after=set_channel_block, api="inner") {
+    name, container, set_after=set_channel_block) {
     $.ajax({
-		url: "/api/" + api + "/?name=" + name,
+		url: "/api/inner/?name=" + name,
 		type: "GET",
 		dataType: "json",
 		success:function(data){
             set_after(data.results, container);
-            // newest videos under category
-            if (api == "inner") {
-                get_three_videos(data.results);
-            }
         },
         error: function(){
         }
     }); 
 }
 
+// get non empty channel by category
+function get_newest_channel(
+    container, set_after=set_newest_channel_block) {
+    $.ajax({
+		url: "/api/playlist/?newest=True",
+		type: "GET",
+		dataType: "json",
+		success:function(data){
+            set_after(data.results, container);
+        },
+        error: function(){
+        }
+    }); 
+}
+
+function set_newest_channel_block(data, container) {
+     if (data.length != 0) {
+         // $(".details-title-span").text(data[0]["channel_title"].toUpperCase());
+         // $(".details-title-span").attr("id", data[0]["channel_title"].replace(' ', '-'));
+         var $details_content = $("<div />", {
+             "class": "details-content"
+         });
+         container.append($details_content);
+         get_channel_info(data, "placeholder", $details_content);
+    }
+}
+
 
 function set_channel_block(data, container) {
      if (data[0].length != 0) {
+         console.log(data[0]);
          $(".details-title-span").text(data[0]["name"].toUpperCase());
          $(".details-title-span").attr("id", data[0]["name"].replace(' ', '-'));
          // $(".details-title-link").text("Newest Videos Under " + data[0]["name"]);

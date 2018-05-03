@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime, timedelta
 from requests.auth import HTTPBasicAuth
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
@@ -62,8 +63,14 @@ class InnerViewSet(viewsets.ModelViewSet):
 
 class PlaylistViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrReadOnly, )
-    queryset = Playlist.objects.all().order_by('-update_time')
     serializer_class = PlaylistSerializer
+
+    def get_queryset(self):
+        queryset = Playlist.objects.all().order_by('-update_time')
+        related = self.request.query_params.get('newest', None)
+        if related is not None:
+            queryset = queryset.filter(create_time__gte=datetime.now()-timedelta(days=30)).order_by('-create_time')
+        return queryset
 
 
 class RecommendViewSet(viewsets.ModelViewSet):
