@@ -230,3 +230,8 @@ pre {
     font-size: 2.5vw;
     text-align: center;
 }
+
+#pure-channel-id {
+    margin-top: 5px;
+    text-align: left;
+}

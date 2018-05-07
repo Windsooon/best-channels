@@ -69,7 +69,7 @@ function set_weekly(data) {
                 $("#weekly-name-" + k).text(title);
                 $("#weekly-content-" + k).text(description);
                 $("#weekly-img-" + k).attr("src", thumbnails);
-                $("#weekly-a-" + k).attr("href", host + "/channel/" + title + "/");
+                $("#weekly-a-" + k).attr("href", real_host + "/channel/" + title + "/");
             },
         });
     });

@@ -69,7 +69,7 @@ function update_slider(title) {
             if (related_subcategory.length > 3){
                 var related_subcategory = related_subcategory.sort(function() { return 0.5 - Math.random()});
                 $('.slider-a').each(function(k, obj) {
-                    $(obj).attr("href", host + "/subcategory/" + replaceSpace(related_subcategory[k]) + "/");
+                    $(obj).attr("href", real_host + "/subcategory/" + replaceSpace(related_subcategory[k]) + "/");
                 });
                 $('.slider-h2').each(function(k, obj) {
                     $(obj).text(related_subcategory[k]);
