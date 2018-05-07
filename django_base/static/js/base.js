@@ -1,4 +1,4 @@
-var host = "https://"+ window.location.hostname;
+var real_host = window.location.host;
 $(document).ready(function() {
     var category_list=new Array();
     var select_type = $('#select-add-type').selectize({
@@ -13,7 +13,7 @@ $(document).ready(function() {
         render: {
             item: function(item, escape) {
                 return "<div>" +
-                    ("<span class=" + item.name + ">" + item.name + "</span>") +
+                    ("<span class=" + "select-type" + ">" + item.name + "</span>") +
                 "</div>";
             },
             option: function(item, escape) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
                 success: function(res) {
                     category_list = [];
                     $.each(res.results, function(k, v) {
-                        category_list.push({"name": v.name});
+                        category_list.push({"id": v.id, "name": v.name});
                     });
                     var selectize = select_category[0].selectize;
                     selectize.clear();
@@ -68,7 +68,7 @@ $(document).ready(function() {
         render: {
             item: function(item, escape) {
                 return "<div>" +
-                    ("<span class=" + item.name + ">" + item.name + "</span>") +
+                    ("<span val=" + item.id + " class=select-sub-category >" + item.name + "</span>") +
                 "</div>";
             },
             option: function(item, escape) {
@@ -102,7 +102,7 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            window.location = host + "/subcategory" + "/" + replaceSpace(value) + "/";
+            window.location = real_host + "/subcategory" + "/" + replaceSpace(value) + "/";
         },
         load: function(query, callback) {
             $.ajax({
@@ -121,28 +121,36 @@ $(document).ready(function() {
     });
 
     $(".sub-btn").on("click", function() {
-        var csrftoken = getCookie("csrftoken");
-        if (!$(".sub-text").val() 
-            || !$(".sub-textarea").val()) {
-
-            alert("Please complete this form");
+        if (!$(".select-type").length || !$(".select-sub-category").length || 
+            !$("#channel-id").val() || !$("#channel-email").val() || 
+            !$("#channel-name").val()){
+            alert("Please complete the form");
             return false;
         }
         data = {
-            "email": $(".sub-email").val(),
-            "category": $(".sub-text").val(),
-            "reason": $(".sub-textarea").val(),
+            "inner": $(".select-sub-category").attr("val"),
+            "channel_id": $("#channel-id").val(),
+            "channel_title": $("#channel-name").val(),
+            "channel_email": $("#channel-email").val(),
         }
+        var csrftoken = getCookie("csrftoken");
         $.ajax({
-            url: "/api/recommend/",
+            url: "/api/playlist/",
             type: "POST",
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
             data: JSON.stringify(data),
             beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                    $(".sub-btn").prop("disabled", true); 
                 },
-            error: function() {
+            error: function(xhr, status, error) {
+                if (xhr.responseJSON.channel_id == "20001") {
+                    alert("Please make sure the channel id is correct.")
+                }
+                else if (xhr.responseJSON.channel_id == "playlist with this channel id already exists."){
+                    alert("Channel already exists."); 
+                }
             },
             success: function(res) {
                 $("#recommend-form").remove();
@@ -156,7 +164,11 @@ $(document).ready(function() {
 
                 $thank_you_div.append($thank_you_text);
                 $(".sub-form").append($thank_you_div);
+            },
+            complete: function() {
+                $(".sub-btn").prop("disabled", false); 
             }
+
         });
     });
 });

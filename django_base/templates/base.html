@@ -110,8 +110,9 @@
       <form class="pure-form pure-g" id="recommend-form">
         <div class="pure-u-20-24 pure-u-md-1-2 form-div">
         <fieldset class="pure-group">
-          <input type="text" class="pure-input-1" placeholder="* Channel Id" required>
-          <textarea class="pure-input-1" required placeholder="* Tell us more about your channel!"></textarea>
+          <input type="text" id="channel-name" class="pure-input-1" placeholder="* Channel Display Name(Not Username)" required>
+          <input type="text" id="channel-id" class="pure-input-1" placeholder="* Channel Id" required>
+          <span id="pure-channel-id" class="pure-form-message"><a href="https://johnnythetank.github.io/youtube-channel-name-converter/">How to get my channel id?</a></span>
           <div class="pure-g select-add">
             <div class="pure-u-11-24">
               <label for="select-add-type"></label>
@@ -123,7 +124,7 @@
               <select id="select-add-category"></select>
             </div> <!-- end prue-u-1 -->
           </div> <!-- end pure-g -->
-          <input type="email" class="pure-input-1 sub-email" placeholder="* Your Email Address" required>
+          <input type="email" id="channel-email" class="pure-input-1 sub-email" placeholder="* Your Email Address" required>
         </fieldset>
         <button type="button" class="sub-btn pure-button pure-input-1 pure-button-primary">Submit</button>
       </form>

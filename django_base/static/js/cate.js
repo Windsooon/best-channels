@@ -136,8 +136,6 @@ function get_newest_channel(
 
 function set_newest_channel_block(data, container) {
      if (data.length != 0) {
-         // $(".details-title-span").text(data[0]["channel_title"].toUpperCase());
-         // $(".details-title-span").attr("id", data[0]["channel_title"].replace(' ', '-'));
          var $details_content = $("<div />", {
              "class": "details-content"
          });
@@ -149,7 +147,6 @@ function set_newest_channel_block(data, container) {
 
 function set_channel_block(data, container) {
      if (data[0].length != 0) {
-         console.log(data[0]);
          $(".details-title-span").text(data[0]["name"].toUpperCase());
          $(".details-title-span").attr("id", data[0]["name"].replace(' ', '-'));
          // $(".details-title-link").text("Newest Videos Under " + data[0]["name"]);
@@ -185,7 +182,7 @@ function get_channel_info(data, type, container) {
                  var $channel_inside_a = $("<a />", {
                      "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
                      "id": "channel-" + v["channel_id"],
-                     "href": "http://" + window.location.hostname + "/channel/" + v["channel_title"] + "/",
+                     "href": "http://" + real_host + "/channel/" + v["channel_title"] + "/",
                      "target": "_blank"
                  });
                  var $channel_inside_type = $("<input />", {

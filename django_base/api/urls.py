@@ -20,6 +20,7 @@ inner_detail = views.InnerViewSet.as_view({
 
 playlist_list = views.PlaylistViewSet.as_view({
     'get': 'list',
+    'post': 'create'
 })
 
 playlist_detail = views.PlaylistViewSet.as_view({
