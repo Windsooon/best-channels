@@ -3,6 +3,14 @@
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/channel.css' %}" />
 <link rel="stylesheet" href="{% static 'css/slider.css' %}" />
+<style>
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221);
+}
+</style>
 {% endblock %}
 {% block title %} {{ title }} - Best Youtube Channels{% endblock %}
 
@@ -36,6 +44,7 @@
               <span id="channel-header-content-span"></span>
               <div id="channel-time" class="pure-u-1-1 pure-sm-1-1 pure-md-1-1">
                   <a target="_blank" class="pure-button pure-button-primary get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Browse the Channel</a>
+                  <a class="button-secondary pure-button" href="#channel-comment">Recommendation</a>
               </div>
             </div> <!-- end channel-header-content -->
           </div> <!-- end channel-header-details -->
@@ -64,6 +73,28 @@
     <div class="pure-g newest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
+  <div id="comment-div">
+  <p id="channel-comment">What do you think about this channel?</p>
+  </div>
+  <div id="disqus_thread"></div>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://channelshunt.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div> <!-- end channel-content -->
 {% endblock %}
 

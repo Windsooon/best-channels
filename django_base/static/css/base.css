@@ -235,3 +235,9 @@ pre {
     margin-top: 5px;
     text-align: left;
 }
+
+#channel-comment {
+    font-size: 3vw;
+    color: #ff6a48;
+    text-align: center;
+}
