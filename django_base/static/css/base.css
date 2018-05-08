@@ -236,8 +236,14 @@ pre {
     text-align: left;
 }
 
-#channel-comment {
-    font-size: 3vw;
-    color: #ff6a48;
+.highlight-h1 {
     text-align: center;
+}
+
+.highlight-h1 h1 {
+    color: #ff6a48;
+}
+
+#all-categories {
+    color: #ff6a48;
 }

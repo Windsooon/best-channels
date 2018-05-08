@@ -48,7 +48,7 @@ function set_category_block(data, container, pre) {
                 });
              var $cate_img = $("<img />", {
                     "class": "cate-img",
-                    "src": 'https://' + window.location.hostname + 
+                    "src": 'http://' + real_host + 
                     '/static/imgs/' + v["thumbnail"] + '.png'
                 });
          }
