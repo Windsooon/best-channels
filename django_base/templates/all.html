@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+{% endblock %}
+{% block title %}All Categories{% endblock %}
+
+{% block subscribe %}
+{% endblock %}
+{% block content %}
+<div class="cate-content">
+</div> <!-- end country-content -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/slider.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        slick_init(2, 1);
+        get_category("/api/outer/", $(".cate-content"), "category"); 
+        get_weekly($(".responsive"));
+    });
+</script>
+{% endblock %}
