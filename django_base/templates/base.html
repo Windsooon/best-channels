@@ -104,7 +104,9 @@
   {% endblock %}
   
   {% block banner %}
-  <a href="/all/"><img src="{% static 'imgs/all.png' %}"/></a>
+  <div id="banner-div">
+    <a id="all-categories-a" href="/all/"><img src="{% static 'imgs/all.png' %}"/></a>
+  </div>
   {% endblock %}
 
   {% block sub %}
