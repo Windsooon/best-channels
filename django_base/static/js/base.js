@@ -1,4 +1,4 @@
-var real_host = window.location.host;
+var real_host = window.location.hostname;
 $(document).ready(function() {
     var category_list=new Array();
     // 底部添加category
