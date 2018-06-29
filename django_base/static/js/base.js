@@ -1,6 +1,7 @@
 var real_host = window.location.host;
 $(document).ready(function() {
     var category_list=new Array();
+    // 底部添加category
     var select_type = $('#select-add-type').selectize({
         valueField: "name",
         labelField: "name",
@@ -56,6 +57,7 @@ $(document).ready(function() {
             });
         }
     });
+    // 底部添加sub-category
     var select_category = $('#select-add-category').selectize({
         valueField: "name",
         labelField: "name",
@@ -78,6 +80,7 @@ $(document).ready(function() {
             },
         },
     });
+    // 顶部搜索分类
     var select_cate =  $("#select-cate").selectize({
         valueField: "name",
         labelField: "name",
@@ -102,7 +105,8 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            window.location = real_host + "/subcategory" + "/" + replaceSpace(value) + "/";
+            // window.location = real_host + "/subcategory/" + replaceSpace(value) + "/";
+            window.location.replace(real_host + "/subcategory/" + replaceSpace(value) + "/");
         },
         load: function(query, callback) {
             $.ajax({
