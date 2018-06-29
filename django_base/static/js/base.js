@@ -1,4 +1,4 @@
-var real_host = window.location.hostname;
+var real_host = "http://" + window.location.hostname;
 $(document).ready(function() {
     var category_list=new Array();
     // 底部添加category
@@ -105,8 +105,8 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            // window.location = real_host + "/subcategory/" + replaceSpace(value) + "/";
-            window.location.replace(real_host + "/subcategory/" + replaceSpace(value) + "/");
+            window.location = real_host + "/subcategory/" + replaceSpace(value) + "/";
+            // window.location.replace(real_host + "/subcategory/" + replaceSpace(value) + "/");
         },
         load: function(query, callback) {
             $.ajax({
