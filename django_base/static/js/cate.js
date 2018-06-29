@@ -112,6 +112,7 @@ function get_channel(
 		type: "GET",
 		dataType: "json",
 		success:function(data){
+            get_three_videos(data.results);
             set_after(data.results, container);
         },
         error: function(){
