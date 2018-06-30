@@ -255,3 +255,7 @@ pre {
 #banner-div {
     text-align: center;
 }
+
+#banner-img {
+    max-width: 100%;
+}
