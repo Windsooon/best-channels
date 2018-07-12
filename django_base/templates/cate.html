@@ -7,37 +7,22 @@
 {% block subscribe %}
 {% endblock %}
 
-{% block up_slider %}
-<div class="slider-outside-div">
-  <div class="slider-title">
-    <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
-    <h2 id="weekly-re">Best of this week</h2>
-  </div>
-  <div class="slider responsive">
-    {% for i in "012345" %}
-    <div class="weekly-div">
-        <a id="weekly-a-{{i}}"  class="weekly-a" href="#"/>
-        <div class="weekly-inside-div">
-          <div class="weekly-thumbnail">
-            <img id="weekly-img-{{i}}" class="weekly-img" src=""/>
-          </div> <!-- end channel-thumbnail -->
-          <div class="weekly-details">
-            <span id="weekly-name-{{i}}" class="weekly-name"></span>
-            <span id="weekly-content-{{i}}" class="weekly-content-span"></span>
-          </div> <!-- end channel-details -->
-        </div> <!-- end channel-inside-div -->
-      </a> <!-- end channel-indide-a -->
-    </div> <!-- end weekly-div -->
-    {% endfor %}
-  </div> <!-- end slider -->
-</div> <!-- end slider-outside-div -->
-{% endblock %}
-
 {% block content %}
 <div class="cate-content">
-  <div class="pure-g details-outside-div">
-    <div class="pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div">
-      <span class="highlight-h1"><h1>Newest channels in last 30 days</h1></span>
+  <div class="columns is-mobile details-outside-div">
+    <div class="details-div">
+      <section class="day-section hero is-info">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Newest YouTube channels
+            </h1>
+            <h2 class="subtitle">
+              in last 30 days
+            </h2>
+          </div>
+        </div>
+      </section>
     </div> <!--end details-div -->
   </div> <!-- end details-outside-div -->
 </div> <!-- end country-content -->

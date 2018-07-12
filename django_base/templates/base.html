@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {% block styles %}
     <link rel="shortcut icon" href="{% static 'imgs/youtube_64.png' %}"/>
-    <link rel="stylesheet" href="{% static 'css/css_lib/nromalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/css_lib/normalize.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/css_lib/bulma.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/css_lib/pure.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/css_lib/pure.response.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/slider.css' %}" />
     <link rel="stylesheet" href="{% static 'css/cate.css' %}" />
@@ -52,41 +51,66 @@
     </script>
     {% endif %}
   </head>
-
   {% block nav %}
   <div class="outside">
-    <div class="pure-g outside-div">
-      <div class="pure-u-1-2 pure-u-sm-1-2 pure-u-md-1-2 pure-u-lg-1-2 pure-u-xl-1-2 youtube-header">
-        <a class="header-a" href="/">
-          <img id="youtube-img" src="{% static "imgs/youtube.png" %}"/>
+    <nav class="navbar is-transparent is-fixed-top">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://bulma.io/images/bulma-logo.png" alt="Channelshunt logo" width="112" height="28">
         </a>
-        <div id="best-title">
-          <span id="youtube-title">Channelshunt</span>
-          <div class="youtube-wrapper">
-            <span class="youtube-count-span">We've classified </span>
-            <span id="youtube-count" class="youtube-count-span"></span>
-            <span class="youtube-count-span"> awesome YouTube channels for you</span>
-            <div class="twitter-div"><a href="https://twitter.com/channelshunt" class="twitter-follow-button" data-show-count="false">Follow @channelshunt</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
-          </div><!-- youtube-wrapper -->
-        </div> <!-- end for humans -->
-      </div> <!-- end youtube-header -->
-    </div> <!-- end pure-g -->
-    <div class="cate-search">
-      <div class="pure-g search-cate-div">
-        <div class="pure-u-21-24 pure-u-sm-21-24 pure-u-md-21-24 pure-u-lg-21-24 pure-u-xl-21-24 select-cate-div">
-          <div class="control-group">
-            <label for="select-cate"></label>
-            <select id="select-cate" class="select-category" placeholder="Select a Category...">
+        <div class="navbar-burger burger" data-target="navbar-channels">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="navbar-channels" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/all/">
+              Categories
+            </a>
+            <div class="navbar-dropdown is-boxed">
+            </div> <!-- end navbar-dropdown -->
+          </div> <!-- end navbar-item -->
+        </div> <!-- end navbar-start -->
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <select id="select-cate" class="select-category" placeholder="Search">
             </select>
-          </div> <!-- end control-group -->
-          <a class="sub-tags" href="/all/"><span id="all-categories">All categories</span></a>
-          <a class="sub-tags" href="/subcategory/Comedians/"><span>Comedians</span></a>
-          <a class="sub-tags" href="/subcategory/Video-Games/"><span>Video-Games</span></a>
-          <a class="sub-tags" href="/subcategory/Cooking/"><span>Cooking</span></a>
+          </div>
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="is-info button" data-social-network="Twitter" data-social-action="tweet" target="_blank" href="https://twitter.com/channelshunt">
+                  <span>
+                    Twitter
+                  </span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero is-medium is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-mobile">
+            <div class="column is-5">
+              <img src="https://bulma.io/images/bulma-logo.png" alt="Channelshunt logo" width="112" height="28">
+            </div>
+            <div class="column is-7">
+              <h1 class="title">
+              Discover trending YouTube channels.
+              </h1>
+              <h2 id="youtube-count" class="subtitle">
+              </h2>
+            </div>
+        </div>
+      </div>
+    </section>
 
-        </div> <!-- end pure-u-1 -->
-      </div> <!-- end pure-g -->
-    </div> <!-- end cate-search -->
   {% endblock %}
 
   {% block subscribe %}
@@ -166,6 +190,7 @@
   <script>
     $(document).ready(function(){
         get_channels_count();
+        get_categories($(".navbar-dropdown"));
     });
   </script>
   {% endblock %}
