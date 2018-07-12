@@ -118,7 +118,7 @@
       <form class="pure-form pure-g" id="subscribe-form">
         <div class="pure-u-2-3 pure-u-md-2-3 subscribe-form-div">
         <fieldset>
-            <legend id="sub-legend">Sorry, please re-submit your email to get new channels update.</legend>
+            <legend id="sub-legend">Get Trending YouTube channels.</legend>
             <input id="subscribe-email" class="pure-u-20-24 pure-u-md-10-24" placeholder="Email Address" type="email">
             <button type="button" id="subscribe-email-btn" class="pure-button pure-button-primary pure-u-2-3 pure-u-md-4-24">Subscribe</button>
             </div>
@@ -153,26 +153,12 @@
   {% block sub %}
   <div class="sub-form">
       <span class="highlight-h1"><h1>Add You Channel</h1></span>
-      <form class="pure-form pure-g" id="recommend-form">
-        <div class="pure-u-20-24 pure-u-md-1-2 form-div">
-        <fieldset class="pure-group">
-          <input type="text" id="channel-name" class="pure-input-1" placeholder="* Channel Display Name (Not Username)" required>
-          <input type="text" id="channel-id" class="pure-input-1" placeholder="* Channel Id" required>
-          <span id="pure-channel-id" class="pure-form-message"><a href="https://johnnythetank.github.io/youtube-channel-name-converter/">How to get my channel id?</a></span>
-          <div class="pure-g select-add">
-            <div class="pure-u-11-24">
-              <label for="select-add-type"></label>
-              <select id="select-add-type"></select>
-            </div> <!-- end prue-u-1 -->
-            <div class="pure-u-2-24"></div>
-            <div class="pure-u-11-24">
-              <label for="select-add-category"></label>
-              <select id="select-add-category"></select>
-            </div> <!-- end prue-u-1 -->
-          </div> <!-- end pure-g -->
-          <input type="email" id="channel-email" class="pure-input-1 sub-email" placeholder="* Your Email Address" required>
-        </fieldset>
-        <button type="button" class="sub-btn pure-button pure-input-1 pure-button-primary">Submit</button>
+      <form id="recommend-form">
+        <div class="field">
+            <div class="control">
+              <input class="input" type="text" placeholder="* Channel Display Name (Not Username)">
+            </div>
+        </div>
       </form>
     </div> <!-- end form-div -->
   </div> <!-- end sub_form -->
