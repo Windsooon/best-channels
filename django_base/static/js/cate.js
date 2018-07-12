@@ -22,7 +22,7 @@ function set_category_block(data, container, pre) {
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a",
-                "href": pre + "/" + replaceSpace(v["name"]) + "/"
+                "href": real_host + "/" + pre + "/" + replaceSpace(v["name"]) + "/"
             });
          var $cate_block_outside = $("<div />", {
                 "class": "cate-block-outside"
@@ -174,14 +174,14 @@ function get_channel_info(data, type, container) {
 	    	success:function(data){
                 var title = data["items"][0]["snippet"]["title"];
                 var description = data["items"][0]["snippet"]["description"];
-                var thumbnails = data["items"][0]["snippet"]["thumbnails"]["high"]["url"];
+                var thumbnails = data["items"][0]["snippet"]["thumbnails"]["medium"]["url"];
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
 
                  var $channel_div = $("<div />", {
                      "class": "channel-div"
                  });
                  var $channel_inside_a = $("<a />", {
-                     "class": "channel-indide-a pure-u-md-2-3 pure-u-sm-2-3",
+                     "class": "channel-indide-a column is-7",
                      "id": "channel-" + v["channel_id"],
                      "href": real_host + "/channel/" + v["channel_title"] + "/",
                      "target": "_blank"
@@ -192,13 +192,13 @@ function get_channel_info(data, type, container) {
                      "value": type,
                  });
                  var $channel_inside_div = $("<div />", {
-                     "class": "channel-indide-div pure-u-g"
+                     "class": "channel-indide-div columns is-mobile"
                  });
                  var $channel_clear = $("<div />", {
                      "class": "clear"
                  });
                  var $channel_details = $("<div />", {
-                     "class": "channel-details pure-u-1-1 pure-u-md-1-1 pure-u-sm-4-6 pure-u-lg-5-6"
+                     "class": "channel-details column"
                  });
                  var $channel_details_inside = $("<div />", {
                      "class": "channel-details-inside"
@@ -214,7 +214,7 @@ function get_channel_info(data, type, container) {
                      "text": description
                  });
                  var $channel_thumbnail = $("<div />", {
-                     "class": "channel-thumbnail pure-u-1-3 pure-u-md-2-6 pure-u-sm-2-6 pure-u-lg-1-6"
+                     "class": "channel-thumbnail column is-3 is-hidden-mobile"
                  });
                  var $channel_thumbnail_inside = $("<div />", {
                      "class": "channel-thumbnail_inside"

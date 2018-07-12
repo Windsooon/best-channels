@@ -108,7 +108,7 @@ function get_channel_details(id) {
         success:function(data){
             var title = data["items"][0]["snippet"]["title"];
             var description = data["items"][0]["snippet"]["description"];
-            var thumbnails = data["items"][0]["snippet"]["thumbnails"]["high"]["url"];
+            var thumbnails = data["items"][0]["snippet"]["thumbnails"]["medium"]["url"];
             var create_time = moment(data["items"][0]["snippet"]["publishedAt"], moment.ISO_8601);
             var sub_count = readSub(data["items"][0]["statistics"]["subscriberCount"]);
             $("#channel-header-text").text(title);

@@ -86,7 +86,7 @@ $(document).ready(function() {
         labelField: "name",
         searchField: "name",
         preload: true,
-        placeholder: "Search subcategory",
+        placeholder: "Search",
         options: [],
         closeAfterSelect: true,
         create: false,
@@ -213,12 +213,51 @@ function get_channels_count() {
     $.ajax({
         url: "/api/playlist/",
         type: "GET",
-        cache: true,
         dataType: "JSON",
         success: function(data) {
-            $("#youtube-count").text(data["count"]);
+            $("#youtube-count").text("We collect, classify " + data["count"] + " channels for you.");
         },
         error: function() {
         },
     });
 }
+
+function get_categories(container) {
+    $.ajax({
+        url: "/api/outer/",
+        type: "GET",
+        dataType: "JSON",
+        success: function(data) {
+            update_nav(container, data["results"]);
+        },
+        error: function() {
+        },
+    });
+}
+
+function update_nav(container, data) {
+    // container
+    $.each(data, function(k, v) {
+        var $nav_item_a = $("<a />", {
+            "class": "navbar-item",
+            "href": real_host + "/category/" + v.name + "/",
+            "text": v.name
+        });
+        container.append($nav_item_a);
+    });
+}
+
+// bulma navbar
+document.addEventListener('DOMContentLoaded', () => {
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+  if ($navbarBurgers.length > 0) {
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});
