@@ -72,8 +72,6 @@ pre {
 }
 
 .sub-form {
-    background-color: white;
-    text-align: center;
     padding-top: 20px;
     padding-bottom: 40px;
 }
@@ -244,8 +242,13 @@ pre {
     color: #ff6a48;
 }
 
-#all-categories-a {
+.all-div {
+    margin: 0 auto;
     text-align: center;
+}
+
+#all-categories-a {
+    display: inline-block;
 }
 
 #banner-div {
@@ -266,4 +269,8 @@ pre {
 
 .navbar.is-fixed-top, .hero-body {
     border-bottom: 1px solid #e8e8e8 !important;
+}
+
+#recommend-form {
+    margin-top: 20px;
 }

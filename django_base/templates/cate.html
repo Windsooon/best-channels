@@ -8,33 +8,28 @@
 {% endblock %}
 
 {% block content %}
-<div class="cate-content">
-  <div class="columns is-mobile details-outside-div">
-    <div class="details-div">
-      <section class="day-section hero is-dark">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
-              Newest YouTube channels
-            </h1>
-            <h2 class="subtitle">
-              in last 30 days
-            </h2>
-          </div>
+<div class="cate-content columns is-mobile">
+  <div class="details-div column is-8 is-offset-2">
+    <section class="day-section hero is-warning columns is-mobile">
+      <div class="hero-body">
+        <div class="">
+          <h1 class="title">
+            Newest YouTube channels
+          </h1>
+          <h2 class="subtitle">
+            in last 30 days
+          </h2>
         </div>
-      </section>
-    </div> <!--end details-div -->
-  </div> <!-- end details-outside-div -->
+      </div>
+    </section>
+  </div> <!--end details-div -->
 </div> <!-- end country-content -->
 {% endblock %}
 
 {% block extra_scripts %}
-<script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
         get_newest_channel($(".details-div"));
-        slick_init(2, 1);
-        get_weekly($(".responsive"));
     });
 </script>
 {% endblock %}

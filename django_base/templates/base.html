@@ -7,12 +7,9 @@
     {% block styles %}
     <link rel="shortcut icon" href="{% static 'imgs/youtube_64.png' %}"/>
     <link rel="stylesheet" href="{% static 'css/css_lib/normalize.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/css_lib/bulma.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/css_lib/bulma.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/slider.css' %}" />
     <link rel="stylesheet" href="{% static 'css/cate.css' %}" />
     {% endblock %}
 
@@ -73,6 +70,9 @@
             <div class="navbar-dropdown is-boxed">
             </div> <!-- end navbar-dropdown -->
           </div> <!-- end navbar-item -->
+          <a class="navbar-item" href="./#sub-form">
+            Add Your Channel
+          </a>
         </div> <!-- end navbar-start -->
         <div class="navbar-end">
           <div class="navbar-item">
@@ -145,26 +145,103 @@
   {% endblock %}
   
   {% block banner %}
+  <section class="hero">
+    <div class="hero-body hero-add-div">
+      <div class="all-div">
+        <a id="all-categories-a" href="/all/"><img id="banner-img" src="{% static 'imgs/all.jpg' %}"/></a>
+      </div>
+    </div>
+  </section>
   <div id="banner-div">
-    <a id="all-categories-a" href="/all/"><img id="banner-img" src="{% static 'imgs/all.png' %}"/></a>
   </div>
   {% endblock %}
 
   {% block sub %}
-  <div class="sub-form">
-      <span class="highlight-h1"><h1>Add You Channel</h1></span>
+  <div id="sub-form" class="sub-form columns">
+    <div class="sud-form-div card column is-8 is-offset-2">
+      <section class="hero is-warning">
+        <div class="hero-body hero-add-div">
+          <div>
+            <h1 class="title">
+              Add Your Channel
+            </h1>
+            <h2 class="subtitle">
+              Say Hi To The World
+            </h2>
+          </div>
+        </div>
+      </section>
       <form id="recommend-form">
-        <div class="field">
-            <div class="control">
-              <input class="input" type="text" placeholder="* Channel Display Name (Not Username)">
-            </div> <!-- end control -->
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">* Channel Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input id="channel-name" class="input" type="text" placeholder="Name display on channel page">
+              </p>
+            </div>
+          </div> <!-- end field body -->
         </div> <!-- end field -->
-        <div class="field">
-            <div class="control">
-              <input class="input" type="text" placeholder="* Channel Id">
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">* Channel Id</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input id="channel-id" class="input" type="text" placeholder="Channel Id">
+              </p>
               <a href="https://johnnythetank.github.io/youtube-channel-name-converter/"><p class="help">How to get my channel id?</p></a>
-            </div> <!-- end control -->
+            </div>
+          </div> <!-- end field body -->
         </div> <!-- end field -->
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">* Category</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="is-fullwidth">
+                  <select id="select-add-type"></select>
+                </div>
+              </div> <!-- end control -->
+            </div> <!-- end field is-narrow -->
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="is-fullwidth">
+                  <select id="select-add-category"></select>
+                </div>
+              </div> <!-- end control -->
+            </div> <!-- end field is-narrow -->
+          </div> <!-- end field-body -->
+        </div> <!-- end field is-horizontal -->
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">* Email</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <p class="control">
+                <input id="channel-email" class="input" type="email" placeholder="Your Email Address">
+              </p>
+            </div>
+          </div> <!-- end field body -->
+        </div> <!-- end field -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <!-- Left empty for spacing -->
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <a class="sub-btn button is-primary">Submit</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </div> <!-- end form-div -->
   </div> <!-- end sub_form -->
@@ -175,8 +252,6 @@
   {% block scripts %}
   <script src="{% static 'js/js_lib/jquery.min.js' %}"></script>
   <script src="{% static 'js/js_lib/selectize.min.js' %}"></script>
-  <script src="{% static 'js/js_lib/slick.min.js' %}"></script>
-  <script src="{% static 'js/slider.js' %}"></script>
   <script src="{% static 'js/base.js' %}"></script>
   <script src="{% static 'js/cate.js' %}"></script>
   <script>
