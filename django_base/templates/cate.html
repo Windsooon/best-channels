@@ -8,9 +8,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="cate-content columns is-mobile">
-  <div class="details-div column is-8 is-offset-2">
-    <section class="day-section hero is-warning columns is-mobile">
+<div class="cate-content container">
+  <div class="details-div">
+    <section class="day-section hero columns is-mobile">
       <div class="hero-body">
         <div class="">
           <h1 class="title">
@@ -28,8 +28,6 @@
 
 {% block extra_scripts %}
 <script>
-    $(document).ready(function() {
-        get_newest_channel($(".details-div"));
-    });
+    get_newest_channel($(".details-div"));
 </script>
 {% endblock %}

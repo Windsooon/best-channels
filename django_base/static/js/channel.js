@@ -24,7 +24,7 @@ function get_video_playlist(order, id, container, name, type="video") {
 
 function set_videos_block(value, container, name="video", type="video") {
     var $video_block = $("<div />", {
-           "class": "pure-u-1-1 pure-u-sm-1-1 pure-u-md-1-3 " + name + "-block"
+           "class": "column is-4 is-12-mobile " + name + "-block"
        });
     if (type == "playlist") {
         video_href = "https://www.youtube.com/playlist?list=" + value["id"]["playlistId"]
@@ -47,7 +47,7 @@ function set_videos_block(value, container, name="video", type="video") {
            "class": name + "-header-div"
        });
     var $video_header_img = $("<img />", {
-           "class": name + "-header-img",
+           "class": name + "-header-img lazyload",
             "src": value["snippet"]["thumbnails"]["high"]["url"]
        });
     var $video_details = $("<div />", {
@@ -93,6 +93,9 @@ function set_videos_block(value, container, name="video", type="video") {
     $video_content.append($video_view);
     $video_content.append($video_time);
     container.append($video_block);
+    $("img.lazyload").lazyload({
+       effect : "fadeIn"
+    });
 }
 
 function get_channel_details(id) {

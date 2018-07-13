@@ -19,16 +19,15 @@
 
 {% block content %}
 <div class="channel-header">
-  <div class="pure-g channel-pure">
-    <div class="pure-u-1-1 pure-u-md-1-1 pure-u-lg-1-1 pure-u-xl-1-1 channel-header-pure">
-      <div id="channel-header-outside" >
-        <div class="pure-u-1-1 pure-u-md-2-24"></div>
-        <div id="channel-header-img" class="pure-u-1-1 pure-u-sm-4-24 pure-u-md-4-24">
-          <div id="channel-header-img-wrapper" class="pure-u-1-3 pure-u-sm-1-1 pure-u-md-1-1">
+  <div class="channel-pure container">
+    <div class="channel-header-pure">
+      <div id="channel-header-outside" class="columns is-mobile">
+        <div id="channel-header-img" class="column is-2 is-offset-2">
+          <div id="channel-header-img-wrapper">
             <img id="channel-src" src="" />
           </div>
         </div> <!-- end channel-header-img -->
-        <div id="channel-header-details" class="pure-u-1-1 pure-u-sm-18-24 pure-u-md-16-24">
+        <div id="channel-header-details" class="column is-6">
           <div id="channel-header-details-wrapper">
             <div id="channel-header-title">
                 <a target="_blank" class="channel-title-href" href="https://www.youtube.com/channel/{{ channel_id }}"><span id="channel-header-text"></span></a>
@@ -49,20 +48,19 @@
             </div> <!-- end channel-header-content -->
           </div> <!-- end channel-header-details -->
         </div>
-        <div class="pure-u-sm-2-24 pure-u-md-2-24 pure-u-lg-2-24 pure-u-xl-2-24"></div>
       </div> <!-- end channel-header-outside -->
       <div class="clear"></div>
     </div> <!-- end pure-u-1 -->
   </div> <!-- end pure-g -->
 </div> <!-- end channel-header -->
 
-<div class="channel-content">
+<div class="channel-content container">
   <div class="hostest-video">
     <div id="hostest-content-title">
       <img class="content-img-icon" src="{% static 'imgs/Rocket.png' %}" />
       <h1 id="hostest-content-title-text">Newest Videos</h1>
     </div>
-    <div class="pure-g hostest-content-g">
+    <div class="columns is-multiline hostest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
   <div class="newest-video">
@@ -70,7 +68,7 @@
       <img class="content-img-icon" src="{% static 'imgs/Like.png' %}" />
       <h1 id="newest-content-title-text">Hostest Videos</h1>
     </div>
-    <div class="pure-g newest-content-g">
+    <div class="columns is-multiline newest-content-g">
     </div> <!-- end channel-content-g -->
   </div> <!-- end hostest-video -->
   <div id="comment-div">
@@ -110,8 +108,5 @@
     get_channel_details(channel_id);
     get_video_playlist("date", channel_id, $(".hostest-content-g"), "video");
     get_video_playlist("viewCount", channel_id, $(".newest-content-g"), "video");
-    $(document).ready(function() {
-        slick_init();
-    });
 </script>
 {% endblock %}

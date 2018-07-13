@@ -50,7 +50,7 @@
   </head>
   {% block nav %}
   <div class="outside">
-    <nav class="navbar is-transparent is-fixed-top">
+    <nav class="nav-channelshunt navbar is-transparent is-fixed-top">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
           <p id="logo-p">Channelshunt</p>
@@ -93,41 +93,36 @@
         </div>
       </div>
     </nav>
-    <section class="hero is-bold hero-logo">
-      <div class="hero-body">
+    <section class="hero is-bold is-medium hero-logo">
+      <div class="hero-body hero-first-body">
         <div class="container">
-          <div class="columns is-mobile">
-            <div class="column is-5">
-              <img src="{% static 'imgs/bear256.png' %}" alt="Channelshunt logo">
+          <div class="columns">
+            <div id="hero-logo-div" class="column is-5 hero-logo-div">
+              <img src="{% static 'imgs/bear128.png' %}" alt="Channelshunt logo">
             </div>
-            <div class="column is-7">
+            <div class="column is-7 hero-logo-div">
               <h1 class="title">
               Discover trending YouTube channels.
               </h1>
               <h2 id="youtube-count" class="subtitle">
               </h2>
+              <form id="subscribe-form">
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input id="subscribe-email" class="input" type="text" placeholder="Your Email Address">
+          </p>
+          <p class="control">
+            <a class="button is-link" id="subscribe-email-btn">
+              Subscribe
+            </a>
+          </p>
+        </div>
+      </form>
             </div>
         </div>
       </div>
     </section>
 
-  {% endblock %}
-
-  {% block subscribe %}
-    <div class="subscribe-form">
-      <form class="pure-form pure-g" id="subscribe-form">
-        <div class="pure-u-2-3 pure-u-md-2-3 subscribe-form-div">
-        <fieldset>
-            <legend id="sub-legend">Get Trending YouTube channels.</legend>
-            <input id="subscribe-email" class="pure-u-20-24 pure-u-md-10-24" placeholder="Email Address" type="email">
-            <button type="button" id="subscribe-email-btn" class="pure-button pure-button-primary pure-u-2-3 pure-u-md-4-24">Subscribe</button>
-            </div>
-        </fieldset>
-      </form>
-    </div> <!-- end form-div -->
-  </div> <!-- end sub_form -->
-  <div class="on-github">
-  </div>
   {% endblock %}
   </div> <!-- end outside -->
   
@@ -157,9 +152,9 @@
   {% endblock %}
 
   {% block sub %}
-  <div id="sub-form" class="sub-form columns">
-    <div class="sud-form-div card column is-8 is-offset-2">
-      <section class="hero is-warning">
+  <div id="sub-form" class="sub-form columns is-mobile">
+    <div class="sud-form-div card column is-8-desktop is-8-tablet is-10-mobile is-offset-1-mobile is-offset-2-tablet">
+      <section class="hero">
         <div class="hero-body hero-add-div">
           <div>
             <h1 class="title">
@@ -254,6 +249,7 @@
   <script src="{% static 'js/js_lib/selectize.min.js' %}"></script>
   <script src="{% static 'js/base.js' %}"></script>
   <script src="{% static 'js/cate.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
   <script>
     $(document).ready(function(){
         get_channels_count();
@@ -268,19 +264,17 @@
   </body>
   {% block footer %}
   <footer>
-    <div class="base-footer">
-      <div class="pure-g footer-div">
-        <div class="pure-u-1-3 pure-u-md-1-3">
-          <a href="mailto:contact@channelshunt.com?subject=Hello"><h4>Suggestions?</h4></a>
-        </div>
-        <div class="pure-u-1-3 pure-u-md-1-3">
-          <a href="/why/"><h4>Why Us?</h4></a>
-        </div>
-        <div class="pure-u-1-3 pure-u-md-1-3">
-          <a href="https://www.unicooo.com"><h4>© 2018 - Unicooo</h4></a>
-        </div>
-      </div> <!-- end pure-g -->
-    </div> <!-- end base-footer -->
+    <div class="footer-div columns is-mobile">
+      <div class="column is-4">
+        <a href="mailto:contact@channelshunt.com?subject=Hello"><h4>Suggestions?</h4></a>
+      </div>
+      <div class="column is-4">
+        <a href="/why/"><h4>Why Us?</h4></a>
+      </div>
+      <div class="column is-4">
+        <a href="https://www.unicooo.com"><h4>© 2018 - Unicooo</h4></a>
+      </div>
+    </div> <!-- end columns -->
   </footer>
   {% endblock %}
 

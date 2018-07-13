@@ -13,12 +13,11 @@ function get_category(url, container, pre) {
 // set category block
 function set_category_block(data, container, pre) {
      var $cate_block_pure = $("<div />", {
-            "class": "pure-g cate-block-pure"
+            "class": "columns is-multiline"
         });
      $.each(data, function(k, v) {
          var $cate_block = $("<div />", {
-                "class": "cate-block pure-u-1 pure-u-sm-1-1 " + 
-                         "pure-u-md-1-3"
+                "class": "cate-block column is-4"
             });
          var $cate_block_a = $("<a />", {
                 "class": "cate-block-a",
@@ -28,14 +27,11 @@ function set_category_block(data, container, pre) {
                 "class": "cate-block-outside"
             });
          var $cate_block_inside = $("<div />", {
-                "class": "cate-block-inside"
-            });
-         var $cate_title = $("<div />", {
-                "class": "cate-title pure-u-2-3 pure-u-sm-2-3 pure-u-md-2-3"
+                "class": "cate-block-inside columns is-mobile"
             });
          if (pre == "/subcategory") {
              var $cate_img_span = $("<span />", {
-                    "class": "cate-count-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
+                    "class": "cate-count-span column is-2 is-offset-2",
                     "text": v["playlist"].length
                 });
              var $cate_img = $("<img />", {
@@ -44,7 +40,7 @@ function set_category_block(data, container, pre) {
          }
          else {
              var $cate_img_span = $("<span />", {
-                    "class": "cate-img-span pure-u-6-24 pure-u-sm-6-24 pure-u-md-6-24",
+                    "class": "cate-img-span column is-3 is-offset-2",
                 });
              var $cate_img = $("<img />", {
                     "class": "cate-img",
@@ -52,14 +48,11 @@ function set_category_block(data, container, pre) {
                     '/static/imgs/' + v["thumbnail"] + '.png'
                 });
          }
-         var $cate_grep = $("<span />", {
-                "class": "cate-grep pure-u-2-24 pure-u-sm-2-24 pure-u-md-2-24",
-            });
-         var $cate_wrapper_span = $("<span />", {
-                "class": "cate-wrapper-span pure-u-16-24 pure-u-sm-16-24 pure-u-md-16-24",
-            });
+         // var $cate_wrapper_span = $("<span />", {
+         //        "class": "cate-wrapper-span column is-5",
+         //    });
          var $cate_span = $("<p />", {
-                "class": "cate-span",
+                "class": "cate-span column is-5",
                 "text": v["name"]
             });
          container.append($cate_block_pure);
@@ -67,12 +60,10 @@ function set_category_block(data, container, pre) {
          $cate_block.append($cate_block_a);
          $cate_block_a.append($cate_block_outside);
          $cate_block_outside.append($cate_block_inside);
-         $cate_block_inside.append($cate_title);
-         $cate_title.append($cate_img_span);
-         $cate_title.append($cate_grep);
-         $cate_title.append($cate_wrapper_span);
+         $cate_block_inside.append($cate_img_span);
+         $cate_block_inside.append($cate_span);
          $cate_img_span.append($cate_img);
-         $cate_wrapper_span.append($cate_span);
+         // $cate_wrapper_span.append($cate_span);
          height = $cate_block_inside.outerHeight();
      });
 }
@@ -241,8 +232,8 @@ function get_channel_info(data, type, container) {
                      "src": "../../static/imgs/youtube_64.png"
                  });
                  var $channel_img = $("<img />", {
-                     "class": "channel-img",
-                     "src": thumbnails
+                     "class": "lazyload channel-img",
+                     "data-src": thumbnails,
                  });
                  $channel_div.append($channel_inside_a);
                  $channel_div.append($channel_inside_type);
@@ -262,6 +253,9 @@ function get_channel_info(data, type, container) {
                  $channel_thumbnail.append($channel_thumbnail_inside);
                  $channel_thumbnail_inside.append($channel_img);
                  container.append($channel_div);
+                 $("img.lazyload").lazyload({
+                    effect : "fadeIn"
+                 });
             },
             error: function(){
             },

@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}{{ title }} - Best Youtube Channels{% endblock %} 
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
+<link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
+{% endblock %}
 {% block content %}
 <div class="slider-outside-div">
   <div class="slider-title">
-    <img class="details-title-img" src="{% static 'imgs/tv.png' %}" />
-    <h2 class="details-title-span"></h2>
     <div class="slider-wrapper">
       <div class="slider newest-responsive">
         {% for i in "012" %}
@@ -13,30 +15,27 @@
           <a id="newest-a-{{ i }}" class="newest-a" href="../../videos/{{ title }}/"/>
             <div class="newest-inside-div">
               <div class="newest-thumbnail">
-                <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.png' %}"/>
+                <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.jpg' %}"/>
               </div> <!-- end channel-thumbnail -->
             </div> <!-- end channel-inside-div -->
           </a> <!-- end channel-inside-a -->
         </div> <!-- end newest-div -->
         {% endfor %}
       </div> <!-- end newest-responsive -->
-      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span id="newest-videos-span">Click to watch newest Videos Under {{ title }}</span></a>
+      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span class="subtitle">Newest Videos In {{ title }}</span></a>
     </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
 </div> <!-- end slider-outiside-div -->
-<div class="cate-content">
-  <div class="pure-g details-outside-div">
-    <div class="pure-u-1 pure-u-md-1-1 pure-u-sm-1-1 details-div">
+<div class="cate-content container">
+  <div class="columns details-outside-div">
+    <div class="details-div">
     </div> <!--end details-div -->
   </div> <!-- end details-outside-div -->
 </div> <!-- end cate-content -->
 {% endblock %}
 
 {% block slider-ad %}
-<div class="slider-rs-wrapper">
-  <div class="slider-rs-title">
-    <h2>Suggested Websites</h2>
-  </div>
+<div class="slider-rs-wrapper container">
   <div class="slider responsive">
     {% for i in "012345" %}
     <div class="slider-rs-div">
@@ -45,7 +44,7 @@
     {% endfor %}
   </div>
   <div class="slider-rs-footer">
-    <a href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Add Resources?</p></a>
+    <a href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Show your Product here?</p></a>
   </div>
 </div>
 {% endblock %}
@@ -67,6 +66,8 @@
 
 {% block extra_scripts %}
 <script src="{% static 'js/subcategory.js' %}"></script>
+<script src="{% static 'js/js_lib/slick.min.js' %}"></script>
+<script src="{% static 'js/slider.js' %}"></script>
 <script>
     $(document).ready(function() {
         var title = "{{title}}"

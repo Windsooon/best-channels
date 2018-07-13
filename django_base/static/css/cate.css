@@ -61,19 +61,15 @@
 
 .cate-span {
     display: inline-block;
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     white-space: nowrap;
+    margin-top: 20px !important;
 }
 
 .cate-block-inside {
     margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.cate-block-pure {
-    width: 90%;
-    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .details-title {
@@ -115,7 +111,7 @@
     display: inline-block;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 3.6em; 
+    max-height: 3.5em; 
     line-height: 1.2em;
     text-align:justify;
 }
@@ -138,7 +134,7 @@
 }
 
 .channel-details-inside {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .channel-thumbnail_inside {
@@ -191,7 +187,7 @@
         margin-top: 10px; 
     }
     .cate-span {
-        font-size: 6vw;
+        font-size: 1.4rem;
         margin-top: 0em;
         margin-bottom: 0em;
     }
@@ -249,10 +245,10 @@
 }
 
 .cate-count-span {
-    font-size: 3vw;
+    font-size: 2rem;
     color: white;
     background-color: #0078e7;
-    border-radius: 50%;
+    border-radius: 30px;
 }
 
 .cate-count-span-inside {

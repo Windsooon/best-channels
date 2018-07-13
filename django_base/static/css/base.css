@@ -1,5 +1,13 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
+.title {
+    color: #3273dc;
+}
+
+.subtitle {
+    color: #00d1b2;
+}
+
 * {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
@@ -213,7 +221,10 @@ pre {
 }
 
 .slider-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: white;
+    text-align: center;
 }
 
 #newest-videos-a {
@@ -267,7 +278,7 @@ pre {
     box-shadow: -2px 4px 18px 0px rgba(107,107,107,1);
 }
 
-.navbar.is-fixed-top, .hero-body {
+.nav-channelshunt, .hero-first-body {
     border-bottom: 1px solid #e8e8e8 !important;
 }
 
@@ -281,4 +292,16 @@ pre {
 
 .hero-logo {
     margin-top: 20px;
+}
+
+.hero-logo-div, .hero-add-div, .slider-rs-footer{
+    text-align: center;
+}
+
+.slider-outside-div {
+    margin-top: 20px;
+}
+
+.details-content {
+    padding-top: 20px;
 }

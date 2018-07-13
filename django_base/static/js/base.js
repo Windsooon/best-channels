@@ -139,15 +139,15 @@ $(document).ready(function() {
         }
         var csrftoken = getCookie("csrftoken");
         $.ajax({
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                $(".sub-btn").prop("disabled", true); 
+            },
             url: "/api/playlist/",
             type: "POST",
             contentType: "application/json; charset=utf-8",
             dataType: "JSON",
             data: JSON.stringify(data),
-            beforeSend: function(xhr) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken)
-                    $(".sub-btn").prop("disabled", true); 
-                },
             error: function(xhr, status, error) {
                 if (xhr.status == 404) {
                     alert("Please make sure the channel id is correct.")

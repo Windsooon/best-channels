@@ -4,10 +4,10 @@
 
 .channel-header {
     margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 #channel-header-img-wrapper {
+    padding: 20px;
     margin: 0 auto;
     display: inline-block;
 }
@@ -17,8 +17,6 @@
 }
 
 .channel-pure {
-    margin: 0 auto;
-    width: 90%;
     background-color: white;
 }
 
@@ -54,10 +52,6 @@
     overflow: hidden;
 }
 
-#channel-header-outside {
-    margin-top: 30px;
-}
-
 #channel-sub-img-span {
     display: inline-block;
     width: 20px;
@@ -91,20 +85,18 @@
 }
 
 .channel-content {
-    width: 90%;
-    margin: 0 auto;
     margin-bottom: 40px;
 }
 
 .video-title-text {
-    font-size: 1.5vw;
+    font-size: 1rem;
     font-weight: bold;
     word-wrap: break-word; 
     overflow-wrap: break-word;
 }
 
 .video-des-text {
-    font-size: 1.1vw;
+    font-size: 1rem;
 }
 
 .video-details-div {
