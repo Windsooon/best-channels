@@ -63,7 +63,7 @@ $(document).ready(function() {
         labelField: "name",
         searchField: "name",
         preload: true,
-        placeholder: "Choose a sub-category",
+        placeholder: "Choose a subcategory",
         options: [],
         closeAfterSelect: true,
         create: false,
@@ -167,7 +167,7 @@ $(document).ready(function() {
                 });
 
                 $thank_you_div.append($thank_you_text);
-                $(".sub-form").append($thank_you_div);
+                $(".hero-add-div").append($thank_you_div);
             },
             complete: function() {
                 $(".sub-btn").prop("disabled", false); 

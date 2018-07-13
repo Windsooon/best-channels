@@ -9,8 +9,10 @@ def cate(request):
 def why(request):
     return render(request, 'why.html')
 
+
 def all(request):
     return render(request, 'all.html')
+
 
 def channel(request, title):
     channel = get_object_or_404(Playlist, channel_title=title)
