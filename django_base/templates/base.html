@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     {% block styles %}
-    <link rel="shortcut icon" href="{% static 'imgs/youtube_64.png' %}"/>
+    <link rel="shortcut icon" href="{% static 'imgs/bear64.png' %}"/>
     <link rel="stylesheet" href="{% static 'css/css_lib/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/bulma.min.css' %}" />
@@ -53,7 +53,7 @@
     <nav class="navbar is-transparent is-fixed-top">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="https://bulma.io/images/bulma-logo.png" alt="Channelshunt logo" width="112" height="28">
+          <p id="logo-p">Channelshunt</p>
         </a>
         <div class="navbar-burger burger" data-target="navbar-channels">
           <span></span>
@@ -93,12 +93,12 @@
         </div>
       </div>
     </nav>
-    <section class="hero is-medium is-bold">
+    <section class="hero is-bold hero-logo">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-mobile">
             <div class="column is-5">
-              <img src="https://bulma.io/images/bulma-logo.png" alt="Channelshunt logo" width="112" height="28">
+              <img src="{% static 'imgs/bear256.png' %}" alt="Channelshunt logo">
             </div>
             <div class="column is-7">
               <h1 class="title">

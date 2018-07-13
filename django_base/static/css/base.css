@@ -274,3 +274,11 @@ pre {
 #recommend-form {
     margin-top: 20px;
 }
+
+#logo-p {
+    font-weight: bold !important;
+}
+
+.hero-logo {
+    margin-top: 20px;
+}

@@ -172,6 +172,9 @@ function get_channel_info(data, type, container) {
                 'Access-Control-Allow-Origin': '*'
             },
 	    	success:function(data){
+                if (data.items.length == 0) {
+                    return
+                }
                 var title = data["items"][0]["snippet"]["title"];
                 var description = data["items"][0]["snippet"]["description"];
                 var thumbnails = data["items"][0]["snippet"]["thumbnails"]["medium"]["url"];

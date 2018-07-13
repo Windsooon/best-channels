@@ -3,8 +3,9 @@ from datetime import datetime, timedelta
 from requests.auth import HTTPBasicAuth
 from django.db.models import Count
 from django.views.decorators.csrf import csrf_exempt
+from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -63,6 +64,26 @@ class InnerViewSet(viewsets.ModelViewSet):
 
 class PlaylistViewSet(viewsets.ModelViewSet):
     serializer_class = PlaylistSerializer
+
+    def create(self, request, *args, **kwargs):
+        channel_id = request.data['channel_id']
+        try:
+            Playlist.objects.get(channel_id=channel_id)
+        except ObjectDoesNotExist:
+            response = requests.get(
+                'https://www.youtube.com/channel/' + channel_id)
+            if response.status_code == 404:
+                return Response(status=404)
+            else:
+                serializer = self.get_serializer(data=request.data)
+                serializer.is_valid(raise_exception=True)
+                self.perform_create(serializer)
+                headers = self.get_success_headers(serializer.data)
+                return Response(
+                    serializer.data, status=status.HTTP_201_CREATED,
+                    headers=headers)
+        else:
+            return Response(status=401)
 
     def get_queryset(self):
         queryset = Playlist.objects.all().order_by('-update_time')

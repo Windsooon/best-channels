@@ -149,10 +149,10 @@ $(document).ready(function() {
                     $(".sub-btn").prop("disabled", true); 
                 },
             error: function(xhr, status, error) {
-                if (xhr.responseJSON.channel_id == "20001") {
+                if (xhr.status == 404) {
                     alert("Please make sure the channel id is correct.")
                 }
-                else if (xhr.responseJSON.channel_id == "playlist with this channel id already exists."){
+                else if (xhr.status == 401){
                     alert("Channel already exists."); 
                 }
             },
