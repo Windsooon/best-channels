@@ -53,7 +53,7 @@
     <nav class="nav-channelshunt navbar is-transparent is-fixed-top">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <p id="logo-p">Channelshunt</p>
+          <img src="{% static 'imgs/bear128.png' %}" alt="Channelshunt logo"/>
         </a>
         <div class="navbar-burger burger" data-target="navbar-channels">
           <span></span>
@@ -100,10 +100,11 @@
           <div class="columns">
             <div id="hero-logo-div" class="column is-5 hero-logo-div">
               <a href="/"><img src="{% static 'imgs/bear128.png' %}" alt="Channelshunt logo"></a>
+              <p class="title" >Channelhunt</p>
             </div>
             <div class="column is-7 hero-logo-div">
               <h1 class="title">
-              Discover trending YouTube channels.
+              Discover Next YouTube channels.
               </h1>
               <h2 id="youtube-count" class="subtitle">
               </h2>
@@ -143,7 +144,7 @@
   {% block sub %}
   <div id="sub-form" class="sub-form">
     <div class="sud-form-div card columns is-mobile">
-      <div class="column is-8 is-offset-2">
+      <div class="column is-8-tablet is-10-mobile is-offset-2-tablet is-offset-1-mobile">
         <section class="hero">
           <div class="hero-body hero-add-div">
             <div>
@@ -254,17 +255,18 @@
   </body>
   {% block footer %}
   <footer>
-    <div class="footer-div columns is-mobile">
-      <div class="column is-4">
-        <a href="mailto:contact@channelshunt.com?subject=Hello"><h4>Suggestions?</h4></a>
+    <nav class="level card level-footer">
+      <div class="level-item has-text-centered">
+        <div>
+          <a href="mailto:contact@channelshunt.com?subject=Hello"><h4>Suggestions?</h4></a>
+        </div>
       </div>
-      <div class="column is-4">
-        <a href="/why/"><h4>Why Us?</h4></a>
+      <div class="level-item has-text-centered">
+        <div>
+          <a href="https://www.unicooo.com"><h4>© 2018 - Unicooo</h4></a>
+        </div>
       </div>
-      <div class="column is-4">
-        <a href="https://www.unicooo.com"><h4>© 2018 - Unicooo</h4></a>
-      </div>
-    </div> <!-- end columns -->
+    </nav>
   </footer>
   {% endblock %}
 

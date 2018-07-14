@@ -1,5 +1,7 @@
 function slick_init(big=3, small=1, container=$(".responsive")) {
     container.slick({
+        prevArrow: false,
+        nextArrow: false,
         dots: true,
         infinite: false,
         speed: 300,

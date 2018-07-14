@@ -1,5 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
+.columns {
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+
 .title {
     color: #3273dc;
 }
@@ -298,10 +303,6 @@ pre {
     margin-top: 20px;
 }
 
-.details-content {
-    padding-top: 20px;
-}
-
 .cate-search {
     background-color: white;
     padding-top: 40px;
@@ -384,20 +385,21 @@ pre {
     margin-bottom: 40px;
 }
 
-.details-div {
-    margin-bottom: 20px;
-    border-radius: 6px;
-}
-
 .channel-img {
     max-width: 100%;
     border-radius: 50%;
 }
 
-.channel-indide-div {
+@media only screen and (min-width: 768px) {
+    .channel-indide-a{
+        border-width: 1px 1px 0px 1px !important;
+    }
+}
+
+.channel-indide-a {
     border-style: solid;
     border-color: #e8e8e8;
-    border-width: 1px 1px 0px 1px;
+    border-width: 1px 0px 0px 0px;
 }
 
 .channel-indide-a:hover {
@@ -572,4 +574,9 @@ pre {
 
 .slider-rs-a {
     display: inline-block;
+}
+
+.level-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

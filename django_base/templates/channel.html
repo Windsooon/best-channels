@@ -18,8 +18,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="channel-header">
-  <div class="channel-pure container">
+<div class="channel-header card">
+  <div class="channel-pure">
     <div class="channel-header-pure">
       <div id="channel-header-outside" class="columns is-mobile">
         <div id="channel-header-img" class="lazyload column is-2 is-offset-2 is-hidden-mobile">
@@ -27,7 +27,7 @@
             <img id="channel-src" src="" />
           </div>
         </div> <!-- end channel-header-img -->
-        <div id="channel-header-details" class="column is-tablet-6 is-mobile-12">
+        <div id="channel-header-details" class="column is-6-tablet is-12-mobile">
           <div id="channel-header-details-wrapper">
             <div id="channel-header-title">
                 <a target="_blank" class="channel-title-href" href="https://www.youtube.com/channel/{{ channel_id }}"><span id="channel-header-text"></span></a>
@@ -41,9 +41,9 @@
             </div> <!-- end channel-header-title -->
             <div id="channel-header-content">
               <span id="channel-header-content-span"></span>
-              <div id="channel-time" class="pure-u-1-1 pure-sm-1-1 pure-md-1-1">
-                  <a target="_blank" class="pure-button pure-button-primary get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Browse the Channel</a>
-                  <a class="button-secondary pure-button" href="#channel-comment">Recommendation</a>
+              <div id="channel-time">
+                  <a target="_blank" class="button is-info get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Browse the Channel</a>
+                  <a class="button is-warning" href="#channel-comment">Recommendation</a>
               </div>
             </div> <!-- end channel-header-content -->
           </div> <!-- end channel-header-details -->
@@ -54,7 +54,7 @@
   </div> <!-- end pure-g -->
 </div> <!-- end channel-header -->
 
-<div class="channel-content container">
+<div class="channel-content container card">
   <div class="hostest-video">
     <div id="hostest-content-title">
       <img class="content-img-icon" src="{% static 'imgs/Rocket.png' %}" />

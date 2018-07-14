@@ -111,16 +111,13 @@ function get_channel_info(data, type, container) {
                      "value": type,
                  });
                  var $channel_inside_div = $("<div />", {
-                     "class": "channel-indide-div columns is-mobile"
+                     "class": "channel-indide-div columns"
                  });
                  var $channel_clear = $("<div />", {
-                     "class": "clear"
+                     "class": "heclear"
                  });
                  var $channel_details = $("<div />", {
-                     "class": "channel-details column"
-                 });
-                 var $channel_details_inside = $("<div />", {
-                     "class": "channel-details-inside"
+                     "class": "column"
                  });
                  var $channel_title = $("<div />", {
                      "class": "channel-title",
@@ -164,9 +161,8 @@ function get_channel_info(data, type, container) {
                  $channel_div.append($channel_inside_type);
                  $channel_inside_a.append($channel_inside_div);
                  $channel_inside_div.append($channel_thumbnail);
-                 $channel_details.append($channel_details_inside);
-                 $channel_details_inside.append($channel_title);
-                 $channel_details_inside.append($channel_content);
+                 $channel_details.append($channel_title);
+                 $channel_details.append($channel_content);
                  $channel_inside_div.append($channel_details);
                  $channel_inside_div.append($channel_clear);
                  $channel_content.append($channel_content_span);
