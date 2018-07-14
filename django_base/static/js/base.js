@@ -222,24 +222,12 @@ function get_channels_count() {
     });
 }
 
-function get_categories(container) {
-    $.ajax({
-        url: "/api/outer/",
-        type: "GET",
-        dataType: "JSON",
-        success: function(data) {
-            update_nav(container, data["results"]);
-        },
-        error: function() {
-        },
-    });
-}
 
 function update_nav(container, data) {
     // container
     $.each(data, function(k, v) {
         var $nav_item_a = $("<a />", {
-            "class": "navbar-item",
+            "class": "navbar-item navbar-category",
             "href": real_host + "/category/" + v.name + "/",
             "text": v.name
         });

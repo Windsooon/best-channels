@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load show_categories %}
 <!DOCTYPE html> <html>
   <head>
     <meta charset="UTF-8">
@@ -10,7 +11,6 @@
     <link rel="stylesheet" href="{% static 'css/css_lib/selectize.bootstrap3.css' %}" />
     <link rel="stylesheet" href="{% static 'css/css_lib/bulma.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/cate.css' %}" />
     {% endblock %}
 
     {% block extra_styles %}
@@ -64,10 +64,11 @@
       <div id="navbar-channels" class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" href="/all/">
+            <a class="navbar-link">
               Categories
             </a>
             <div class="navbar-dropdown is-boxed">
+              {% show_categories %}
             </div> <!-- end navbar-dropdown -->
           </div> <!-- end navbar-item -->
           <a class="navbar-item" href="./#sub-form">
@@ -98,7 +99,7 @@
         <div class="container">
           <div class="columns">
             <div id="hero-logo-div" class="column is-5 hero-logo-div">
-              <img src="{% static 'imgs/bear128.png' %}" alt="Channelshunt logo">
+              <a href="/"><img src="{% static 'imgs/bear128.png' %}" alt="Channelshunt logo"></a>
             </div>
             <div class="column is-7 hero-logo-div">
               <h1 class="title">
@@ -139,105 +140,95 @@
   {% block slider %}
   {% endblock %}
   
-  {% block banner %}
-  <section class="hero">
-    <div class="hero-body hero-add-div">
-      <div class="all-div">
-        <a id="all-categories-a" href="/all/"><img id="banner-img" src="{% static 'imgs/all.jpg' %}"/></a>
-      </div>
-    </div>
-  </section>
-  <div id="banner-div">
-  </div>
-  {% endblock %}
-
   {% block sub %}
-  <div id="sub-form" class="sub-form columns is-mobile">
-    <div class="sud-form-div card column is-8-desktop is-8-tablet is-10-mobile is-offset-1-mobile is-offset-2-tablet">
-      <section class="hero">
-        <div class="hero-body hero-add-div">
-          <div>
-            <h1 class="title">
-              Add Your Channel
-            </h1>
-            <h2 class="subtitle">
-              Say Hi To The World
-            </h2>
-          </div>
-        </div>
-      </section>
-      <form id="recommend-form">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">* Channel Name</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
-                <input id="channel-name" class="input" type="text" placeholder="Name display on channel page">
-              </p>
+  <div id="sub-form" class="sub-form">
+    <div class="sud-form-div card columns is-mobile">
+      <div class="column is-8 is-offset-2">
+        <section class="hero">
+          <div class="hero-body hero-add-div">
+            <div>
+              <h1 class="title">
+                Add Your Channel
+              </h1>
+              <h2 class="subtitle">
+                Say Hi To The World
+              </h2>
             </div>
-          </div> <!-- end field body -->
-        </div> <!-- end field -->
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">* Channel Id</label>
           </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
-                <input id="channel-id" class="input" type="text" placeholder="Channel Id">
-              </p>
-              <a href="https://johnnythetank.github.io/youtube-channel-name-converter/"><p class="help">How to get my channel id?</p></a>
+        </section>
+        <form id="recommend-form">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">* Channel Name</label>
             </div>
-          </div> <!-- end field body -->
-        </div> <!-- end field -->
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">* Category</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="is-fullwidth">
-                  <select id="select-add-type"></select>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input id="channel-name" class="input" type="text" placeholder="Name display on channel page">
+                </p>
+              </div>
+            </div> <!-- end field body -->
+          </div> <!-- end field -->
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">* Channel Id</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input id="channel-id" class="input" type="text" placeholder="Channel Id">
+                </p>
+                <a href="https://johnnythetank.github.io/youtube-channel-name-converter/"><p class="help">How to get my channel id?</p></a>
+              </div>
+            </div> <!-- end field body -->
+          </div> <!-- end field -->
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">* Category</label>
+            </div>
+            <div class="field-body">
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="is-fullwidth">
+                    <select id="select-add-type"></select>
+                  </div>
+                </div> <!-- end control -->
+              </div> <!-- end field is-narrow -->
+              <div class="field is-narrow">
+                <div class="control">
+                  <div class="is-fullwidth">
+                    <select id="select-add-category"></select>
+                  </div>
+                </div> <!-- end control -->
+              </div> <!-- end field is-narrow -->
+            </div> <!-- end field-body -->
+          </div> <!-- end field is-horizontal -->
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">* Email</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <p class="control">
+                  <input id="channel-email" class="input" type="email" placeholder="Your Email Address">
+                </p>
+              </div>
+            </div> <!-- end field body -->
+          </div> <!-- end field -->
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <!-- Left empty for spacing -->
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <a class="sub-btn button is-primary">Submit</a>
                 </div>
-              </div> <!-- end control -->
-            </div> <!-- end field is-narrow -->
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="is-fullwidth">
-                  <select id="select-add-category"></select>
-                </div>
-              </div> <!-- end control -->
-            </div> <!-- end field is-narrow -->
-          </div> <!-- end field-body -->
-        </div> <!-- end field is-horizontal -->
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">* Email</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
-                <input id="channel-email" class="input" type="email" placeholder="Your Email Address">
-              </p>
-            </div>
-          </div> <!-- end field body -->
-        </div> <!-- end field -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <!-- Left empty for spacing -->
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <a class="sub-btn button is-primary">Submit</a>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div> <!-- end form-div -->
   </div> <!-- end sub_form -->
   <div class="on-github">
@@ -253,7 +244,6 @@
   <script>
     $(document).ready(function(){
         get_channels_count();
-        get_categories($(".navbar-dropdown"));
     });
   </script>
   {% endblock %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load all_categories %}
 {% block extra_styles %}
 {% endblock %}
 {% block title %}Best Youtube Channels{% endblock %}
@@ -8,9 +9,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="cate-content container">
+<div class="cate-content container card">
   <div class="details-div">
-    <section class="day-section hero columns is-mobile">
+    <section class="day-section hero">
       <div class="hero-body">
         <div class="">
           <h1 class="title">
@@ -22,12 +23,29 @@
         </div>
       </div>
     </section>
+    <div class="details-content columns is-mobile is-multiline">
+      <aside class="menu column is-3 is-offset-1 is-hidden-mobile">
+        <p class="menu-label">
+          Categories
+        </p>
+        <ul class="menu-list">
+          <li>
+            <a class="is-active">Select Category</a>
+            <ul>
+              {% all_categories %}
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <div class="details-content-inside column is-tablet-7 is-mobile-12">
+      </div>
+    </div>
   </div> <!--end details-div -->
 </div> <!-- end country-content -->
 {% endblock %}
 
 {% block extra_scripts %}
 <script>
-    get_newest_channel($(".details-div"));
+    get_newest_channel($(".details-content-inside"));
 </script>
 {% endblock %}

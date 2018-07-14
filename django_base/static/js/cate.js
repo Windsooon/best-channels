@@ -1,73 +1,3 @@
-// get category by name, like Science
-function get_category(url, container, pre) {
-	$.ajax({
-		url: url,
-		type: "GET",
-		dataType: "json",
-		success:function(data){
-            set_category_block(data.results, container, pre);
-        }
-    });
-};
-
-// set category block
-function set_category_block(data, container, pre) {
-     var $cate_block_pure = $("<div />", {
-            "class": "columns is-multiline"
-        });
-     $.each(data, function(k, v) {
-         var $cate_block = $("<div />", {
-                "class": "cate-block column is-4"
-            });
-         var $cate_block_a = $("<a />", {
-                "class": "cate-block-a",
-                "href": real_host + "/" + pre + "/" + replaceSpace(v["name"]) + "/"
-            });
-         var $cate_block_outside = $("<div />", {
-                "class": "cate-block-outside"
-            });
-         var $cate_block_inside = $("<div />", {
-                "class": "cate-block-inside columns is-mobile"
-            });
-         if (pre == "/subcategory") {
-             var $cate_img_span = $("<span />", {
-                    "class": "cate-count-span column is-2 is-offset-2",
-                    "text": v["playlist"].length
-                });
-             var $cate_img = $("<img />", {
-                    "class": "cate-count-span-inside",
-                });
-         }
-         else {
-             var $cate_img_span = $("<span />", {
-                    "class": "cate-img-span column is-3 is-offset-2",
-                });
-             var $cate_img = $("<img />", {
-                    "class": "cate-img",
-                    "src": real_host + 
-                    '/static/imgs/' + v["thumbnail"] + '.png'
-                });
-         }
-         // var $cate_wrapper_span = $("<span />", {
-         //        "class": "cate-wrapper-span column is-5",
-         //    });
-         var $cate_span = $("<p />", {
-                "class": "cate-span column is-5",
-                "text": v["name"]
-            });
-         container.append($cate_block_pure);
-         $cate_block_pure.append($cate_block)
-         $cate_block.append($cate_block_a);
-         $cate_block_a.append($cate_block_outside);
-         $cate_block_outside.append($cate_block_inside);
-         $cate_block_inside.append($cate_img_span);
-         $cate_block_inside.append($cate_span);
-         $cate_img_span.append($cate_img);
-         // $cate_wrapper_span.append($cate_span);
-         height = $cate_block_inside.outerHeight();
-     });
-}
-
 function get_three_videos(data) {
     if (data[0]["playlist"].length < 3) {
         $(".slider-wrapper").css("display", "none");
@@ -128,11 +58,7 @@ function get_newest_channel(
 
 function set_newest_channel_block(data, container) {
      if (data.length != 0) {
-         var $details_content = $("<div />", {
-             "class": "details-content"
-         });
-         container.append($details_content);
-         get_channel_info(data, "placeholder", $details_content);
+         get_channel_info(data, "placeholder", container);
     }
 }
 
@@ -172,13 +98,12 @@ function get_channel_info(data, type, container) {
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
 
                  var $channel_div = $("<div />", {
-                     "class": "channel-div"
+                     "class": "channel-div columns"
                  });
                  var $channel_inside_a = $("<a />", {
-                     "class": "channel-indide-a column is-7",
+                     "class": "channel-indide-a column is-8 is-offset-2",
                      "id": "channel-" + v["channel_id"],
                      "href": real_host + "/channel/" + v["channel_title"] + "/",
-                     "target": "_blank"
                  });
                  var $channel_inside_type = $("<input />", {
                      "class": "channel-indide-type",
