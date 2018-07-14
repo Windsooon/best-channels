@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_styles %}
+{% endblock %}
+{% block title %}{{title}} - Best Youtube Channels{% endblock %}
+
+{% block subscribe %}
+{% endblock %}
+
+{% block content %}
+<div class="cate-content card">
+  <nav class="columns is-multiline is-mobile">
+  {% for inner in inner_set %}
+    <div class="num-column has-text-centered column is-4">
+      <div>
+        <p class="heading">{{ inner.name }}</p>
+        <p class="title">3,456</p>
+        <a href="{{ host }}subcategory/{{ inner.name }}/" class="button is-warning">More</a>
+      </div>
+    </div>
+  {% endfor %}
+  </nav>
+</div>
+{% endblock %}
+
+{% block slider %}
+{% endblock %}
+
+{% block sub %}
+{% endblock %}
+
+{% block slider_scripts %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    $(document).ready(function() {
+        var title = "{{title}}"
+        get_category("/api/inner/?category=" + title , $(".cate-content"), "/subcategory"); 
+    });
+
+</script>
+{% endblock %}

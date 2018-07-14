@@ -23,7 +23,7 @@ SECRET_KEY = '&g*5c4iue$o&w66dvi%g8q-mde%-0t&59gw%9k*5+@7spf%z0-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -140,3 +140,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 20
 }
+
+if DEBUG:
+    SITE_URL = 'http://192.168.1.88:8000/'
+else:
+    SITE_URL = 'https://www.channelshunt.com/'
