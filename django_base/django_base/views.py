@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
+from django.conf import settings
 from playlist.models import Playlist
+from inner.models import Inner
 
 
 def cate(request):
@@ -8,10 +10,6 @@ def cate(request):
 
 def why(request):
     return render(request, 'why.html')
-
-
-def all(request):
-    return render(request, 'all.html')
 
 
 def channel(request, title):
@@ -26,10 +24,16 @@ def channel(request, title):
 
 
 def category(request, title):
+    inner_object = Inner.objects.filter(outer__name=title)
+    host = settings.SITE_URL
+    if inner_object.count() == 0:
+        return render(request, '404.html')
     return render(
-        request, 'small_cate.html',
+        request, 'num_cate.html',
         {
-            'title': title
+            'title': title,
+            'inner_set': inner_object,
+            'host': host,
         }
     )
 
