@@ -117,7 +117,7 @@ function get_channel_info(data, type, container) {
                      "class": "heclear"
                  });
                  var $channel_details = $("<div />", {
-                     "class": "column"
+                     "class": "column is-9"
                  });
                  var $channel_title = $("<div />", {
                      "class": "channel-title",

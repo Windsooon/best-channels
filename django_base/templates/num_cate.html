@@ -31,13 +31,3 @@
 
 {% block slider_scripts %}
 {% endblock %}
-
-{% block extra_scripts %}
-<script>
-    $(document).ready(function() {
-        var title = "{{title}}"
-        get_category("/api/inner/?category=" + title , $(".cate-content"), "/subcategory"); 
-    });
-
-</script>
-{% endblock %}
