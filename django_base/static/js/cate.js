@@ -130,7 +130,7 @@ function get_channel_info(data, type, container) {
                      "text": description
                  });
                  var $channel_thumbnail = $("<div />", {
-                     "class": "channel-thumbnail column is-3 is-hidden-mobile"
+                     "class": "channel-thumbnail column is-3 is-6-mobile"
                  });
                  var $channel_thumbnail_inside = $("<div />", {
                      "class": "channel-thumbnail_inside"
