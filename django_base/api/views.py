@@ -90,7 +90,7 @@ class PlaylistViewSet(viewsets.ModelViewSet):
         related = self.request.query_params.get('newest', None)
         if related is not None:
             queryset = queryset.filter(
-                create_time__gte=datetime.now()-timedelta(days=30)). \
+                create_time__gte=datetime.now()-timedelta(days=7)). \
                 order_by('-create_time')
         return queryset
 
