@@ -24,7 +24,7 @@ function get_video_playlist(order, id, container, name, type="video") {
 
 function set_videos_block(value, container, name="video", type="video") {
     var $video_block = $("<div />", {
-           "class": "column is-4 is-12-mobile " + name + "-block"
+           "class": "column is-4 " + name + "-block"
        });
     if (type == "playlist") {
         video_href = "https://www.youtube.com/playlist?list=" + value["id"]["playlistId"]
@@ -43,12 +43,9 @@ function set_videos_block(value, container, name="video", type="video") {
     var $video_outside = $("<div />", {
            "class": name + "-outside-div"
        });
-    var $video_header = $("<div />", {
-           "class": name + "-header-div"
-       });
     var $video_header_img = $("<img />", {
            "class": name + "-header-img lazyload",
-            "src": value["snippet"]["thumbnails"]["high"]["url"]
+            "data-src": value["snippet"]["thumbnails"]["high"]["url"]
        });
     var $video_details = $("<div />", {
            "class": name + "-details-div"
@@ -82,9 +79,8 @@ function set_videos_block(value, container, name="video", type="video") {
        });
     $video_block.append($video_outside_a);
     $video_outside_a.append($video_outside);
-    $video_outside.append($video_header);
+    $video_outside.append($video_header_img);
     $video_outside.append($video_details);
-    $video_header.append($video_header_img);
     $video_details.append($video_title);
     $video_details.append($video_content);
     $video_title.append($video_title_text);

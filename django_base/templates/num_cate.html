@@ -11,12 +11,12 @@
 <div class="cate-content card">
   <nav class="columns is-multiline is-mobile">
   {% for inner in inner_set %}
-    <div class="num-column has-text-centered column is-4-tablet is-6-mobile">
-      <div>
+    <div class="num-column has-text-centered column is-4-tablet is-6-mobile card">
+      <a href="{{ host }}subcategory/{{ inner.name }}/">
+        <p class="inner-title">{{ inner.name }}</p>
         <p class="heading">Channels Count</p>
         <p class="title">{{ inner.playlist.count }}</p>
-        <a href="{{ host }}subcategory/{{ inner.name }}/" class="button is-warning">{{ inner.name }}</a>
-      </div>
+      </a>
     </div>
   {% endfor %}
   </nav>

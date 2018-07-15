@@ -411,7 +411,7 @@ pre {
     font-weight: bold;
 }
 
-.channel-content-span {
+.channel-content-span, #channel-header-content-span {
     font-size: 1rem;
     color: grey;
     position: relative;
@@ -441,7 +441,7 @@ pre {
 }
 
 .channel-thumbnail_inside {
-    margin: 25px;
+    margin: 15px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -567,11 +567,6 @@ pre {
     margin-bottom: 20px;
 }
 
-.num-column {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
 .slider-rs-a {
     display: inline-block;
 }
@@ -579,4 +574,21 @@ pre {
 .level-footer {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.details-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.num-button {
+    margin-bottom: 15px;
+}
+
+.inner-title {
+    color: #555;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    margin-bottom: 1rem;
 }

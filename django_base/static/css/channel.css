@@ -7,7 +7,7 @@
 }
 
 #channel-header-img-wrapper {
-    padding: 20px;
+    padding: 20px 50px 50px 50px;
     margin: 0 auto;
     display: inline-block;
 }
@@ -80,8 +80,7 @@
 }
 
 .video-header-img {
-    max-width:100%;
-    max-height:100%;
+    width:100%;
 }
 
 .channel-content {
@@ -125,13 +124,11 @@
 
 .video-outside-a {
     display: block;
-    margin: 25px;
-    padding: 10px;
     text-decoration: none;
 }
 
 .hostest-content-g, .newest-content-g, .playlist-content-g{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
