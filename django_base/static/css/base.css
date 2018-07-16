@@ -440,8 +440,12 @@ pre {
     margin-bottom: 8px;
 }
 
-.channel-thumbnail_inside {
-    margin: 15px 5px 5px 5px;
+.channel-thumbnail-padding-true {
+    margin: 18px;
+}
+
+.channel-thumbnail-padding-false {
+    margin: 10px 5px 5px 5px;
 }
 
 @media only screen and (max-width: 767px) {

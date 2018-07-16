@@ -58,27 +58,24 @@ function get_newest_channel(
 
 function set_newest_channel_block(data, container) {
      if (data.length != 0) {
-         get_channel_info(data, "placeholder", container);
+         get_channel_info(data, "placeholder", container, padding=false);
     }
 }
 
 
 function set_channel_block(data, container) {
      if (data[0].length != 0) {
-         $(".details-title-span").text(data[0]["name"].toUpperCase());
-         $(".details-title-span").attr("id", data[0]["name"].replace(' ', '-'));
-         // $(".details-title-link").text("Newest Videos Under " + data[0]["name"]);
-         // $(".details-title-link").attr("href", "http://" + window.location.hostname + "/videos/" + data[0]["name"] + "/");
          var $details_content = $("<div />", {
              "class": "details-content"
          });
          container.append($details_content);
-         get_channel_info(data[0]["playlist"], data[0]["name"], $details_content);
+         get_channel_info(
+             data[0]["playlist"], data[0]["name"], $details_content, padding=true);
     }
 }
 
 
-function get_channel_info(data, type, container) {
+function get_channel_info(data, type, container, padding=false) {
     $.each(data, function(k, v) {
         url = "https://www.googleapis.com/youtube/v3/channels?part=snippet, statistics&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&id=" + v["channel_id"];
         $.ajax({
@@ -132,8 +129,14 @@ function get_channel_info(data, type, container) {
                  var $channel_thumbnail = $("<div />", {
                      "class": "channel-thumbnail column is-3"
                  });
+                 if(padding == true) {
+                     padding_class = "channel-thumbnail-padding-true";
+                 }
+                 else {
+                     padding_class = "channel-thumbnail-padding-false";
+                 }
                  var $channel_thumbnail_inside = $("<div />", {
-                     "class": "channel-thumbnail_inside"
+                     "class": padding_class
                  });
                  var $channel_name = $("<span />", {
                      "class": "channel-name",
