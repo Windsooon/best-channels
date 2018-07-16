@@ -32,10 +32,6 @@ function subscribe_email_click(title) {
     });
 }
 
-function update_sub(title) {
-    $("#sub-legend").text("Get Trending " + title + " Channel Newsletter Update!");
-}
-
 function update_ad(title) {
     $.ajax({
         url: '/api/resource/' + '?inner=' + title,

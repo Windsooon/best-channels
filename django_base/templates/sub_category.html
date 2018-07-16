@@ -22,7 +22,7 @@
         </div> <!-- end newest-div -->
         {% endfor %}
       </div> <!-- end newest-responsive -->
-      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span class="title">Newest Videos In {{ title }}</span></a>
+      <a id="newest-videos-a" href="../../videos/{{ title }}/"><span class="subtitle">Newest Videos In {{ title }}</span></a>
     </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
 </div> <!-- end slider-outiside-div -->
@@ -56,11 +56,10 @@
     $(document).ready(function() {
         var title = "{{title}}"
         get_channel(title , $(".cate-content")); 
-        update_sub(title);
         subscribe_email_click(title);
         update_slider(title);
         slick_init();
-        slick_init(3, 2, $(".newest-responsive"));
+        slick_init(3, 1, $(".newest-responsive"));
         update_ad(title);
     });
 </script>
