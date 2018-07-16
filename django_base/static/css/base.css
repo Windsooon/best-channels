@@ -420,7 +420,6 @@ pre {
     overflow: hidden;
     max-height: 2.4em; 
     line-height: 1.2em;
-    text-align:justify;
 }
 
 .channel-title, .channel-content {
