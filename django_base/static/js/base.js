@@ -86,7 +86,7 @@ $(document).ready(function() {
         labelField: "name",
         searchField: "name",
         preload: true,
-        placeholder: "Search",
+        placeholder: "Sub Categories",
         options: [],
         closeAfterSelect: true,
         create: false,
