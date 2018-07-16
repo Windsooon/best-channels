@@ -81,6 +81,10 @@ function get_channel_info(data, type, container, padding=false) {
         $.ajax({
 	    	url: url,
 	    	type: "GET",
+            cache: true,
+            headers: {
+                'Cache-Control': 'max-age=2000'
+            },
 	    	dataType: "json",
             headers: {
                 'Access-Control-Allow-Origin': '*'
