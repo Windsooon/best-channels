@@ -163,7 +163,7 @@ function get_channel_info(data, type, container, padding=false) {
                  });
                  var $channel_sub_img = $("<img />", {
                      "class": "channel-sub-img",
-                     "src": "../../static/imgs/youtube_64.png"
+                     "src": "../../../static/imgs/youtube_64.png"
                  });
                  var $channel_img = $("<img />", {
                      "class": "lazyload channel-img",
