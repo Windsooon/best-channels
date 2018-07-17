@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect
 from django.conf import settings
 from playlist.models import Playlist
 from inner.models import Inner
@@ -25,8 +26,8 @@ def channel(request, title):
 
 
 def category(request, title):
-    inner_object = Inner.objects.filter(outer__name=title)
     host = settings.SITE_URL
+    inner_object = Inner.objects.filter(outer__name=title)
     if inner_object.count() == 0:
         return render(request, '404.html')
     return render(
@@ -63,6 +64,11 @@ def sub_category(request, title, sub):
             'sub': sub
         }
     )
+
+
+def old_sub_category(request, sub):
+    outer = get_object_or_404(Outer, inner__name=sub)
+    return redirect('sub_category', title=outer.name, sub=sub)
 
 
 def videos(request, title):
