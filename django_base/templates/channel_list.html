@@ -12,7 +12,7 @@
       <div class="slider newest-responsive">
         {% for i in "012" %}
         <div class="newest-div">
-          <a id="newest-a-{{ i }}" class="newest-a" href="../../videos/{{ sub }}/"/>
+          <a id="newest-a-{{ i }}" class="newest-a" href="{{ host }}videos/{{ sub }}/"/>
             <div class="newest-inside-div">
               <div class="newest-thumbnail">
                 <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.jpg' %}"/>
@@ -22,7 +22,7 @@
         </div> <!-- end newest-div -->
         {% endfor %}
       </div> <!-- end newest-responsive -->
-      <a id="newest-videos-a" href="../../videos/{{ sub }}/"><span class="subtitle">Newest Videos In {{ title }}</span></a>
+      <a id="newest-videos-a" href="{{ host }}videos/{{ sub }}/"><span class="subtitle">Newest Videos In {{ title }}</span></a>
     </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
 </div> <!-- end slider-outiside-div -->

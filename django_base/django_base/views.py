@@ -57,9 +57,11 @@ def all(request):
 
 
 def sub_category(request, title, sub):
+    host = settings.SITE_URL
     return render(
         request, 'channel_list.html',
         {
+            'host': host,
             'title': title,
             'sub': sub
         }
