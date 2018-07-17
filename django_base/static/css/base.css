@@ -312,6 +312,7 @@ pre {
 .cate-content {
     margin-top: 40px;
     margin-bottom: 40px;
+    padding-top: 1.5rem;
 }
 
 .select-add {
@@ -440,7 +441,7 @@ pre {
 }
 
 .channel-thumbnail-padding-true {
-    margin: 18px;
+    margin: 10px;
 }
 
 .channel-thumbnail-padding-false {
@@ -591,4 +592,9 @@ pre {
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.125;
+}
+
+.bread-div {
+    margin-left: 2rem;
+    margin-bottom: 2.5rem !important;
 }

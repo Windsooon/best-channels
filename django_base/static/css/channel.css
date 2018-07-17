@@ -7,7 +7,7 @@
 }
 
 #channel-header-img-wrapper {
-    padding: 20px 50px 50px 50px;
+    padding: 30px 30px 30px 30px;
     margin: 0 auto;
     display: inline-block;
 }
@@ -26,7 +26,7 @@
 }
 
 #channel-header-text {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -37,7 +37,7 @@
 #channel-header-sub {
     display: inline-block;
     float: right;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 #channel-sub-text {

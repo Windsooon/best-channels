@@ -135,7 +135,7 @@ $(document).ready(function() {
         render: {
             item: function(item, escape) {
                 return "<div>" +
-                    ("<span class=" + item.outer + ">" + item.name + "</span>") +
+                    ("<span id='search-outer' value=" + item.outer + ">" + item.name + "</span>") +
                 "</div>";
             },
             option: function(item, escape) {
@@ -147,7 +147,7 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            window.location = real_host + "/subcategory/" + replaceSpace(value) + "/";
+            window.location = real_host + "/" + $("#search-outer").val() + "/" + replaceSpace(value) + "/";
             // window.location.replace(real_host + "/subcategory/" + replaceSpace(value) + "/");
         },
         load: function(query, callback) {
