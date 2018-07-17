@@ -95,7 +95,12 @@ function get_channel_info(data, type, container, padding=false) {
                 }
                 var title = data["items"][0]["snippet"]["title"];
                 var description = data["items"][0]["snippet"]["description"];
-                var thumbnails = data["items"][0]["snippet"]["thumbnails"]["medium"]["url"];
+                if (padding) {
+                    var thumbnails = data["items"][0]["snippet"]["thumbnails"]["medium"]["url"];
+                }
+                else {
+                    var thumbnails = data["items"][0]["snippet"]["thumbnails"]["default"]["url"];
+                }
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
 
                  var $channel_div = $("<div />", {
