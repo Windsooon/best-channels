@@ -2,20 +2,34 @@
 {% load staticfiles %}
 {% block extra_styles %}
 {% endblock %}
-{% block title %}{{title}} - Best Youtube Channels{% endblock %}
+{% block title %}{{ title }} - Best Youtube Channels{% endblock %}
 
 {% block subscribe %}
 {% endblock %}
 
 {% block content %}
-<div class="cate-content card">
+<div class="cate-content card container">
+  <div class="bread-div breadcrumb is-medium" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="/all/">All</a></li>
+      <li class="is-active"><a href="#" aria-current="page">{{ title }}</a></li>
+    </ul>
+  </div>
   <nav class="columns is-multiline is-mobile">
-  {% for inner in inner_set %}
+  {% for object in object_set %}
     <div class="num-column has-text-centered column is-4-tablet is-6-mobile card">
-      <a href="{{ host }}subcategory/{{ inner.name }}/">
-        <p class="inner-title">{{ inner.name }}</p>
-        <p class="heading">Channels Count</p>
-        <p class="title">{{ inner.playlist.count }}</p>
+        {% if title == 'All Categories' %}
+          <a href="{{ host }}category/{{ object.name }}/">
+          <p class="inner-title">{{ object.name }}</p>
+          <p class="heading">Subcategories Count</p>
+          <p class="title">{{ object.inner.count }}</p>
+        {% else %}
+          <a href="{{ host }}category/{{ title }}/{{ object.name }}/">
+          <p class="inner-title">{{ object.name }}</p>
+          <p class="heading">Channels Count</p>
+          <p class="title">{{ object.playlist.count }}</p>
+        {% endif %}
+
       </a>
     </div>
   {% endfor %}

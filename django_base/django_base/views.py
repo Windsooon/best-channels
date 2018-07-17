@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from playlist.models import Playlist
 from inner.models import Inner
+from outer.models import Outer
 
 
 def cate(request):
@@ -32,17 +33,34 @@ def category(request, title):
         request, 'num_cate.html',
         {
             'title': title,
-            'inner_set': inner_object,
+            'object_set': inner_object,
             'host': host,
         }
     )
 
 
-def sub_category(request, sub):
+def all(request):
+    '''
+    Get all category
+    '''
+    host = settings.SITE_URL
+    outer_object = Outer.objects.all()
     return render(
-        request, 'sub_category.html',
+        request, 'num_cate.html',
         {
-            'title': sub.replace('-', ' ')
+            'title': 'All Categories',
+            'object_set': outer_object,
+            'host': host,
+        }
+    )
+
+
+def sub_category(request, title, sub):
+    return render(
+        request, 'channel_list.html',
+        {
+            'title': title,
+            'sub': sub
         }
     )
 
