@@ -103,11 +103,17 @@ function get_channel_info(data, type, container, padding=false) {
                 }
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
 
-                 var $channel_div = $("<div />", {
+                var $channel_div = $("<div />", {
                      "class": "channel-div columns"
-                 });
+                });
+                 if (padding  == true) {
+                    var inside_a_class = "channel-indide-a column is-6 is-offset-3"
+                 }
+                 else {
+                    var inside_a_class = "channel-indide-a column is-10 is-offset-1";
+                 }
                  var $channel_inside_a = $("<a />", {
-                     "class": "channel-indide-a column is-8 is-offset-2",
+                     "class": inside_a_class,
                      "id": "channel-" + v["channel_id"],
                      "href": real_host + "/channel/" + v["channel_title"] + "/",
                  });

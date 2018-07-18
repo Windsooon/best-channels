@@ -42,8 +42,12 @@
             <div id="channel-header-content">
               <span id="channel-header-content-span"></span>
               <div id="channel-time">
-                  <a target="_blank" class="button is-info get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Browse the Channel</a>
-                  <a class="button is-warning" href="#channel-comment">Recommendation</a>
+                <div class="field is-grouped">
+                  <p class="control">
+                    <a target="_blank" class="button is-info get-channel" href="https://www.youtube.com/channel/{{ channel_id }}">Browse</a>
+                    <a class="button is-warning" href="#channel-comment">Suggestions</a>
+                  </p>
+                </div>
               </div>
             </div> <!-- end channel-header-content -->
           </div> <!-- end channel-header-details -->
