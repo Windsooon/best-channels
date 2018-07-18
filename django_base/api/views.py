@@ -2,6 +2,7 @@ import requests
 from datetime import datetime, timedelta
 from requests.auth import HTTPBasicAuth
 from django.db.models import Count
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
@@ -70,26 +71,29 @@ class PlaylistViewSet(viewsets.ModelViewSet):
         try:
             Playlist.objects.get(channel_id=channel_id)
         except ObjectDoesNotExist:
-            response = requests.get(
-                'https://www.youtube.com/channel/' + channel_id)
-            if response.status_code == 404:
-                return Response(status=404)
+            if settings.DEBUG:
+                pass
             else:
-                serializer = self.get_serializer(data=request.data)
-                serializer.is_valid(raise_exception=True)
-                self.perform_create(serializer)
-                headers = self.get_success_headers(serializer.data)
-                return Response(
-                    serializer.data, status=status.HTTP_201_CREATED,
-                    headers=headers)
+                response = requests.get(
+                    'https://www.youtube.com/channel/' + channel_id)
+                if response.status_code == 404:
+                    return Response(status=404)
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_201_CREATED,
+                headers=headers)
         else:
             return Response(status=401)
 
     def get_queryset(self):
-        queryset = Playlist.objects.all().order_by('-update_time')
+        queryset = Playlist.objects.all().order_by('-create_time')
         related = self.request.query_params.get('newest', None)
         if related is not None:
             queryset = queryset.filter(
+                type="new",
                 create_time__gte=datetime.now()-timedelta(days=7)). \
                     order_by('-create_time')[:25]
         return queryset
