@@ -10,7 +10,6 @@ $(document).ready(function() {
             return !!localCache.data[url] && ((new Date().getTime() - localCache.data[url]._) < localCache.timeout);
         },
         get: function (url) {
-            console.log('Getting in cache for url' + url);
             return localCache.data[url].data;
         },
         set: function (url, cachedData, callback) {
@@ -128,7 +127,7 @@ $(document).ready(function() {
         labelField: "name",
         searchField: "name",
         preload: true,
-        placeholder: "Sub Categories",
+        placeholder: "Search",
         options: [],
         closeAfterSelect: true,
         create: false,
@@ -147,8 +146,7 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            window.location = real_host + "/" + $("#search-outer").val() + "/" + replaceSpace(value) + "/";
-            // window.location.replace(real_host + "/subcategory/" + replaceSpace(value) + "/");
+            window.location = real_host + "/category/" + $("#search-outer").attr('value') + "/" + replaceSpace(value) + "/";
         },
         load: function(query, callback) {
             $.ajax({
@@ -165,6 +163,7 @@ $(document).ready(function() {
             });
         }
     });
+
 
     $(".sub-btn").on("click", function() {
         if (!$(".select-type").length || !$(".select-sub-category").length || 
