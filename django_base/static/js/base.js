@@ -164,7 +164,6 @@ $(document).ready(function() {
         }
     });
 
-
     $(".sub-btn").on("click", function() {
         if (!$(".select-type").length || !$(".select-sub-category").length || 
             !$("#channel-id").val() || !$("#channel-email").val() || 
@@ -173,6 +172,7 @@ $(document).ready(function() {
             return false;
         }
         data = {
+            "type": $("#sub-hidden-type").val(),
             "inner": $(".select-sub-category").attr("val"),
             "channel_id": $("#channel-id").val(),
             "channel_title": $("#channel-name").val(),
@@ -182,7 +182,7 @@ $(document).ready(function() {
         $.ajax({
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                $(".sub-btn").prop("disabled", true); 
+                $(".sub-btn").attr("disabled","disabled");
             },
             url: "/api/playlist/",
             type: "POST",
@@ -211,7 +211,7 @@ $(document).ready(function() {
                 $(".hero-add-div").append($thank_you_div);
             },
             complete: function() {
-                $(".sub-btn").prop("disabled", false); 
+                $(".sub-btn").removeAttr("disabled");
             }
 
         });
