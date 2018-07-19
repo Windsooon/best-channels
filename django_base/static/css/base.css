@@ -13,6 +13,10 @@
     color: #00d1b2;
 }
 
+#show-a {
+    text-align: center;
+}
+
 * {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
@@ -599,3 +603,6 @@ pre {
     color: #4a4a4a;
 }
 
+.slick-vertical .slick-slide {
+    margin-bottom: 20px;
+}

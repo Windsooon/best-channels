@@ -65,12 +65,8 @@ function set_newest_channel_block(data, container) {
 
 function set_channel_block(data, container) {
      if (data[0].length != 0) {
-         var $details_content = $("<div />", {
-             "class": "details-content"
-         });
-         container.append($details_content);
          get_channel_info(
-             data[0]["playlist"], data[0]["name"], $details_content, padding=true);
+             data[0]["playlist"], data[0]["name"], container, padding=true);
     }
 }
 
@@ -107,7 +103,7 @@ function get_channel_info(data, type, container, padding=false) {
                      "class": "channel-div columns"
                 });
                  if (padding  == true) {
-                    var inside_a_class = "channel-indide-a column is-6 is-offset-3"
+                    var inside_a_class = "channel-indide-a column is-9 is-offset-1"
                  }
                  else {
                     var inside_a_class = "channel-indide-a column is-10 is-offset-1";

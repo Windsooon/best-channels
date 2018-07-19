@@ -17,7 +17,7 @@
 <div class="slider-outside-div">
   <div class="slider-title">
     <div class="slider-wrapper">
-      <div class="slider newest-responsive">
+      <div class="slider container slider-container">
         {% for i in "012" %}
         <div class="newest-div">
           <a id="newest-a-{{ i }}" class="newest-a" href="{{ host }}videos/{{ sub }}/"/>
@@ -42,22 +42,24 @@
       <li class="is-active"><a href="#" aria-current="page">{{ sub }}</a></li>
     </ul>
   </div>
+  <div class="details-content columns is-multiline">
+    <div class="slider-rs-wrapper column is-3 is-offset-1">
+      <div class="slider responsive">
+      {% for i in "012345" %}
+      <div class="slider-rs-div">
+        <a id="slider-rs-a-{{i}}" class="slider-rs-a" href="" ><img id="slider-rs-{{i}}"class="slider-rs-img" src="{% static 'imgs/ad.png' %}" /></a>
+      </div>
+      {% endfor %}
+    </div> <!-- end slider-rs-wrapper -->
+    <a id="show-a" href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Show Your Product here?</p></a>
+  </div> <!-- end details-content -->
+  <div class="details-wrapper column">
+  </div> <!-- end details-wrapper -->
 </div> <!-- end cate-content -->
 {% endblock %}
 
 {% block slider-ad %}
-<div class="slider-rs-wrapper container card">
-  <div class="slider responsive">
-    {% for i in "012345" %}
-    <div class="slider-rs-div">
-        <a id="slider-rs-a-{{i}}" class="slider-rs-a" href="" ><img id="slider-rs-{{i}}"class="slider-rs-img" src="{% static 'imgs/ad.png' %}" /></a>
-    </div>
-    {% endfor %}
-  </div>
-  <div class="slider-rs-footer">
-    <a href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Show Your Product here?</p></a>
-  </div>
-</div>
+
 {% endblock %}
 
 {% block slider %}
@@ -70,11 +72,11 @@
 <script>
     $(document).ready(function() {
         var sub = "{{ sub }}"
-        get_channel(sub , $(".cate-content")); 
+        get_channel(sub, $(".details-wrapper"));
         subscribe_email_click(sub);
         update_slider(sub);
-        slick_init();
-        slick_init(3, 1, $(".newest-responsive"));
+        slick_init(6, 1, true, $(".responsive"));
+        slick_init(3, 1, false, $(".slider-container"));
         update_ad(sub);
     });
 </script>

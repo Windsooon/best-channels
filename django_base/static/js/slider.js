@@ -1,9 +1,10 @@
-function slick_init(big=3, small=1, container=$(".responsive")) {
+function slick_init(big=3, small=1, vertical=true, container=$(".responsive")) {
     container.slick({
         prevArrow: false,
         nextArrow: false,
         dots: true,
         infinite: false,
+        vertical: vertical,
         speed: 300,
         slidesToShow: big,
         slidesToScroll: big,
@@ -14,21 +15,27 @@ function slick_init(big=3, small=1, container=$(".responsive")) {
               slidesToShow: big,
               slidesToScroll: big,
               infinite: true,
-              dots: true
+              dots: true,
             }
           },
           {
             breakpoint: 600,
             settings: {
               slidesToShow: small,
-              slidesToScroll: small
+              slidesToScroll: small,
+              infinite: true,
+              vertical: false,
+              dots: true,
             }
           },
           {
             breakpoint: 480,
             settings: {
               slidesToShow: small,
-              slidesToScroll: small
+              slidesToScroll: small,
+              infinite: true,
+              vertical: false,
+              dots: true,
             }
           }
         ]
