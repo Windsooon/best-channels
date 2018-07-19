@@ -476,10 +476,6 @@ pre {
     #youtube-title {
         font-size: 8vw;
     }
-    #youtube-count {
-        font-size: 6vw;
-    }
-
     .youtube-wrapper {
         font-size: 5vw;
     }
@@ -598,3 +594,8 @@ pre {
     margin-left: 2rem;
     margin-bottom: 2.5rem !important;
 }
+
+#youtube-count {
+    color: #4a4a4a;
+}
+

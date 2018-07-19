@@ -256,7 +256,7 @@ function get_channels_count() {
         type: "GET",
         dataType: "JSON",
         success: function(data) {
-            $("#youtube-count").text("We collect, classify " + data["count"] + " channels for you.");
+            $("#youtube-count").html("We collect " + data["count"] + " awesome channels for you. <br> Subscribe to discover and learn from trending channels.");
         },
         error: function() {
         },
