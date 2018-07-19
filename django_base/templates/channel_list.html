@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block title %}{{ sub }} - Best Youtube Channels{% endblock %} 
+
+{% block meta %}
+<meta name="Description" content="Discover Best {{ sub }} YouTube Channels." />
+<meta property="og:description" content="Discover Best {{ sub }} YouTube channels." />
+<meta itemprop="description" content="Channelshunt help you find the most subscribed, biggest youtube channels." />
+<meta name="keywords" content="best {{ sub }} youtube channels, awesome {{ sub }} youtubers, best of youtube" />
+{% endblock meta %}
+
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'css/css_lib/slick-theme.css' %}" />
 <link rel="stylesheet" href="{% static 'css/css_lib/slick.css' %}" />
