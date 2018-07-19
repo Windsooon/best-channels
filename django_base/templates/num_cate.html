@@ -2,10 +2,14 @@
 {% load staticfiles %}
 {% block extra_styles %}
 {% endblock %}
-{% block title %}{{ title }} - Best Youtube Channels{% endblock %}
+{% block title %}Best {{ title }} YouTube Channels{% endblock %}
 
-{% block subscribe %}
-{% endblock %}
+{% block meta %}
+<meta name="Description" content="Discover Best {{ title }} YouTube Channels." />
+<meta property="og:description" content="Discover Best {{ title }} YouTube channels." />
+<meta itemprop="description" content="Channelshunt help you find the most subscribed, biggest youtube channels." />
+<meta name="keywords" content="best {{ title }} youtube channels, awesome {{ title }} youtubers, best of youtube" />
+{% endblock meta %}
 
 {% block content %}
 <div class="cate-content card container">
