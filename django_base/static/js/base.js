@@ -146,7 +146,7 @@ $(document).ready(function() {
             },
         },
         onItemAdd: function (value, item) {
-            window.location = real_host + "/category/" + $("#search-outer").attr('value') + "/" + replaceSpace(value) + "/";
+            window.location = real_host + "/category/" + $("#search-outer").attr('value') + "/" + value + "/";
         },
         load: function(query, callback) {
             $.ajax({

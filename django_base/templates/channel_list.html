@@ -23,7 +23,7 @@
           <a id="newest-a-{{ i }}" class="newest-a" href="{{ host }}videos/{{ sub }}/"/>
             <div class="newest-inside-div">
               <div class="newest-thumbnail">
-                <img id="newest-img-{{ i }}" class="newest-img" src="{% static 'imgs/img_holder.jpg' %}"/>
+                <img id="newest-img-{{ i }}" class="newest-img" src=""/>
               </div> <!-- end channel-thumbnail -->
             </div> <!-- end channel-inside-div -->
           </a> <!-- end channel-inside-a -->
@@ -53,7 +53,7 @@
     </div> <!-- end slider-rs-wrapper -->
     <a id="show-a" href="mailto:contact@channelshunt.com?subject=Website/Book/Store?"><p>Show Your Product here?</p></a>
   </div> <!-- end details-content -->
-  <div class="details-wrapper column">
+  <div class="details-wrapper column is-8">
   </div> <!-- end details-wrapper -->
 </div> <!-- end cate-content -->
 {% endblock %}
@@ -74,7 +74,7 @@
         var sub = "{{ sub }}"
         get_channel(sub, $(".details-wrapper"));
         subscribe_email_click(sub);
-        update_slider(sub);
+        // update_slider(sub);
         slick_init(6, 1, true, $(".responsive"));
         slick_init(3, 1, false, $(".slider-container"));
         update_ad(sub);
