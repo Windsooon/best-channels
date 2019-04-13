@@ -179,6 +179,8 @@ $(document).ready(function() {
             "channel_email": $("#channel-email").val(),
         }
         var csrftoken = getCookie("csrftoken");
+        console.log($("#channel-name").val());
+        console.log($("#channel-email").val());
         $.ajax({
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken);
