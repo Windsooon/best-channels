@@ -5,7 +5,7 @@ from .models import Playlist
 
 class PlaylistAdmin(admin.ModelAdmin):
     list_display = (
-        'channel_title', 'type', 'channel_id', 'inner', 'id', 'create_time',)
+        'channel_title', 'email', 'type', 'channel_id', 'inner', 'id', 'create_time',)
     list_filter = ('type', 'inner')
     search_fields = ['channel_title', 'inner__name']
 
