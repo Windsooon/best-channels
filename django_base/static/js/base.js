@@ -235,7 +235,9 @@ function getCookie(name) {
 }
 
 function readSub(number) {
-    console.log(number);
+    if (number == 0) {
+        return "";
+    }
     var s = [" ", "K", "M"]
     var e = Math.floor(Math.log(number) / Math.log(1000));
     return (number / Math.pow(1000, e)).toFixed(1) + " " + s[e];
