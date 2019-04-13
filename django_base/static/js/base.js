@@ -179,8 +179,6 @@ $(document).ready(function() {
             "channel_email": $("#channel-email").val(),
         }
         var csrftoken = getCookie("csrftoken");
-        console.log($("#channel-name").val());
-        console.log($("#channel-email").val());
         $.ajax({
             beforeSend: function(xhr) {
                 xhr.setRequestHeader("X-CSRFToken", csrftoken);
@@ -200,6 +198,7 @@ $(document).ready(function() {
                 }
             },
             success: function(res) {
+                console.log(res);
                 $("#recommend-form").remove();
                 var $thank_you_div = $("<div />", {
                     "class": "thank-you-div"
