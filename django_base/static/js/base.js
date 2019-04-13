@@ -176,7 +176,7 @@ $(document).ready(function() {
             "inner": $(".select-sub-category").attr("val"),
             "channel_id": $("#channel-id").val(),
             "channel_title": $("#channel-name").val(),
-            "channel_email": $("#channel-email").val(),
+            "email": $("#channel-email").val(),
         }
         var csrftoken = getCookie("csrftoken");
         $.ajax({
