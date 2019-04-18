@@ -66,12 +66,12 @@ function set_newest_channel_block(data, container) {
 function set_channel_block(data, container) {
      if (data[0].length != 0) {
          get_channel_info(
-             data[0]["playlist"], data[0]["name"], container, padding=true);
+             data[0]["playlist"], data[0]["name"], container, padding=true, limit=true);
     }
 }
 
 
-function get_channel_info(data, type, container, padding=false) {
+function get_channel_info(data, type, container, padding=false, limit=false) {
     $.each(data, function(k, v) {
         url = "https://www.googleapis.com/youtube/v3/channels?part=snippet, statistics&key=AIzaSyBABK-dxkscLAibISE0-cgNW9Wk7wd5uEY&id=" + v["channel_id"];
         $.ajax({
@@ -98,7 +98,11 @@ function get_channel_info(data, type, container, padding=false) {
                     var thumbnails = data["items"][0]["snippet"]["thumbnails"]["default"]["url"];
                 }
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
-
+                if (limit == true) {
+                    if (sub_count < 1000) {
+                        return
+                    }
+                }
                 var $channel_div = $("<div />", {
                      "class": "channel-div columns"
                 });
