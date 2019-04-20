@@ -227,6 +227,7 @@ pre {
 
 .newest-a {
     display: inline-block;
+    padding: 10px;
 }
 
 .slider-wrapper {

@@ -24,13 +24,14 @@
             <div class="newest-inside-div">
               <div class="newest-thumbnail">
                 <img id="newest-img-{{ i }}" class="newest-img" src=""/>
+                <p id="newest-p-{{ i }}" class="newest-p"></p>
               </div> <!-- end channel-thumbnail -->
             </div> <!-- end channel-inside-div -->
           </a> <!-- end channel-inside-a -->
         </div> <!-- end newest-div -->
         {% endfor %}
       </div> <!-- end newest-responsive -->
-      <a id="newest-videos-a" href="{{ host }}videos/{{ sub }}/"><span class="subtitle">Newest Videos In {{ sub }}</span></a>
+      <a id="newest-videos-a" href="{{ host }}videos/{{ sub }}/"><span class="subtitle">Checkout newest videos about {{ sub }}</span></a>
     </div> <!-- end slider-wrapper -->
   </div> <!-- end slider-title -->
 </div> <!-- end slider-outiside-div -->

@@ -19,6 +19,7 @@ function get_three_videos(data) {
                 },
                 success:function(data){
                     $("#newest-img-" + k).attr("src", data["items"][0]["snippet"]["thumbnails"]["high"]["url"]);
+                    $("#newest-p-" + k).text(data["items"][0]["snippet"]["title"]);
                 }
             });
         });
