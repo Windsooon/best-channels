@@ -100,7 +100,7 @@ function get_channel_info(data, type, container, padding=false, limit=false) {
                 }
                 var sub_count = data["items"][0]["statistics"]["subscriberCount"];
                 if (limit == true) {
-                    if (sub_count < 1000) {
+                    if (sub_count < 500) {
                         return
                     }
                 }
