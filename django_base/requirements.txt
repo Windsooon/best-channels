@@ -1,6 +1,6 @@
 certifi==2018.4.16
 chardet==3.0.4
-Django==2.0.4
+Django==2.2.24
 django-pipeline==1.6.14
 djangorestframework==3.8.2
 idna==2.6
